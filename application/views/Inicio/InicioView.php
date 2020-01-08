@@ -3,70 +3,7 @@
 <link rel="stylesheet" type="text/css" href="<?= base_url() ?>Estilos/css/animate.css">
 <link rel="stylesheet" type="text/css" href="<?= base_url() ?>Estilos/css/boton.css">
 
-<script>
-    $(document).ready(function() {
-        $("#particles-js").css({
-            "height": $(window).height() + "px"
-        });
-    });
-</script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.carousel');
-        var instances = M.Carousel.init(elems, {
-            fullWidth: true
-        });
-    });
-
-    autoplay()
-
-    function autoplay() {
-        $('.carousel').carousel('next');
-        setTimeout(autoplay, 8000);
-    }
-</script>
-
-<style>
-    .centrado {
-        position: absolute;
-        top: 27%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    #particles-js {
-        background: url(https://i.ibb.co/HxJst1z/animal-collar-dog-8700.jpg);
-        background-position: center;
-        background-attachment: contain;
-        background-size: cover;
-        background-color: red;
-    }
-
-    .centrado_1 {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .centrado_2 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    mark {
-        /* El color del fondo anula el color de la página completa */
-        background-color: rgba(0, 0, 0, 0.5);
-        color: #f1f8e9;
-    }
-
-    .carousel {
-        height: 400px !important;
-    }
-</style>
 
 
 <div class="">
