@@ -40,6 +40,7 @@
         background-position: center;
         background-attachment: contain;
         background-size: cover;
+        background-color: red;
     }
 
     .centrado_1 {
