@@ -8,8 +8,8 @@
 
     <!-- Bootstrap CSS -->
 
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>private/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>private/css/index.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>private/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>private/css/inicio/index.css">
     <title>Let's Adopt | Inicio</title>
 
 </head>
@@ -50,7 +50,7 @@
         <button class="navbar-toggler navbar-toggler-rigth" type="button" data-toggle="collapse"
             data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
             aria-label="Toggle navigation">
-            <img src="images/icons/menu.png" width="24px" height="24px" alt="">
+            <img src="<?=base_url() ?>private/media/icons/menu.png" width="24px" height="24px" alt="">
         </button>
 
         <div class="collapse navbar-collapse justify-content-end mr-sm-auto text-sm-center" id="navbarNavDropdown">
@@ -70,7 +70,7 @@
                 <li class="nav-item  dropdown">
                     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="images/icons/user.png" width="25px" height="25px" alt="" id="icon-nav">
+                        <img src="<?=base_url() ?>private/media/icons/user.png" width="25px" height="25px" alt="" id="icon-nav">
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dd_menu">
                         <a class="dropdown-item text-white" href="#">¡Registrate!</a>
@@ -91,7 +91,7 @@
                 <div class="card border-light my-2">
 
                     <div class="card-body">
-                        <img src="images/icons/browser.svg" width="128px" height="128px" class="card-img-top" alt="...">
+                        <img src="<?=base_url() ?>private/media/icons/browser.svg" width="128px" height="128px" class="card-img-top" alt="...">
                         <h5 class="card-title text-center text-info">Registrarte</h5>
                         <p class="card-text text-justify">Contamos con dos tipos de registros. Para personas que buscan
                             adoptar a
@@ -105,7 +105,7 @@
                 <div class="card border-light my-2 ">
 
                     <div class="card-body">
-                        <img src="images/icons/password.svg" width="128px" height="128px" class="card-img-top"
+                        <img src="<?=base_url() ?>private/media/icons/password.svg" width="128px" height="128px" class="card-img-top"
                             alt="...">
                         <h5 class="card-title text-center text-info">Iniciar Sesión</h5>
                         <p class="card-text text-justify">No podrás gozar de ninguno de nuestros servicios sin antes
@@ -122,7 +122,7 @@
                 <div class="card border-light my-1">
 
                     <div class="card-body">
-                        <img src="images/icons/medal.svg" width="128px" height="128px" class="card-img-top" alt="...">
+                        <img src="<?=base_url() ?>private/media/icons/medal.svg" width="128px" height="128px" class="card-img-top" alt="...">
                         <h5 class="card-title text-center text-info">Adoptar</h5>
                         <p class="card-text text-justify">Puedes conocer a más de un cachorro, puedes buscar con el que
                             sientas esa química especial, solicita una cita y visítalo. Existen diversos centros de
@@ -380,12 +380,10 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
-        <script type="text/javascript"  src="<?= base_url() ?>private/js/bootstrap.min.js">
+        <script type="text/javascript"  src="<?= base_url() ?>private/js/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript"  src="<?= base_url() ?>private/js/animations/scroll-entrance.js"></script>
 
-        </script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/index/index.js"></script>
-    <script src="css/animations/scroll-entrance.js"></script>
+
 
 </body>
 
