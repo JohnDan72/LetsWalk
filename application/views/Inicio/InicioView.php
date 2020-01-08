@@ -1,4 +1,6 @@
-<!--Cambio de master-->
+<!--COMENTARIO DE PRUEBA PARA GIT-->
+
+>>>>>>> ramaJuan
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="<?= base_url() ?>Estilos/css/animate.css">
