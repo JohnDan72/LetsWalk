@@ -56,7 +56,7 @@
         <div class="collapse navbar-collapse justify-content-end mr-sm-auto text-sm-center" id="navbarNavDropdown">
             <ul class="navbar-nav ">
                 <li class="nav-item active">
-                    <a class="nav-link text-white" href="#">Inicio</a>
+                    <a class="nav-link text-white" href="<?=base_url()?>InicioController">Inicio</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link text-white" href="<?=base_url()?>WarningController">Adopta</a>
