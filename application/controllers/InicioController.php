@@ -10,7 +10,7 @@ class InicioController extends CI_Controller {
 			$dato['string'] = "Let's Walk | Inicio";
 
 			//$this->load->view('Templates/header',$dato);
-			$this->load->view('Inicio/InicioView');
+			$this->load->view('Inicio/InicioView', $dato);
 			//$this->load->view('Templates/footer');
 		}
 }

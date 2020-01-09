@@ -1,0 +1,13 @@
+.slider {
+  background: url('../../../private/media/images/warning.jpg');
+  width: : 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+mark{
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffff;
+}

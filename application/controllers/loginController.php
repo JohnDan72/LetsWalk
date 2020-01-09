@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class WarningController extends CI_Controller {
+class loginController extends CI_Controller {
 		function __construct(){
 			parent::__construct();
 		}
@@ -10,7 +10,7 @@ class WarningController extends CI_Controller {
 			$dato['string'] = "Let's Walk | Espera un poco";
 
 			//$this->load->view('Templates/header',$dato);
-			$this->load->view('Warning/WarningView', $dato);
+			$this->load->view('login/loginView', $dato);
 			//$this->load->view('Templates/footer');
 		}
 }

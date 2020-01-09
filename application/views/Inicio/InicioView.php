@@ -10,7 +10,8 @@
 
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>private/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>private/css/inicio/index.css">
-    <title>Let's Adopt | Inicio</title>
+    <link rel="icon" href="https://image.ibb.co/dEEbaA/baidu-logotipo-de-la-pata-2.png">
+    <title><?php echo $string; ?></title>
 
 </head>
 
@@ -75,7 +76,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dd_menu">
                         <a class="dropdown-item text-white" href="#">¡Registrate!</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-white" href="#">Inicia Sesión</a>
+                        <a class="dropdown-item text-white" href="<?=base_url()?>loginController">Inicia Sesión</a>
                     </div>
                 </li>
             </ul>
