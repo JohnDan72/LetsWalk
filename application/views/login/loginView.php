@@ -10,10 +10,10 @@
   <body>
 
     <div class="row">
-      <div class="slider d-sm-none d-md-block d-lg-block d-xl-block col-md-6 col-lg-6 col-xl-6 rounded mx-n5"></div>
+      <div class="slider d-sm-none d-md-block d-lg-block d-xl-block col-md-6 col-lg-6 col-xl-6 rounded"></div>
       <div class="col-md-6 col-lg-6 col-xl-6 rounded d-flex justify-content-center align-items-center">
         <div class="container">
-          <div class="card my-n5">
+          <div class="card">
             <div class="card-body">
 
               <div class="mt-n5 d-flex justify-content-center">
@@ -30,7 +30,7 @@
                   <small id="emailHelp" class="form-text text-muted"> *Campos requeridos</small>
                 </div>
                 <div class="form-group">
-                  <label for="pass">Contraseña *</label>
+                  <label for="pass">Contraseña * </label>
                   <input type="password" class="form-control" id="pass">
                 </div>
 
