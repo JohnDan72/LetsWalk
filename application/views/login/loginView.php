@@ -7,23 +7,24 @@
     <link rel="icon" href="https://image.ibb.co/dEEbaA/baidu-logotipo-de-la-pata-2.png">
     <title><?php echo $string; ?></title>
   </head>
-  <body>
+  <body class="">
 
     <div class="row">
-      <div class="slider d-sm-none d-md-block d-lg-block d-xl-block col-md-6 col-lg-6 col-xl-6 rounded"></div>
-      <div class="col-md-6 col-lg-6 col-xl-6 rounded d-flex justify-content-center align-items-center">
-        <div class="container">
-          <div class="card">
+      <!--<div class=" d-sm-none d-md-block d-lg-block d-xl-block col-md-6 col-lg-6 col-xl-6 rounded"></div>-->
+      <div class="col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center align-items-center slider ">
+          <div class="card trans">
             <div class="card-body">
-
-              <div class="mt-n5 d-flex justify-content-center">
-                  <img src="<?=base_url() ?>private/media/icons/gold.svg" alt="" width="150px" height="150px" class="mt-n5">
+              <div class=" d-flex justify-content-center">
+                  <img src="<?=base_url() ?>private/media/icons/gold.svg" alt="" width="150px" height="150px" class="">
               </div>
-
               <h4 class="card-title text-center mt-3">Inicio de Sesión</h4>
               <p class="card-text text-center">¡Que gusto tenerte aquí! Por favor completa los campos</p>
 
-              <form>
+              <?php
+                $form_U = array('id' => "form_login");
+                echo form_open(base_url() . 'loginController',$form_U);
+                ?>
+
                 <div class="form-group">
                   <label for="correo">e-mail *</label>
                   <input type="email" class="form-control" id="correo" aria-describedby="emailHelp">
@@ -33,13 +34,10 @@
                   <label for="pass">Contraseña * </label>
                   <input type="password" class="form-control" id="pass">
                 </div>
-
-              </form>
-
+              <?= form_close() ?>
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
-        </div>
       </div>
     </div>
 
