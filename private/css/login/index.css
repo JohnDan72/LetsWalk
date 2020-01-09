@@ -21,10 +21,18 @@ body{
   background-color: #FAFAFA;
 }
 
-h1,h2,h3,h4,h5,h6,p{
+h1,h2,h3,h5,h6,p{
   color: #424242;
 }
 
 .trans{
   opacity: 0.9;
+}
+
+.forgot-pass{
+  font-size: 12px;
+}
+
+.register{
+  font-size: 13px;
 }
