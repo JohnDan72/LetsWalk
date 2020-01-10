@@ -42,12 +42,36 @@
                 <li class="nav-item  dropdown">
                     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <?php 
+                            if($this->session->userdata('user')) {
+                                //$user = $this->session->userdata('user');
+                                //extract($user);
+                                echo "Bienvenido ".$this->session->userdata('user')['Nombre'];
+                            }
+                        ?>
                         <img src="<?=base_url() ?>private/media/icons/user.png" width="25px" height="25px" alt="" id="icon-nav">
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dd_menu">
-                        <a class="dropdown-item text-white" href="#">¡Registrate!</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-white" href="<?=base_url()?>loginController">Inicia Sesión</a>
+                        <?php 
+                            if($this->session->userdata('user')) {
+                                //$user = $this->session->userdata('user');
+                                //extract($user);
+                                //echo "Bienvenido ".$this->session->userdata('user')['Nombre'];
+                        ?>
+                                <a class="dropdown-item text-white" href="#">Pánel de Control</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-white" href="<?=base_url()?>loginController/logout">Cerrar Sesión</a>
+                        <?php
+                            }
+                            else
+                            {
+                        ?>
+                                <a class="dropdown-item text-white" href="#">¡Registrate!</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-white" href="<?=base_url()?>loginController">Inicia Sesión</a>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </li>
             </ul>
