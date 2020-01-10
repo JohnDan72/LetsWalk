@@ -7,7 +7,7 @@ class loginController extends CI_Controller {
 		}
 
 		function index(){
-			$dato['string'] = "Let's Walk | Espera un poco";
+			$dato['string'] = "Let's Walk | Inicio de Sesión";
 
 			//$this->load->view('Templates/header',$dato);
 			$this->load->view('login/loginView', $dato);

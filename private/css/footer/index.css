@@ -1,0 +1,25 @@
+footer{
+  background-color: #E6E6E6;
+}
+
+.scale-gray{
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  transition:filter 0.4s;
+  -webkit-transition:-webkit-filter 0.5s;
+}
+
+
+
+.scale-gray:hover {
+  filter: grayscale(0);
+  -webkit-filter: grayscale(0);
+}
+
+.gray-font{
+  color: #A399A3;
+}
+
+.gray-font:hover{
+  color: #474645;
+}
