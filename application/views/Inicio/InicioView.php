@@ -2,7 +2,7 @@
 
     <div class="slider">
         <h5 class="display-4 d-flex justify-content-center text-center text-white pt-5" data-entrance="from-right">
-            Bienvenido a Let's Adopt
+            Bienvenido a Let's Adopt Puto!
         </h5>
         <p class="text-center text-white d-none d-sm-block d-md-block d-lg-block d-xl-block" data-entrance="from-left">
             ¿Estas pensando en un nuevo perrito? Nuestra recomendación siempre será:
