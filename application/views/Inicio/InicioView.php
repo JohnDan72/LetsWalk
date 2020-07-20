@@ -100,70 +100,45 @@
         </div>
     </div>
 
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active align-items-center">
-                <img src="https://i.ibb.co/NNscFrZ/1rahca.jpg" class="circle-img" alt="" width="128px" heigth="128px">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum nisi amet similique exercitationem blanditiis? Reprehenderit molestias tempore iste ipsam at, ea, consequuntur, reiciendis eveniet excepturi iure voluptatem nisi sint dignissimos?Quibusdam perferendis ab ipsa totam! Eos est libero quasi dolor reprehenderit illo deleniti consequatur eius beatae. Possimus perferendis neque adipisci dolorem ipsa officia, recusandae a repellendus quas enim minus eum.</p>
-            </div>
-            <div class="carousel-item">
-            <img src="" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
+
+    <div class="container mt-5 d-block">
+        <h3 class="display-4 mt-4 mb-4 text-center">Testimonios</h3>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner  align-content-center" ALIGN="center">
+                <div class="carousel-item active">
+                    <img src="https://i.ibb.co/NNscFrZ/1rahca.jpg" class="circle-img" alt="" width="128px" heigth="128px">
+                    <p class="text-center cursive mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum nisi amet similique exercitationem blanditiis? Reprehenderit molestias tempore iste ipsam at, ea, consequuntur, reiciendis eveniet excepturi iure voluptatem nisi sint dignissimos?Quibusdam perferendis ab ipsa totam! Eos est libero quasi dolor reprehenderit illo deleniti consequatur eius beatae. Possimus perferendis neque adipisci dolorem ipsa officia, recusandae a repellendus quas enim minus eum.</p>
+                </div>
+                
             </div>
         </div>
     </div>
 
 
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-
-    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </div>
-            </div>
+    <div class="row mt-4 mb-4">
+        <div class="offset-4 col-4" >
+            <div class="dropdown-divider"></div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <div class="container mb-5">
+        <h3 class="display-4 mt-4 mb-5 text-center">¿Quienes somos?</h3>
+        <p class="text-center">
+            Somos una organización sin fines de lucro, que busca disminuir los índices de perros callejeros, así como los índices de 
+            sacrificios, además de fomentar la empatía, la solidaridad y el amor en las familias, a través del sistema de recepción de 
+            citas a través de internet para conocer a un perro de una organización afiliada para que puedas adoptarlo. De esta manera 
+            creamos una manera más rápida y fácil de vincular perros callejeros con familias capaces de darle el amor y el cuidado que 
+            merecen.
+        </p>
+
+        <div class=" d-flex justify-content-center mt-3 mb-5" data-entrance="fade" data-entrance-delay="300">
+            <button type="button" class="btn btn-color text-white ">Conoce más</button>
+        </div>
+    </div>
+ 
+
+
+    
+
 
   

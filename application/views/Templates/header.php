@@ -37,7 +37,7 @@
                     <a class="nav-link text-white" href="#">Contacto</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link text-white" href="#">Nosotros</a>
+                    <a class="nav-link text-white" href="<?=base_url()?>NosotrosController">Nosotros</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link text-white" href="#">Faq's</a>
