@@ -43,7 +43,7 @@
                 
 			</section> <!-- .content -->
 		</div><!--.main -->
-	</div>  <!-- wrapper -->
+	</div> <!-- wrapper -->
 
     
     
