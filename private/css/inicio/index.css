@@ -101,11 +101,12 @@ nav, #dd_menu {
 }
 
 .slider_banner {
-  background: url('../../../private/media/images/dog-pet-cute-37401.svg');
+  background: url('../../../private/media/images/weimaraner-2600694_1920.jpg');
  /* background-color: #1de9b6;*/
   height: 70vh;
   background-size: cover;
   background-position: center;
+  
 }
 
 mark{
@@ -120,3 +121,25 @@ body{
 h1,h2,h3,h4,h5,h6,p{
   color: #424242;
 }
+
+.card{
+  border-radius: 10px;
+}
+
+.zoom {
+  transition: transform .3s;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05); 
+}
+
+.circle-img{
+  border-radius: 50%;
+}
+
+
+
+

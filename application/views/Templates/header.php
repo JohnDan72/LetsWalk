@@ -13,7 +13,7 @@
     <link rel="icon" href="https://image.ibb.co/dEEbaA/baidu-logotipo-de-la-pata-2.png">
     <title><?php echo $string; ?></title>
 
-    <nav class="navbar  navbar-expand-md">
+    <nav class="navbar navbar-expand-md sticky-top">
         <a class="navbar-brand text-white d-flex justify-content-sm-center" href="#">
             <img src="https://i.ibb.co/CsdPL9q/Logo-nav.png" width="89" height="35" class="d-inline-block align-top "
                 alt="">
@@ -35,6 +35,9 @@
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link text-white" href="#">Contacto</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link text-white" href="#">Nosotros</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link text-white" href="#">Faq's</a>
