@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>private/css/<?php echo $css?>/index.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>private/css/footer/index.css">
     <link rel="icon" href="https://image.ibb.co/dEEbaA/baidu-logotipo-de-la-pata-2.png">
+    <?php if(isset($alt_css)) echo $alt_css; ?>
     <title><?php echo $string; ?></title>
 
     <nav class="navbar navbar-expand-md sticky-top">
