@@ -11,7 +11,7 @@
 
                 <div class="texto">
                     <p class="text-center mb-3">
-                        A continuación, te mostramos el test que de Ardogs, esto te ayudará a saber si realmente estas listo para
+                        A continuación, te mostramos el test que Let's Walk diseño, esto te ayudará a saber si realmente estas listo para
                         adoptar a un perrito. Se sincero contigo mismo.
                     </p>
                 </div>
@@ -21,7 +21,7 @@
 
 
 
-    <div class="container" id="main">
+    <div class="container" id="main_1">
         <div class="bs-stepper container ">
             <div class="bs-stepper-header" role="tablist" id="step_h" ALIGN="center">
                 <!-- your steps here -->
@@ -49,7 +49,6 @@
                 </div>
             </div>
             <div class="bs-stepper-content">
-
                 <!-- your steps content here -->
                 <div id="part_1" class="content mt-5" role="tabpanel" aria-labelledby="logins-part-trigger">
 
@@ -88,7 +87,7 @@
                     </div>
 
                     <div class="row mt-5 mb-5">
-                        <div class="col-5">
+                        <div class="col-md-5 offset-sm-4 col-sm-4">
                             <div class="dropdown-divider"></div>
                         </div>
                     </div>
@@ -123,7 +122,7 @@
 
 
                     <div class="row mt-5 mb-5">
-                        <div class="col-5">
+                        <div class="col-md-5 offset-sm-4 col-sm-4">
                             <div class="dropdown-divider"></div>
                         </div>
                     </div>
@@ -152,7 +151,7 @@
 
 
                     <div class="row mt-5 mb-5">
-                        <div class="col-5">
+                        <div class="col-md-5 offset-sm-4 col-sm-4">
                             <div class="dropdown-divider"></div>
                         </div>
                     </div>
@@ -201,7 +200,7 @@
                     </div>
 
                     <div class="row mt-5 mb-5">
-                        <div class="col-5">
+                        <div class="col-md-5 offset-sm-4 col-sm-4">
                             <div class="dropdown-divider"></div>
                         </div>
                     </div>
@@ -234,7 +233,11 @@
                             </label>
                         </div>
                     </div>
-                    <button class="btn btn-info mt-5" id="next_1" onclick="stepper.next()">Siguiente</button>
+
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-primary mt-5 mb-5" id="next_1" onclick="stepper.next()">Siguiente</button>
+                    </div>
+
                 </div>
 
                 <div id="part_2" class="content mt-5" role="tabpanel" aria-labelledby="information-part-trigger">
@@ -268,7 +271,7 @@
                     </div>
 
                     <div class="row mt-5 mb-5">
-                        <div class="col-5">
+                        <div class="col-md-5 offset-sm-4 col-sm-4">
                             <div class="dropdown-divider"></div>
                         </div>
                     </div>
@@ -302,7 +305,7 @@
                     </div>
 
                     <div class="row mt-5 mb-5">
-                        <div class="col-5">
+                        <div class="col-md-5 offset-sm-4 col-sm-4">
                             <div class="dropdown-divider"></div>
                         </div>
                     </div>
@@ -336,7 +339,7 @@
                     </div>
 
                     <div class="row mt-5 mb-5">
-                        <div class="col-5">
+                        <div class="col-md-5 offset-sm-4 col-sm-4">
                             <div class="dropdown-divider"></div>
                         </div>
                     </div>
@@ -376,12 +379,12 @@
                     </div>
 
                     <div class="row mt-5 mb-5">
-                        <div class="col-5">
+                        <div class="col-md-5 offset-sm-4 col-sm-4">
                             <div class="dropdown-divider"></div>
                         </div>
                     </div>
 
-                    <p class="p_p">10. ¿Conoces lugares públicos PET FRIENDLY (hoteles y restaurantes especiales para perro?</p>
+                    <p class="p_p">10. ¿Conoces lugares públicos PET FRIENDLY (hoteles y restaurantes especiales para perro)?</p>
                     <div class="container">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="p_10" id="r10_1" value="1">
@@ -415,8 +418,10 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-info mt-5" onclick="stepper.next()" id="next_2">Siguiente</button>
-                    <button class="btn btn-danger mt-5" onclick="stepper.previous()" id="back_1">Atras</button>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-dark mt-5 mb-5" onclick="stepper.previous()" id="back_2">Atras</button>
+                        <button class="btn btn-primary mt-5 mb-5 ml-3" onclick="stepper.next()" id="next_2">Siguiente</button>
+                    </div>
 
                 </div>
 
@@ -458,7 +463,7 @@
                     </div>
 
                     <div class="row mt-5 mb-5">
-                        <div class="col-5">
+                        <div class="col-md-5 offset-sm-4 col-sm-4">
                             <div class="dropdown-divider"></div>
                         </div>
                     </div>
@@ -486,7 +491,7 @@
                     </div>
 
                     <div class="row mt-5 mb-5">
-                        <div class="col-5">
+                        <div class="col-md-5 offset-sm-4 col-sm-4">
                             <div class="dropdown-divider"></div>
                         </div>
                     </div>
@@ -520,8 +525,12 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-danger mt-5" onclick="stepper.previous()">Atras</button>
-                    <button class="btn btn-info mt-5" onclick="return evaluaTest();">Terminar</button>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-dark mt-5 mb-5" onclick="stepper.previous()" id="back_3">Atras</button>
+                        <button class="btn btn-success mt-5 mb-5 ml-3" onclick="return evaluaTest();">Terminar</button>
+                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -533,53 +542,51 @@
     //echo "var_dump(expression): ". var_dump($this->session->userdata('user'));
     ?>
     <script>
-        
-
-        function evaluaTest(){
+        function evaluaTest() {
 
             //Recuperación de respuestas
-            var res = []; 
+            var res = [];
             res[0] = 0;
 
-             res[1] = ($("input[name='p_1']:checked").val())?$("input[name='p_1']:checked").val():0;
-             res[2] = ($("input[name='p_2']:checked").val())?$("input[name='p_2']:checked").val():0;
-             res[3] = ($("input[name='p_3']:checked").val())?$("input[name='p_3']:checked").val():0;
-             res[4] = ($("input[name='p_4']:checked").val())?$("input[name='p_4']:checked").val():0;
-             res[5] = ($("input[name='p_5']:checked").val())?$("input[name='p_5']:checked").val():0;
-             res[6] = ($("input[name='p_6']:checked").val())?$("input[name='p_6']:checked").val():0;
-             res[7] = ($("input[name='p_7']:checked").val())?$("input[name='p_7']:checked").val():0;
-             res[8] = ($("input[name='p_8']:checked").val())?$("input[name='p_8']:checked").val():0;
-             res[9] = ($("input[name='p_9']:checked").val())?$("input[name='p_9']:checked").val():0;
-             res[10] = ($("input[name='p_10']:checked").val())?$("input[name='p_10']:checked").val():0;
-             res[11] = ($("input[name='p_11']:checked").val())?$("input[name='p_11']:checked").val():0;
-             res[12] = ($("input[name='p_12']:checked").val())?$("input[name='p_12']:checked").val():0;
-             res[13] = ($("input[name='p_13']:checked").val())?$("input[name='p_13']:checked").val():0;
+            res[1] = ($("input[name='p_1']:checked").val()) ? $("input[name='p_1']:checked").val() : 0;
+            res[2] = ($("input[name='p_2']:checked").val()) ? $("input[name='p_2']:checked").val() : 0;
+            res[3] = ($("input[name='p_3']:checked").val()) ? $("input[name='p_3']:checked").val() : 0;
+            res[4] = ($("input[name='p_4']:checked").val()) ? $("input[name='p_4']:checked").val() : 0;
+            res[5] = ($("input[name='p_5']:checked").val()) ? $("input[name='p_5']:checked").val() : 0;
+            res[6] = ($("input[name='p_6']:checked").val()) ? $("input[name='p_6']:checked").val() : 0;
+            res[7] = ($("input[name='p_7']:checked").val()) ? $("input[name='p_7']:checked").val() : 0;
+            res[8] = ($("input[name='p_8']:checked").val()) ? $("input[name='p_8']:checked").val() : 0;
+            res[9] = ($("input[name='p_9']:checked").val()) ? $("input[name='p_9']:checked").val() : 0;
+            res[10] = ($("input[name='p_10']:checked").val()) ? $("input[name='p_10']:checked").val() : 0;
+            res[11] = ($("input[name='p_11']:checked").val()) ? $("input[name='p_11']:checked").val() : 0;
+            res[12] = ($("input[name='p_12']:checked").val()) ? $("input[name='p_12']:checked").val() : 0;
+            res[13] = ($("input[name='p_13']:checked").val()) ? $("input[name='p_13']:checked").val() : 0;
 
 
             //Preparación del formulario a enviar
             var myForm = new FormData();
-            myForm.append('respuesta',JSON.stringify(res)); //se crea un input donde se manda el array en json para pasar por post
-            myForm.append('max_score',56);                  //Nota máxima del test (puede variar conforme a los cambios)
+            myForm.append('respuesta', JSON.stringify(res)); //se crea un input donde se manda el array en json para pasar por post
+            myForm.append('max_score', 56); //Nota máxima del test (puede variar conforme a los cambios)
 
-            fetch('<?php echo base_url()?>TestController/evaluaTestFetch', {
-                  method: 'POST',
-                  body: myForm
-              })
-              .then(function(response) {
-                  if(response.ok) {
-                      return response.json()
-                  } else {
-                      throw "Error en la llamada Ajax";
-                  }
-              })
-              .then(function(myJson) {
-                  alert("res: "+myJson);
-                  //se prepara para mostrar Resultado despues de que Jesus termine la vista correspondiente
-              })
-              .catch(function(err) {
-                 console.log(err);
-              });
+            fetch('<?php echo base_url() ?>TestController/evaluaTestFetch', {
+                    method: 'POST',
+                    body: myForm
+                })
+                .then(function(response) {
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        throw "Error en la llamada Ajax";
+                    }
+                })
+                .then(function(myJson) {
+                    alert("res: " + myJson);
+                    //se prepara para mostrar Resultado despues de que Jesus termine la vista correspondiente
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
 
-            
+
         }
     </script>

@@ -82,9 +82,6 @@ input[type='radio']:checked:after {
 
 }
 
-
-
-
 @media (max-width: 768px) {
     #step_h{
         display: none;
@@ -97,3 +94,12 @@ input[type='radio']:checked:after {
         align-items: center;
     }    
 }
+
+.card{
+    background-color: white;
+    border-radius: 10px;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    color: #424242;
+  }
