@@ -414,16 +414,9 @@
                             </label>
                         </div>
                     </div>
-<<<<<<< HEAD
 
                     <button class="btn btn-info mt-5" onclick="stepper.next()" id="next_2">Siguiente</button>
                     <button class="btn btn-danger mt-5" onclick="stepper.previous()" id="back_1">Atras</button>
-=======
-                    
-                    <button class="btn btn-danger mt-5" onclick="stepper.previous()">Atras</button>
-                    <button class="btn btn-info mt-5" onclick="stepper.next()">Siguiente</button>
-                    
->>>>>>> 8a9be07766fe9846511771a97e5d51f96a297a74
 
                 </div>
 
@@ -527,13 +520,8 @@
                         </div>
                     </div>
 
-<<<<<<< HEAD
-                    <button class="btn btn-danger mt-5" onclick="stepper.previous()" id="back_2">Atras</button>
-                    <button class="btn btn-info mt-5">Terminar</button>
-=======
                     <button class="btn btn-danger mt-5" onclick="stepper.previous()">Atras</button>
                     <button class="btn btn-info mt-5" onclick="return evaluaTest();">Terminar</button>
->>>>>>> 8a9be07766fe9846511771a97e5d51f96a297a74
                 </div>
             </div>
         </div>
@@ -541,17 +529,11 @@
 
 
 
-<<<<<<< HEAD
-
-=======
     <?php
     //echo "var_dump(expression): ". var_dump($this->session->userdata('user'));
     ?>
     <script>
-        var stepper
-        document.addEventListener('DOMContentLoaded', function() {
-            stepper = new Stepper(document.querySelector('.bs-stepper'))
-        })
+        
 
         function evaluaTest(){
 
@@ -600,23 +582,4 @@
 
             
         }
-
-        /*
-        var next_1 = document.getElementById("next_1");
-        var next_2 = document.getElementById("next_2");
-        var back_2 = document.getElementById("back_2");
-        var back_3 = document.getElementById("back_3");
-        /*
-        next_1.addEventListener('click', () => {
-            stepper.next()
-        })
-
-        next_2.addEventListener('click', () => {
-            stepper.next()
-        })
-
-        back_2.addEventListener('click', () => {
-            stepper.previous()
-        })
->>>>>>> 8a9be07766fe9846511771a97e5d51f96a297a74
-
+    </script>

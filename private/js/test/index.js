@@ -6,14 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 })
 
-/*$(document).ready(function() {
-    $('#next_1, #next_2').click(function() { //referimos el elemento ( clase o identificador de acción )
-        $('html, body').animate({
-            scrollTop: 500
-        }, 'slow'); //seleccionamos etiquetas,clase o identificador destino, creamos animación hacia top de la página.
-        return false;
-    });
-});*/
+
 
 var next_1 = document.getElementById("next_1");
 var next_2 = document.getElementById("next_2");

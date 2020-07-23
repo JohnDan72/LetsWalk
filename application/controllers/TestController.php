@@ -11,9 +11,9 @@ class TestController extends CI_Controller {
 		}
 
 		function index(){
-			if(!$this->session->userdata('user') || $this->session->userdata('user')['scoreTest'] != null){
+			/*if(!$this->session->userdata('user') || $this->session->userdata('user')['scoreTest'] != null){
 	            redirect("InicioController");
-			}
+			}*/
 			$dato['string'] = "Let's Walk | Test";
             $dato['css'] = "test";
             $dato['alt_css'] = "<link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css'>";
