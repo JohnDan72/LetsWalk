@@ -21,11 +21,11 @@
 
 
 
-    <div class="container">
-        <div class="bs-stepper container">
-            <div class="bs-stepper-header" role="tablist">
+    <div class="container" id="main">
+        <div class="bs-stepper container ">
+            <div class="bs-stepper-header" role="tablist" id="step_h" ALIGN="center">
                 <!-- your steps here -->
-                <div class="step" data-target="#part_1">
+                <div class="step" data-target="#part_1 ">
                     <button type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
                         <span class="bs-stepper-circle"><img src="<?= base_url() ?>private/media/icons/galleta-de-perro.svg" alt=""></span>
                         <span class="bs-stepper-label">Paso 1</span>
@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="line"></div>
-                <div class="step" data-target="#part_2">
+                <div class="step " data-target="#part_2">
                     <button type="button" class="step-trigger" role="tab" aria-controls="information-part" id="information-part-trigger">
                         <span class="bs-stepper-circle"><img src="<?= base_url() ?>private/media/icons/perro.svg"></span>
                         <span class="bs-stepper-label">Paso 2</span>
@@ -49,6 +49,7 @@
                 </div>
             </div>
             <div class="bs-stepper-content">
+
                 <!-- your steps content here -->
                 <div id="part_1" class="content mt-5" role="tabpanel" aria-labelledby="logins-part-trigger">
 
@@ -62,15 +63,15 @@
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="p_1" id="r1_2" value="2">
-                            <label class="form-check-label"">
-                                    Por las noches, ya que salgo temprano a trabajar y llego después de las 6 pm.
-                                </label>
-                            </div>
-                            <div class=" form-check">
-                                <input class="form-check-input" type="radio" name="p_1" id="r1_3" value="3">
-                                <label class="form-check-label">
-                                    Los fines de semana, porque otros miembros de la familia se encargan entre semana.
-                                </label>
+                            <label class="form-check-label">
+                                Por las noches, ya que salgo temprano a trabajar y llego después de las 6 pm.
+                            </label>
+                        </div>
+                        <div class=" form-check">
+                            <input class="form-check-input" type="radio" name="p_1" id="r1_3" value="3">
+                            <label class="form-check-label">
+                                Los fines de semana, porque otros miembros de la familia se encargan entre semana.
+                            </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="p_1" id="r1_4" value="4">
@@ -235,8 +236,6 @@
                     </div>
                     <button class="btn btn-info mt-5" id="next_1" onclick="stepper.next()">Siguiente</button>
                 </div>
-
-
 
                 <div id="part_2" class="content mt-5" role="tabpanel" aria-labelledby="information-part-trigger">
 
@@ -416,8 +415,8 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-info mt-5" onclick="stepper.next()">Siguiente</button>
-                    <button class="btn btn-danger mt-5" onclick="stepper.previous()">Atras</button>
+                    <button class="btn btn-info mt-5" onclick="stepper.next()" id="next_2">Siguiente</button>
+                    <button class="btn btn-danger mt-5" onclick="stepper.previous()" id="back_1">Atras</button>
 
                 </div>
 
@@ -497,31 +496,31 @@
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="p_13" id="r13_1" value="1">
                             <label class="form-check-label">
-                            Se le golpea con periódico.
+                                Se le golpea con periódico.
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="p_13" id="r13_2" value="2">
                             <label class="form-check-label">
-                            Se le castiga encerrándolo o amarrándolo.
+                                Se le castiga encerrándolo o amarrándolo.
                             </label>
                         </div>
                         <div class=" form-check">
                             <input class="form-check-input" type="radio" name="p_13" id="r13_3" value="3">
                             <label class="form-check-label">
-                            Nada se debe hacer, pues es parte de su naturaleza cuando son pequeños y tienen la necesidad de morder. Si acaso conseguirle juguetes que cubran esa función.
+                                Nada se debe hacer, pues es parte de su naturaleza cuando son pequeños y tienen la necesidad de morder. Si acaso conseguirle juguetes que cubran esa función.
                             </label>
                         </div>
 
                         <div class=" form-check">
                             <input class="form-check-input" type="radio" name="p_13" id="r13_4" value="4">
                             <label class="form-check-label">
-                            Se le corrige en el momento con una llamada de atención firme.
+                                Se le corrige en el momento con una llamada de atención firme.
                             </label>
                         </div>
                     </div>
 
-                    <button class="btn btn-danger mt-5" id="back_3">Atras</button>
+                    <button class="btn btn-danger mt-5" onclick="stepper.previous()" id="back_2">Atras</button>
                     <button class="btn btn-info mt-5">Terminar</button>
                 </div>
             </div>
@@ -531,30 +530,4 @@
 
 
 
-    <script>
-        var stepper
-        document.addEventListener('DOMContentLoaded', function() {
-            stepper = new Stepper(document.querySelector('.bs-stepper'))
-        })
 
-        var next_1 = document.getElementById("next_1");
-        var next_2 = document.getElementById("next_2");
-        var back_2 = document.getElementById("back_2");
-        var back_3 = document.getElementById("back_3");
-        /*
-        next_1.addEventListener('click', () => {
-            stepper.next()
-        })
-
-        next_2.addEventListener('click', () => {
-            stepper.next()
-        })
-
-        back_2.addEventListener('click', () => {
-            stepper.previous()
-        })
-
-        back_3.addEventListener('click', () => {
-            stepper.previous()
-        })*/
-    </script>

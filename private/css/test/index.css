@@ -82,3 +82,18 @@ input[type='radio']:checked:after {
 
 }
 
+
+
+
+@media (max-width: 768px) {
+    #step_h{
+        display: none;
+    }    
+}
+
+@media (min-width: 768px) {
+    #step_h{
+        width: 85%;
+        align-items: center;
+    }    
+}

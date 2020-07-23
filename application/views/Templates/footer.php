@@ -2,34 +2,36 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script type="text/javascript"  src="<?= base_url() ?>private/js/bootstrap/bootstrap.min.js"></script>
-<script type="text/javascript"  src="<?= base_url() ?>private/js/animations/scroll-entrance.js"></script>
-<script type="text/javascript"  src="<?= base_url() ?>private/js/footer/index.js"></script>
-<?php if(isset($alt_js)) echo $alt_js; ?>
+<script type="text/javascript" src="<?= base_url() ?>private/js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>private/js/animations/scroll-entrance.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>private/js/footer/index.js"></script>
+<?php if (isset($alt_js)) echo $alt_js; ?>
+
+
 
 
 
 <!-- Footer -->
 <footer class="page-footer font-small stylish-color-dark pt-4">
 
-  <ul class="list-unstyled list-inline text-center">
-      <li class="list-inline-item">
-          <a class="btn-floating btn-fb mx-1" href="facebook.com">
-              <img src="<?=base_url()?>/private/media/icons/facebook.svg" alt="" width='24px' height="24px" class="scale-gray">
-          </a>
-      </li>
-      <li class="list-inline-item">
-          <a class="btn-floating btn-tw mx-1">
-              <img src="<?=base_url()?>/private/media/icons/twitter.svg" alt="" width='24px' height="24px" class="scale-gray">
-          </a>
-      </li>
-      <li class="list-inline-item">
-          <a class="btn-floating btn-gplus mx-1">
-              <img src="<?=base_url()?>/private/media/icons/instagram.svg" alt="" width='24px' height="24px" class="scale-gray">
-          </a>
-      </li>
+    <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+            <a class="btn-floating btn-fb mx-1" href="facebook.com">
+                <img src="<?= base_url() ?>/private/media/icons/facebook.svg" alt="" width='24px' height="24px" class="scale-gray">
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a class="btn-floating btn-tw mx-1">
+                <img src="<?= base_url() ?>/private/media/icons/twitter.svg" alt="" width='24px' height="24px" class="scale-gray">
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a class="btn-floating btn-gplus mx-1">
+                <img src="<?= base_url() ?>/private/media/icons/instagram.svg" alt="" width='24px' height="24px" class="scale-gray">
+            </a>
+        </li>
 
-  </ul>
+    </ul>
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
@@ -52,7 +54,7 @@
                 <!-- Links -->
                 <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
 
-                <ul class="list-unstyled" >
+                <ul class="list-unstyled">
                     <li>
                         <a href="#!" class="gray-font">Link 1</a>
                     </li>
@@ -143,40 +145,40 @@
     <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">Patrocinadores</h5>
 
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="<?=base_url()?>/private/media/icons/1.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 1" alt="..." width="48px" height="48px">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="<?= base_url() ?>/private/media/icons/1.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 1" alt="..." width="48px" height="48px">
+
+            </div>
+            <div class="carousel-item">
+                <img src="<?= base_url() ?>/private/media/icons/2.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 2" alt="..." width="48px" height="48px">
+            </div>
+            <div class="carousel-item">
+                <img src="<?= base_url() ?>/private/media/icons/3.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 3" alt="..." width="48px" height="48px">
+            </div>
+            <div class="carousel-item">
+                <img src="<?= base_url() ?>/private/media/icons/4.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 4" alt="..." width="48px" height="48px">
+            </div>
+            <div class="carousel-item">
+                <img src="<?= base_url() ?>/private/media/icons/5.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 5" alt="..." width="48px" height="48px">
+            </div>
+            <div class="carousel-item">
+                <img src="<?= base_url() ?>/private/media/icons/6.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 6" alt="..." width="48px" height="48px">
+            </div>
+            <div class="carousel-item">
+                <img src="<?= base_url() ?>/private/media/icons/6.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 7" alt="..." width="48px" height="48px">
+            </div>
+            <div class="carousel-item">
+                <img src="<?= base_url() ?>/private/media/icons/8.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 8" alt="..." width="48px" height="48px">
+            </div>
+            <div class="carousel-item">
+                <img src="<?= base_url() ?>/private/media/icons/9.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 9" alt="..." width="48px" height="48px">
+            </div>
+            <div class="carousel-item">
+                <img src="<?= base_url() ?>/private/media/icons/10.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 10" alt="..." width="48px" height="48px">
+            </div>
 
         </div>
-        <div class="carousel-item">
-          <img src="<?=base_url()?>/private/media/icons/2.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 2" alt="..." width="48px" height="48px">
-        </div>
-        <div class="carousel-item">
-          <img src="<?=base_url()?>/private/media/icons/3.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 3" alt="..." width="48px" height="48px">
-        </div>
-        <div class="carousel-item">
-          <img src="<?=base_url()?>/private/media/icons/4.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 4" alt="..." width="48px" height="48px">
-        </div>
-        <div class="carousel-item">
-          <img src="<?=base_url()?>/private/media/icons/5.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 5" alt="..." width="48px" height="48px">
-        </div>
-        <div class="carousel-item">
-          <img src="<?=base_url()?>/private/media/icons/6.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 6" alt="..." width="48px" height="48px">
-        </div>
-        <div class="carousel-item">
-          <img src="<?=base_url()?>/private/media/icons/6.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 7" alt="..." width="48px" height="48px">
-        </div>
-        <div class="carousel-item">
-          <img src="<?=base_url()?>/private/media/icons/8.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 8" alt="..." width="48px" height="48px">
-        </div>
-        <div class="carousel-item">
-          <img src="<?=base_url()?>/private/media/icons/9.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 9" alt="..." width="48px" height="48px">
-        </div>
-        <div class="carousel-item">
-          <img src="<?=base_url()?>/private/media/icons/10.svg" class="d-block w-100 scale-gray" data-toggle="tooltip" data-placement="bottom" title="Patrocinador 10" alt="..." width="48px" height="48px">
-        </div>
-
-      </div>
     </div>
 
     <hr>
@@ -187,11 +189,12 @@
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3 gray-font">© 2020 Copyright:
-        <a href="letswalk.com.mx" > letswalk.com.mx</a>
+        <a href="letswalk.com.mx"> letswalk.com.mx</a>
     </div>
     <!-- Copyright -->
 </footer>
 <!-- Footer -->
 
-  </body>
+</body>
+
 </html>
