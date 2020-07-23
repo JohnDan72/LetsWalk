@@ -32,6 +32,15 @@ class Usuario extends CI_Model {
     		}
     		else{return false;}
 		}
+		function updateScoreTest($id_user,$score){
+			$success = $this->db->query("UPDATE usuario SET ScoreTest=$score WHERE Id_User=$id_user;");
+			if ($success) {
+				return $this->db->get_where("Usuario","Id_User = $id_user")->row_array();
+			}
+			else{
+				return false;
+			}
+		}
 
 }
 ?>

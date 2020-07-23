@@ -89,7 +89,7 @@
             </p>
 
             <div class=" d-flex justify-content-center mt-3" data-entrance="fade" data-entrance-delay="300">
-                <button type="button" class="btn btn-color text-white ">¡Aquí!</button>
+                <a href="<?= base_url()?>TestController" class="btn btn-color text-white ">¡Aquí!</a>
             </div>
         </div>
     </div>

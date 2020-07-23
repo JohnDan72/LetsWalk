@@ -186,14 +186,14 @@
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="p_2" id="r4_5" value="5">
+                            <input class="form-check-input" type="radio" name="p_4" id="r4_5" value="5">
                             <label class="form-check-label">
                                 Por seguridad mía y de mi casa.
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="p_2" id="r4_6" value="6">
+                            <input class="form-check-input" type="radio" name="p_4" id="r4_6" value="6">
                             <label class="form-check-label">
                                 Porque amo a los animales, he tenido con anterioridad y deseo darle un hogar a un perro que lo necesite
                             </label>
@@ -414,9 +414,16 @@
                             </label>
                         </div>
                     </div>
+<<<<<<< HEAD
 
                     <button class="btn btn-info mt-5" onclick="stepper.next()" id="next_2">Siguiente</button>
                     <button class="btn btn-danger mt-5" onclick="stepper.previous()" id="back_1">Atras</button>
+=======
+                    
+                    <button class="btn btn-danger mt-5" onclick="stepper.previous()">Atras</button>
+                    <button class="btn btn-info mt-5" onclick="stepper.next()">Siguiente</button>
+                    
+>>>>>>> 8a9be07766fe9846511771a97e5d51f96a297a74
 
                 </div>
 
@@ -520,8 +527,13 @@
                         </div>
                     </div>
 
+<<<<<<< HEAD
                     <button class="btn btn-danger mt-5" onclick="stepper.previous()" id="back_2">Atras</button>
                     <button class="btn btn-info mt-5">Terminar</button>
+=======
+                    <button class="btn btn-danger mt-5" onclick="stepper.previous()">Atras</button>
+                    <button class="btn btn-info mt-5" onclick="return evaluaTest();">Terminar</button>
+>>>>>>> 8a9be07766fe9846511771a97e5d51f96a297a74
                 </div>
             </div>
         </div>
@@ -529,5 +541,82 @@
 
 
 
+<<<<<<< HEAD
 
+=======
+    <?php
+    //echo "var_dump(expression): ". var_dump($this->session->userdata('user'));
+    ?>
+    <script>
+        var stepper
+        document.addEventListener('DOMContentLoaded', function() {
+            stepper = new Stepper(document.querySelector('.bs-stepper'))
+        })
+
+        function evaluaTest(){
+
+            //Recuperación de respuestas
+            var res = []; 
+            res[0] = 0;
+
+             res[1] = ($("input[name='p_1']:checked").val())?$("input[name='p_1']:checked").val():0;
+             res[2] = ($("input[name='p_2']:checked").val())?$("input[name='p_2']:checked").val():0;
+             res[3] = ($("input[name='p_3']:checked").val())?$("input[name='p_3']:checked").val():0;
+             res[4] = ($("input[name='p_4']:checked").val())?$("input[name='p_4']:checked").val():0;
+             res[5] = ($("input[name='p_5']:checked").val())?$("input[name='p_5']:checked").val():0;
+             res[6] = ($("input[name='p_6']:checked").val())?$("input[name='p_6']:checked").val():0;
+             res[7] = ($("input[name='p_7']:checked").val())?$("input[name='p_7']:checked").val():0;
+             res[8] = ($("input[name='p_8']:checked").val())?$("input[name='p_8']:checked").val():0;
+             res[9] = ($("input[name='p_9']:checked").val())?$("input[name='p_9']:checked").val():0;
+             res[10] = ($("input[name='p_10']:checked").val())?$("input[name='p_10']:checked").val():0;
+             res[11] = ($("input[name='p_11']:checked").val())?$("input[name='p_11']:checked").val():0;
+             res[12] = ($("input[name='p_12']:checked").val())?$("input[name='p_12']:checked").val():0;
+             res[13] = ($("input[name='p_13']:checked").val())?$("input[name='p_13']:checked").val():0;
+
+
+            //Preparación del formulario a enviar
+            var myForm = new FormData();
+            myForm.append('respuesta',JSON.stringify(res)); //se crea un input donde se manda el array en json para pasar por post
+            myForm.append('max_score',56);                  //Nota máxima del test (puede variar conforme a los cambios)
+
+            fetch('<?php echo base_url()?>TestController/evaluaTestFetch', {
+                  method: 'POST',
+                  body: myForm
+              })
+              .then(function(response) {
+                  if(response.ok) {
+                      return response.json()
+                  } else {
+                      throw "Error en la llamada Ajax";
+                  }
+              })
+              .then(function(myJson) {
+                  alert("res: "+myJson);
+                  //se prepara para mostrar Resultado despues de que Jesus termine la vista correspondiente
+              })
+              .catch(function(err) {
+                 console.log(err);
+              });
+
+            
+        }
+
+        /*
+        var next_1 = document.getElementById("next_1");
+        var next_2 = document.getElementById("next_2");
+        var back_2 = document.getElementById("back_2");
+        var back_3 = document.getElementById("back_3");
+        /*
+        next_1.addEventListener('click', () => {
+            stepper.next()
+        })
+
+        next_2.addEventListener('click', () => {
+            stepper.next()
+        })
+
+        back_2.addEventListener('click', () => {
+            stepper.previous()
+        })
+>>>>>>> 8a9be07766fe9846511771a97e5d51f96a297a74
 
