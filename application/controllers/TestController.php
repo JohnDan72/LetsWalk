@@ -14,9 +14,9 @@ class TestController extends CI_Controller
 
 	function index()
 	{
-		/*if(!$this->session->userdata('user') || $this->session->userdata('user')['scoreTest'] != null){
+		if(!$this->session->userdata('user') || $this->session->userdata('user')['scoreTest'] != null){
 	            redirect("InicioController");
-			}*/
+			}
 		$dato['string'] = "Let's Walk | Test";
 		$dato['css'] = "test";
 		$dato['alt_css'] = "<link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css'>";
@@ -25,7 +25,7 @@ class TestController extends CI_Controller
 
 
 		$this->load->view('Templates/header', $dato);
-		$this->load->view('test/ResultadoView', $dato);
+		$this->load->view('test/TestView', $dato);
 		$this->load->view('Templates/footer');
 	}
 
@@ -55,5 +55,17 @@ class TestController extends CI_Controller
 		} else {
 			echo json_encode("Error/Error al guardar score de usuario");
 		}
+	}
+
+	function mostrarRes(){
+		if (!$this->session->userdata('user')) {
+			redirect("InicioController");
+		}
+		$dato['string'] = "Let's Walk | Test-Res";
+		$dato['css'] = "test";
+		
+		$this->load->view('Templates/header', $dato);
+		$this->load->view('test/ResultadoView', $dato);
+		$this->load->view('Templates/footer');
 	}
 }

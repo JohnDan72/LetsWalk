@@ -537,13 +537,8 @@
     </div>
 
 
-
-    <?php
-    //echo "var_dump(expression): ". var_dump($this->session->userdata('user'));
-    ?>
-    <script>
-        function evaluaTest() {
-
+<script type="text/javascript">
+    function evaluaTest() {
             //Recuperación de respuestas
             var res = [];
             res[0] = 0;
@@ -580,8 +575,9 @@
                     }
                 })
                 .then(function(myJson) {
-                    alert("res: " + myJson);
+                    //alert("res: " + myJson);
                     //se prepara para mostrar Resultado despues de que Jesus termine la vista correspondiente
+                    window.location.replace("<?php echo base_url();?>TestController/mostrarRes");
                 })
                 .catch(function(err) {
                     console.log(err);
@@ -589,4 +585,4 @@
 
 
         }
-    </script>
+</script>
