@@ -70,7 +70,7 @@
                             else
                             {
                         ?>
-                                <a class="dropdown-item text-white" href="#">¡Registrate!</a>
+                                <a class="dropdown-item text-white" href="<?= base_url() ?>RegistroController">¡Registrate!</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-white" href="<?=base_url()?>loginController">Inicia Sesión</a>
                         <?php
@@ -81,4 +81,6 @@
             </ul>
         </div>
     </nav>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
