@@ -66,20 +66,20 @@ var password_0 = document.getElementById("Passwd")
     password_1.addEventListener('change', ()=>{
         if(password_0.value != password_1.value){
             passw_msg.innerHTML= '<span class="text-danger">Las contraseñas deben de coincidir</span>'
-            console.log("Las contraseñas deben de coincidir")
+            //console.log("Las contraseñas deben de coincidir")
         }else{
             passw_msg.innerHTML=''
-            console.log("Ahora todo esta bien")
+            //console.log("Ahora todo esta bien")
         }
     })
 
     password_0.addEventListener('change', () => {
         if(password_1.value != password_0.value){
             passw_msg.innerHTML= '<span class="text-danger">Las contraseñas deben de coincidir</span>'
-            console.log("Las contraseñas deben de coincidir")
+            //console.log("Las contraseñas deben de coincidir")
         }else{
             passw_msg.innerHTML=''
-            console.log("Ahora todo esta bien")
+            //console.log("Ahora todo esta bien")
         }
         
     })
