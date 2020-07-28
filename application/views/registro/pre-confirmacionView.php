@@ -11,10 +11,10 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>private/css/registro/index.css">
     <link rel="icon" href="https://image.ibb.co/dEEbaA/baidu-logotipo-de-la-pata-2.png">
     <?php if (isset($alt_css)) echo $alt_css; ?>
-    <title><?php echo $string; ?></title>
+    <title>Confirma Correo</title>
 
     <nav class="navbar sticky-top d-flex justify-content-center">
-        <a class="navbar-brand text-white" href="#" align="center">
+        <a class="navbar-brand text-white" href="<?= base_url();?>InicioController" align="center">
             <img src="https://i.ibb.co/CsdPL9q/Logo-nav.png" width="89" height="35" class="d-inline-block align-top " alt="">
         </a>
     </nav>

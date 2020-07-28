@@ -2,6 +2,7 @@
 var stepperForm
 
 document.addEventListener('DOMContentLoaded', function () {
+    
 
     var stepperFormEl = document.querySelector('#stepperForm')
     stepperForm = new Stepper(stepperFormEl, {
@@ -17,10 +18,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var Nombre = document.getElementById('Nombre')
     var Fecha_Nacimiento = document.getElementById('Fecha_Nacimiento')
     var Telefono = document.getElementById('Telefono')
+    
     var Correo = document.getElementById('Correo')
     var Passwd = document.getElementById('Passwd')
     var Passwd_1 = document.getElementById('Passwd_1')
-
     //Correo, Passwd, Passwd_1
 
     //console.log("Tamaño date: " + Fecha_Nacimiento.value.length)
@@ -48,42 +49,82 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         var stepperPan = stepperPanList[currentStep]
+        
+        switch(currentStep){
+            /*Solo se pueden trabajar con Steps que tengan un step siguiente. Si es el último, no funciona*/
+            case 0: 
+                if (!Ap_Paterno.value.length || !Ap_Materno.value.length || !Nombre.value.length || !Fecha_Nacimiento.value.length || !Telefono.value.length ||
+                    !(Fecha_Nacimiento.value.length == 10) ) {
+                    event.preventDefault()
+                    form.classList.add('was-validated')
+                }
+                else if(!(Telefono.value.length == 10) || !($.isNumeric(Telefono.value)) ){
+                    event.preventDefault()
+                    form.classList.add('was-validated')
+                    document.getElementById('errorTel').style.display = 'block';
+                }
+                else{
+                    document.getElementById('errorTel').style.display = 'none';
+                    
+                }
 
-        if ((stepperPan.getAttribute('id') === 'test-form-1' && !Ap_Paterno.value.length && !Ap_Materno.value.length && !Nombre.value.length
-            && !Fecha_Nacimiento.value.length && !Telefono.value.length)
-            || (stepperPan.getAttribute('id') === 'test-form-2' && !Correo.value.length && !Passwd.value.length && !Passwd_1.value.length)) {
-            event.preventDefault()
-            form.classList.add('was-validated')
+                var Sexo = ($("input[name='Sexo']:checked").val()) ? $("input[name='Sexo']:checked").val() : 0;
+                if ((Sexo == 'M') || (Sexo == 'H')) {
+                    document.getElementById('errorSex').style.display = 'none';
+                }
+                else{
+                    event.preventDefault()
+                    form.classList.add('was-validated')
+                    document.getElementById('errorSex').style.display = 'block';
+                }
+            break;
         }
+
     })
 })
+
 
 var password_0 = document.getElementById("Passwd")
     password_1 = document.getElementById("Passwd_1")
     button = document.getElementById("send")
-    passw_msg = document.getElementById("passw_msg");
+    passw_msg = document.getElementById("error_pass_1");
 
     password_1.addEventListener('change', ()=>{
         if(password_0.value != password_1.value){
-            passw_msg.innerHTML= '<span class="text-danger">Las contraseñas deben de coincidir</span>'
+            passw_msg.textContent = 'Las contraseñas deben de coincidir'
+            passw_msg.style.display = 'block'
             //console.log("Las contraseñas deben de coincidir")
         }else{
-            passw_msg.innerHTML=''
+            passw_msg.textContent =''
+            passw_msg.style.display = 'none'
             //console.log("Ahora todo esta bien")
         }
     })
 
     password_0.addEventListener('change', () => {
         if(password_1.value != password_0.value){
-            passw_msg.innerHTML= '<span class="text-danger">Las contraseñas deben de coincidir</span>'
+            passw_msg.textContent = 'Las contraseñas deben de coincidir'
+            passw_msg.style.display = 'block'
             //console.log("Las contraseñas deben de coincidir")
         }else{
-            passw_msg.innerHTML=''
+            passw_msg.textContent =''
+            passw_msg.style.display = 'none'
             //console.log("Ahora todo esta bien")
         }
         
     })
 
+    function soloNumeros(e){
+            tecla = (document.all) ? e.keyCode : e.which;
+            //Tecla de retroceso para borrar, siempre la permite
+            if (tecla == 8 || tecla == 13) {
+                return true;
+            }
+            // Patron de entrada, en este caso solo acepta numeros y letras
+            patron = /[0-9]/;
+            tecla_final = String.fromCharCode(tecla);
+            return patron.test(tecla_final);
+    }
 
 /*function validatePassword_0() {
 

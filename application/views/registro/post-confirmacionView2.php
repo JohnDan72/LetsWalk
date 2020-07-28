@@ -23,18 +23,18 @@
 
 <body>
 
+    <!--Vista que se utilizará en caso de que haya algun error en la verificación o que ya haya sido verificado-->
     <div class="container mt-5">
 
         <div class=" d-flex justify-content-center">
-            <img src="<?= base_url() ?>private/media/icons/garrapata.svg" alt="" width="200px" class="mt-5">
+            <img src="<?= base_url() ?>private/media/icons/404.svg" alt="" width="200px" class="mt-5">
         </div>
 
-        <h2 class="display-4 text-center mt-4">¡Perfecto!</h2>
-        <h4 class="text-center mt-3">Tu dirección de correo ha sido confirmada</h4>
-        <p class="text-center mt-5">Por favor inicia sesión en nuestro sitio web, pero recuerda que aun debes
-            confirmar tu identidad.
+        <h2 class="display-4 text-center mt-4">¡Lo sentimos!</h2>
+        <h4 class="text-center mt-3">Hemos detectado algunos errores</h4>
+        <p class="text-center mt-5 mb-5">Al parecer el enlace de confirmación ha caducado o el correo ya ha sido verificado con anterioridad
         </p>
-        <p class="mb-5 text-center">Ingresa al panel de control para completar tu resgistro.</p>
+        
 
         <p class="text-center mb-5"> <a href="<?= base_url() ?>InicioController">Volver al inicio</a></p>
 

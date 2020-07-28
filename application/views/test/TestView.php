@@ -569,7 +569,7 @@
                 })
                 .then(function(response) {
                     if (response.ok) {
-                        return response.json()
+                        return response.json();
                     } else {
                         throw "Error en la llamada Ajax";
                     }
