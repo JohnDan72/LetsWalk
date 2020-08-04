@@ -1,15 +1,16 @@
 
 var stepperForm
+var stepperForm_1
 
 document.addEventListener('DOMContentLoaded', function () {
-    
+
 
     var stepperFormEl = document.querySelector('#stepperForm')
     stepperForm = new Stepper(stepperFormEl, {
         animation: true
     })
 
-    var btnNextList = [].slice.call(document.querySelectorAll('.btn-next-form'))
+    var btnNextList = [].slice.call(stepperFormEl.querySelectorAll('.btn-next-form'))
     var stepperPanList = [].slice.call(stepperFormEl.querySelectorAll('.bs-stepper-pane'))
 
     //Variables del primer step
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var Nombre = document.getElementById('Nombre')
     var Fecha_Nacimiento = document.getElementById('Fecha_Nacimiento')
     var Telefono = document.getElementById('Telefono')
-    
+
     var Correo = document.getElementById('Correo')
     var Passwd = document.getElementById('Passwd')
     var Passwd_1 = document.getElementById('Passwd_1')
@@ -49,82 +50,82 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         var stepperPan = stepperPanList[currentStep]
-        
-        switch(currentStep){
+
+        switch (currentStep) {
             /*Solo se pueden trabajar con Steps que tengan un step siguiente. Si es el último, no funciona*/
-            case 0: 
+            case 0:
                 if (!Ap_Paterno.value.length || !Ap_Materno.value.length || !Nombre.value.length || !Fecha_Nacimiento.value.length || !Telefono.value.length ||
-                    !(Fecha_Nacimiento.value.length == 10) ) {
+                    !(Fecha_Nacimiento.value.length == 10)) {
                     event.preventDefault()
                     form.classList.add('was-validated')
                 }
-                else if(!(Telefono.value.length == 10) || !($.isNumeric(Telefono.value)) ){
+                else if (!(Telefono.value.length == 10) || !($.isNumeric(Telefono.value))) {
                     event.preventDefault()
                     form.classList.add('was-validated')
                     document.getElementById('errorTel').style.display = 'block';
                 }
-                else{
+                else {
                     document.getElementById('errorTel').style.display = 'none';
-                    
+
                 }
 
                 var Sexo = ($("input[name='Sexo']:checked").val()) ? $("input[name='Sexo']:checked").val() : 0;
                 if ((Sexo == 'M') || (Sexo == 'H')) {
                     document.getElementById('errorSex').style.display = 'none';
                 }
-                else{
+                else {
                     event.preventDefault()
                     form.classList.add('was-validated')
                     document.getElementById('errorSex').style.display = 'block';
                 }
-            break;
+                break;
         }
 
     })
 })
 
 
-var password_0 = document.getElementById("Passwd")
-    password_1 = document.getElementById("Passwd_1")
-    button = document.getElementById("send")
-    passw_msg = document.getElementById("error_pass_1");
+var password_0 = document.getElementById("Passwd_b")
+password_1 = document.getElementById("Passwd_1_b")
+button = document.getElementById("send")
+passw_msg = document.getElementById("error_pass_1_b");
 
-    password_1.addEventListener('change', ()=>{
-        if(password_0.value != password_1.value){
-            passw_msg.textContent = 'Las contraseñas deben de coincidir'
-            passw_msg.style.display = 'block'
-            //console.log("Las contraseñas deben de coincidir")
-        }else{
-            passw_msg.textContent =''
-            passw_msg.style.display = 'none'
-            //console.log("Ahora todo esta bien")
-        }
-    })
-
-    password_0.addEventListener('change', () => {
-        if(password_1.value != password_0.value){
-            passw_msg.textContent = 'Las contraseñas deben de coincidir'
-            passw_msg.style.display = 'block'
-            //console.log("Las contraseñas deben de coincidir")
-        }else{
-            passw_msg.textContent =''
-            passw_msg.style.display = 'none'
-            //console.log("Ahora todo esta bien")
-        }
-        
-    })
-
-    function soloNumeros(e){
-            tecla = (document.all) ? e.keyCode : e.which;
-            //Tecla de retroceso para borrar, siempre la permite
-            if (tecla == 8 || tecla == 13) {
-                return true;
-            }
-            // Patron de entrada, en este caso solo acepta numeros y letras
-            patron = /[0-9]/;
-            tecla_final = String.fromCharCode(tecla);
-            return patron.test(tecla_final);
+password_1.addEventListener('change', () => {
+    if (password_0.value != password_1.value) {
+        passw_msg.textContent = 'Las contraseñas deben de coincidir'
+        passw_msg.style.display = 'block'
+        //console.log("Las contraseñas deben de coincidir")
+    } else {
+        passw_msg.textContent = ''
+        passw_msg.style.display = 'none'
+        //console.log("Ahora todo esta bien")
     }
+})
+
+password_0.addEventListener('change', () => {
+    if (password_1.value != password_0.value) {
+        passw_msg.textContent = 'Las contraseñas deben de coincidir'
+        passw_msg.style.display = 'block'
+        //console.log("Las contraseñas deben de coincidir")
+    } else {
+        passw_msg.textContent = ''
+        passw_msg.style.display = 'none'
+        //console.log("Ahora todo esta bien")
+    }
+
+})
+
+function soloNumeros(e) {
+    tecla = (document.all) ? e.keyCode : e.which;
+    //Tecla de retroceso para borrar, siempre la permite
+    if (tecla == 8 || tecla == 13) {
+        return true;
+    }
+    // Patron de entrada, en este caso solo acepta numeros y letras
+    patron = /[0-9]/;
+    tecla_final = String.fromCharCode(tecla);
+    return patron.test(tecla_final);
+}
 
 /*function validatePassword_0() {
 
@@ -136,5 +137,165 @@ var password_0 = document.getElementById("Passwd")
 }
 password_0.onchange = validatePassword_0;
 confirm_password_0.onkeyup = validatePassword_0; F*/
+
+
+//----------------------
+
+
+
+var nombre_b = document.getElementById('NombreB')
+var TelefonoB = document.getElementById('TelefonoB')
+var calle = document.getElementById('Calle')
+var numExterior = document.getElementById('Num_Ext')
+var CP = document.getElementById('CP')
+var colonia = document.getElementById('Colonia')
+var localidad = document.getElementById('Localidad')
+var municipio = document.getElementById('Municipio')
+
+calle.disabled = true
+numExterior.disabled = true
+colonia.disabled = true
+localidad.disabled = true
+municipio.disabled = true
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+
+    var stepperFormEl_1 = document.querySelector('#stepperForm_1')
+    stepperForm_1 = new Stepper(stepperFormEl_1, {
+        animation: true
+    })
+
+    var btnNextList = [].slice.call(stepperFormEl_1.querySelectorAll('.btn-next-form'))
+    var stepperPanList = [].slice.call(stepperFormEl_1.querySelectorAll('.bs-stepper-pane'))
+
+    //Variables del primer step
+    var Ap_Paterno_b = document.getElementById('Ap_Paterno_b')
+    var Ap_Materno_b = document.getElementById('Ap_Materno_b')
+    var Nombre_b = document.getElementById('Nombre_b')
+    var Fecha_Nacimiento_b = document.getElementById('Fecha_Nacimiento_b')
+    var Telefono_b = document.getElementById('Telefono_b')
+    var TelefonoB = document.getElementById('TelefonoB')
+    var error_cp = document.getElementById('error_cp')
+    var DescripcionB = document.getElementById('DescripcionB')
+
+    //console.log("Tamaño date: " + Fecha_Nacimiento.value.length)
+
+
+    var form = stepperFormEl_1.querySelector('.bs-stepper-content form')
+
+    btnNextList.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            stepperForm_1.next()
+        })
+    })
+
+    stepperFormEl_1.addEventListener('show.bs-stepper', function (event) {
+        form.classList.remove('was-validated')
+        var nextStep = event.detail.indexStep
+        var currentStep = nextStep
+
+        if (currentStep > 0) {
+            currentStep--
+        }
+
+        var stepperPan = stepperPanList[currentStep]
+
+        switch (currentStep) {
+            /*Solo se pueden trabajar con Steps que tengan un step siguiente. Si es el último, no funciona*/
+            case 0:
+                if (!Ap_Paterno_b.value.length || !Ap_Materno_b.value.length || !Nombre_b.value.length || !Fecha_Nacimiento_b.value.length || !Telefono_b.value.length ||
+                    !(Fecha_Nacimiento_b.value.length == 10)) {
+                    event.preventDefault()
+                    form.classList.add('was-validated')
+                }
+                else if (!(Telefono_b.value.length == 10) || !($.isNumeric(Telefono_b.value))) {
+                    event.preventDefault()
+                    form.classList.add('was-validated')
+                    document.getElementById('errorTel_b').style.display = 'block';
+                }
+                else {
+                    document.getElementById('errorTel_b').style.display = 'none';
+
+                }
+
+                var Sexo = ($("input[name='Sexo_b']:checked").val()) ? $("input[name='Sexo_b']:checked").val() : 0;
+                if ((Sexo == 'M') || (Sexo == 'H')) {
+                    document.getElementById('errorSex').style.display = 'none';
+                }
+                else {
+                    event.preventDefault()
+                    form.classList.add('was-validated')
+                    document.getElementById('errorSex').style.display = 'block';
+                }
+                break;
+
+            case 1:
+                if (!nombre_b.value.length || !TelefonoB.value.length || !CP.value.length || !localidad.value.length || !municipio.value.length || !DescripcionB) {
+                    event.preventDefault()
+                    form.classList.add('was-validated')
+                }
+                else if (!(TelefonoB.value.length == 10) || !($.isNumeric(TelefonoB.value))) {
+                    event.preventDefault()
+                    form.classList.add('was-validated')
+                    document.getElementById('errorTelB').style.display = 'block';
+                    console.log("Bro, la regaste!")
+                }
+                else {
+                    document.getElementById('errorTelB').style.display = 'none';
+                    console.log("Bro, no la regaste!")
+                }
+
+                if (!(CP.value.length == 5) || !($.isNumeric(CP.value))) {
+                    event.preventDefault()
+                    form.classList.add('was-validated')
+                    document.getElementById('error_cp').style.display = 'block';
+                    console.log("Bro, la regaste!")
+
+                } else {
+                    document.getElementById('error_cp').style.display = 'none';
+                    console.log("Bro, no la regaste!")
+                }
+
+            break;
+
+
+        }
+    })
+})
+
+var button_search = document.getElementById('search')
+
+button_search.addEventListener('click', () => {
+
+
+    if (CP.value.length == 5 || ($.isNumeric(CP.value)) /* && OTRA CONDICION*/) {
+
+        calle.disabled = false
+        numExterior.disabled = false
+        colonia.disabled = false
+
+    } else {
+        alert("Entre al else")
+    }
+
+})
+
+CP.addEventListener('change', () => {
+    if (CP.value.length < 5 || !($.isNumeric(CP.value))) {
+        calle.disabled = true
+        numExterior.disabled = true
+        colonia.disabled = true
+
+
+
+    }
+})
+
+
+
+
 
 
