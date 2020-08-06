@@ -69,7 +69,7 @@ class RegistroController extends CI_Controller
 			//VALIDACIÓN CAPTCHA 
 			// Creamos el enlace para solicitar la verificación con la API de Google.
 			$params = array();  // Array donde almacenar los parámetros de la petición
-			$params['secret'] = '6LcLefUUAAAAALYKeJhUZrvBeEcyDUKjjkgekW8x'; // Clave privada
+			$params['secret'] = '6LdR_roZAAAAAH9IxYweEubBdKneF-R8BB_Zdo4C'; // Clave privada
 			if (!empty($this->input->post()) && $this->input->post('g-recaptcha-response')) {
 				$params['response'] = urlencode($this->input->post('g-recaptcha-response'));
 			}
@@ -194,7 +194,7 @@ class RegistroController extends CI_Controller
 			$token_email = $this->generateRandomString(10);
 			$band = $this->Usuario->insertUserTemp($this->input->post(), $token_email);
 			//echo var_dump($band)."<br>";
-			if (true) {
+			if ($band) {
 				//echo "<br><br>Insertado correctamente<br><br>";
 				$id = $this->Usuario->getIdUserByCorreo($this->input->post('Correo'));
 				$link = base_url('RegistroController/activarCuentaUser/');
@@ -212,7 +212,7 @@ class RegistroController extends CI_Controller
 				$msg = $CI->load->view('registro/confirmar_mail', $data, true);
 
 				if ($CI->email
-					->from('jesus.martinsamano@gmail.com')
+					->from('johndan478@gmail.com')
 					->to($this->input->post('Correo'))
 					->subject($subject)
 					->message($msg)
@@ -227,6 +227,108 @@ class RegistroController extends CI_Controller
 				echo "<br><br>Error al insertar<br><br>";
 			}
 		}
+	}
+
+	function registrarBenef()
+	{   
+		
+		
+		if ($this->session->userdata('user')) {
+			redirect("InicioController");
+		}
+		$dato['string'] = "Let's Walk | Registro";
+		$dato['css'] = "registro";
+
+		$dato['alt_css'] = "<link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css'>";
+		$dato['alt_js'] = "<script src='https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js'></script>" .
+			"<script src=" . base_url() . "private/js/registro/index.js" . "></script>" .
+			"<script src='https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/1.0/zxcvbn.min.js'></script>" .
+			"<script type='text/javascript' src=" . base_url() . "private/js/registro/zxcvbn-bootstrap4-strength-meter.js" . "></script>" .
+			"<script type='text/javascript'>
+				$(document).ready(function () {
+					$('#StrengthProgressBar').zxcvbnProgressBar({
+						passwordInput: '#Passwd, #Passwd_b',
+						ratings: ['Muy Débil', 'Débil', 'Ok', 'Fuerte', 'Muy fuerte']
+					});
+				});
+								  
+			</script>
+			<script type='text/javascript'>
+				$(document).ready(function () {
+					$('#StrengthProgressBar_b').zxcvbnProgressBar({
+						passwordInput: '#Passwd_b',
+						ratings: ['Muy Débil', 'Débil', 'Ok', 'Fuerte', 'Muy fuerte']
+					});
+				});			  
+			</script>";
+
+
+		//echo var_dump($this->input->post());
+		$this->form_validation->set_rules('Ap_Paterno', '', 'trim|xss_clean|required|alpha');
+		$this->form_validation->set_rules('Ap_Materno', '', 'trim|xss_clean|required|alpha');
+		$this->form_validation->set_rules('Nombre', '', 'trim|xss_clean|required');
+		$this->form_validation->set_rules('Passwd', '', 'trim|xss_clean|required|min_length[6]');
+		$this->form_validation->set_rules('Passwd_1', '', 'trim|xss_clean|required|matches[Passwd]');
+		$this->form_validation->set_rules('Correo', '', 'trim|xss_clean|required|is_unique[Usuario.Correo]|valid_email');
+		$this->form_validation->set_rules('Fecha_Nacimiento', '', 'trim|xss_clean|required|regex_match[/^[0-9]{4}-[0-9]{2}-[0-9]{2}+$/]');
+		$this->form_validation->set_rules('Sexo_b', '', 'trim|xss_clean|required');
+		$this->form_validation->set_rules('Telefono', '', 'trim|xss_clean|required|is_natural|exact_length[10]');
+
+		$this->form_validation->set_rules('NombreB', '', 'trim|xss_clean|required|alpha');
+		$this->form_validation->set_rules('TelefonoB', '', 'trim|xss_clean|required|is_natural|exact_length[10]');
+		$this->form_validation->set_rules('DescripcionB', '', 'trim|xss_clean|required|max_length[200]');
+		$this->form_validation->set_rules('Calle', '', 'trim|xss_clean|required');
+		$this->form_validation->set_rules('Num_Ext', '', 'trim|xss_clean|required');
+		$this->form_validation->set_rules('Colonia', '', 'trim|xss_clean|required');
+		$this->form_validation->set_rules('Localidad', '', 'trim|xss_clean|required');
+		$this->form_validation->set_rules('Municipio', '', 'trim|xss_clean|required');
+		$this->form_validation->set_rules('CP', '', 'trim|xss_clean|required|is_natural|exact_length[5]');
+
+		if ($this->form_validation->run() == false) { //si algo esta mal en el form se regresa
+			//echo var_dump($this->input->post());
+			$this->load->view('Templates/header', $dato);
+			$this->load->view('registro/registroView', $dato);
+			$this->load->view('Templates/footer');
+		} else { //todo sale bien en el form entonces se procede a guardar el registro
+
+			//$this->generateRandomString(10)
+			$token_email = $this->generateRandomString(10);
+			$band = $this->Usuario->insertBenefTemp($this->input->post(), $token_email);
+			//echo var_dump($band)."<br>";
+			if ($band) {
+				//echo "<br><br>Insertado correctamente<br><br>";
+				$id = $this->Usuario->getIdUserByCorreo($this->input->post('Correo'));
+				$link = base_url('RegistroController/activarCuentaUser/');
+				$link .= "?id=" . $id . "&token=" . $token_email;
+				$data['link'] = $link;
+
+				$CI = &get_instance();
+				$CI->load->helper('url');
+				$CI->load->library('session');
+				$CI->config->item('base_url');
+				$CI->load->library('email');
+
+				$subject = 'Bienvenido a LetsWalk Beneficencia';
+
+				$msg = $CI->load->view('registro/confirmar_mail', $data, true);
+
+				if ($CI->email
+					->from('johndan478@gmail.com')
+					->to($this->input->post('Correo'))
+					->subject($subject)
+					->message($msg)
+					->set_mailtype('html')
+					->send()
+				) {
+					$this->load->view('registro/pre-confirmacionView');
+				} else {
+					echo $CI->email->print_debugger();
+				}
+			} else {
+				echo "<br><br>Error al insertar<br><br>";
+			}
+		}
+	
 	}
 
 	function activarCuentaUser()
@@ -249,6 +351,30 @@ class RegistroController extends CI_Controller
 		} else {
 			redirect("InicioController");
 		}
+	}
+
+
+	function getInfoCodigoPostalFetch($codigo_postal = null){
+		//$codigo_postal = $this->input->post('codigo_postal');
+
+		if ($codigo_postal) {
+			$endpoint_sepomex = "http://api-sepomex.hckdrk.mx/query/";
+			$method_sepomex = 'info_cp/';
+			$variable_string = '?type=simplified';
+			
+			$url = $endpoint_sepomex . $method_sepomex . $codigo_postal . $variable_string;
+			$response = file_get_contents($url);
+			
+			if($response){
+				echo $response;
+			}else{
+				echo json_encode("Error");
+			}
+		}
+		else
+			echo json_encode("Error");
+		
+		
 	}
 
 	function generateRandomString($length = 10)

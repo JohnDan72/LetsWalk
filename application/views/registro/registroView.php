@@ -324,7 +324,7 @@
 
 
                                     <div class="d-flex justify-content-center mt-5">
-                                        <div class="g-recaptcha mt-4 mb-4" data-sitekey="6LcLefUUAAAAAIR7n2G2ZUp0wIHeZ3r2yrRE52_h"></div>
+                                        <div class="g-recaptcha mt-4 mb-4" data-sitekey="6LdR_roZAAAAANzLJCdJ1E2dKTXbKx2YzjQTNFoJ"></div>
 
 
                                     </div>
@@ -388,7 +388,7 @@
 
                                 <?php
                                 $attributes_formOpen = ['id' => 'formRegistro_b', 'class' => 'needs_validation', 'onSubmit' => 'return false', 'novalidate' => 'TRUE'];
-                                echo form_open(base_url() . 'registroController/registrar', $attributes_formOpen, 'required');
+                                echo form_open(base_url() . 'registroController/registrarBenef', $attributes_formOpen, 'required');
 
                                 ?>
                                 <!--<form class="needs-validation" onSubmit="return false" novalidate>-->
@@ -551,7 +551,8 @@
                                             </div>
                                         </div>
 
-                                        <div id="errorSex" class="col-12 text-danger text-center" style="font-size: 12.8px; display: none;">Selecciona tu sexo</div>
+                                        <?= form_error('Sexo_b', '<span class="text-danger text-center">', '</span>') ?>
+                                        <div id="errorSex_b" class="col-12 text-danger text-center" style="font-size: 12.8px; display: none;">Selecciona tu sexo</div>
 
                                     </div>
 
@@ -595,8 +596,12 @@
                                                 'name' => 'TelefonoB',
                                                 'type' => 'text',
                                                 'class' => 'form-control',
+                                                'size' => '10',
+                                                'maxlength' => '10',
+                                                'data-length' => '10',
                                                 'placeholder' => '(222) xxxx xxx',
-                                                'required' => 'required'
+                                                'required' => 'required',
+                                                'onkeypress' => 'return soloNumeros(event)'
                                             ];
                                             //label del campo
                                             echo form_label('Número telefonico <span class="text-danger font-weight-bold">*</span>', 'TelefonoB');
@@ -615,35 +620,8 @@
                                         </div>
 
 
-                                        <div class="col-lg-4 offset-lg-4 col-sm-12 mt-4">
-                                            <label for="CP">Código postal <span class="text-danger font-weight-bold">*</span></label>
-                                            <div class="input-group">
-                                                <?php
-                                                //Declaración del arreglo de atributos para el campo
-                                                $cp = [
-                                                    'id' => 'CP',
-                                                    'name' => 'CP',
-                                                    'type' => 'search',
-                                                    'class' => 'form-control py-2 border-right-0 border',
-                                                    'placeholder' => 'Ingresa tu código postal',
-                                                    'required' => 'required',
-                                                    'aria-describedby' => 'button-addon2'
-                                                ];
-                                                //label del campo
-                                                //echo form_label('Código postal <span class="text-danger font-weight-bold">*</span>', 'CP');
-                                                //Se declara el campo
-                                                echo form_input($cp);
-                                                ?>
-                                                <span class="input-group-append">
-                                                    <div class="input-group-text bg-transparent"><img src="<?= base_url() ?>private/media/icons/buscar.svg" alt="" width="18px" class="search_cp" id="search"></div>
-                                                </span>
-
-                                            </div>
-
-                                            
-                                            <span id="error_cp" class="text-danger mt-1" style="font-size: 12.8px; display: none;">Este campo es obligatorio</span>
-                                            <?= form_error('CP', '<span class="text-danger text-center">', '</span>') ?>
-                                        </div>
+                                        
+                                        <div class="col-12">Dirección del centro de adopción</div>
 
                                         <div class="col-lg-8 col-sm-12 mt-sm-4">
 
@@ -690,6 +668,42 @@
                                             <div class="invalid-feedback">Este campo es obligatorio</div>
                                             <?= form_error('Num_Ext', '<span class="text-danger text-center">', '</span>') ?>
                                         </div>
+
+                                        <div class="col-lg-4 offset-lg-4 col-sm-12 mt-4">
+                                            <label for="CP">Código postal <span class="text-danger font-weight-bold">*</span></label>
+                                            <div class="input-group">
+                                                <?php
+                                                //Declaración del arreglo de atributos para el campo
+                                                $cp = [
+                                                    'id' => 'CP',
+                                                    'name' => 'CP',
+                                                    'type' => 'search',
+                                                    'class' => 'form-control py-2 border-right-0 border',
+                                                    'size' => '5',
+                                                    'maxlength' => '5',
+                                                    'data-length' => '5',
+                                                    'placeholder' => 'Ingresa tu código postal',
+                                                    'required' => 'required',
+                                                    'aria-describedby' => 'button-addon2',
+                                                    'onkeypress' => 'return soloNumeros(event)'
+                                                ];
+                                                //label del campo
+                                                //echo form_label('Código postal <span class="text-danger font-weight-bold">*</span>', 'CP');
+                                                //Se declara el campo
+                                                echo form_input($cp);
+                                                ?>
+                                                <span class="input-group-append">
+                                                    <div id="search" class="input-group-text bg-transparent"><img src="<?= base_url() ?>private/media/icons/buscar.svg" alt="" width="18px" class="search_cp"></div>
+                                                </span>
+
+                                            </div>
+
+                                            
+                                            <span id="error_cp" class="text-danger mt-1" style="font-size: 12.8px; display: none;">Ingresa un CP válido (5 dígitos)</span>
+                                            <?= form_error('CP', '<span class="text-danger text-center">', '</span>') ?>
+                                        </div>
+
+                                        <div class="clearfix" style="color: transparent;">...</div>
 
                                         <div class="col-lg-4 col-sm-12 mt-sm-4">
 
@@ -779,7 +793,9 @@
                                                 'class' => 'form-control',
                                                 'required' => 'required',
                                                 'placeholder' => 'Cuentanos algo sobre ustedes',
-                                                'rows' => '6'
+                                                'rows' => '6',
+                                                "data-length" => "200",
+                                                "maxlength" => "200"
                                             ];
                                             //label del campo
                                             echo form_label('Descripción sobre el centro de adopción <span class="text-danger font-weight-bold">*</span>', 'DescripcionB');
@@ -788,6 +804,7 @@
                                             ?>
 
                                             <div class="invalid-feedback">Este campo es obligatorio</div>
+                                            <div id="error_descripcion_b" class="text-danger" style="font-size: 12.8px; display: none;">Se requiere máximo 200 caracteres</div>
                                             <?= form_error('DescripcionB', '<span class="text-danger text-center">', '</span>') ?>
                                         </div>
 
@@ -834,7 +851,7 @@
                                         ?>
 
                                         <?= form_error('Correo', '<span class="text-danger text-center">', '</span>') ?>
-                                        <div id="error_correo" class="text-danger" style="font-size: 12.8px;"></div>
+                                        <div id="error_correo_b" class="text-danger" style="font-size: 12.8px;"></div>
                                     </div>
                                     <div class="col-lg-4 col-sm-12 mt-sm-4">
 
@@ -855,7 +872,7 @@
                                         ?>
 
                                         <?= form_error('Passwd', '<span class="text-danger text-center">', '</span>') ?>
-                                        <div id="error_pass" class="text-danger" style="font-size: 12.8px;"></div>
+                                        <div id="error_pass_b" class="text-danger" style="font-size: 12.8px;"></div>
 
                                         <div class="progress mt-2">
                                             <div id="StrengthProgressBar_b" class="progress-bar"></div>
@@ -904,17 +921,17 @@
                                         echo form_label('<a href="">He leído los terminos de uso y condiciones.</a>', 'term', $label);
 
                                         ?>
-                                        <div id="error_term" class="text-danger text-center" style="font-size: 12.8px; display:none;">Debes aceptar los términos y condiciones</div>
+                                        <div id="error_term_b" class="text-danger text-center" style="font-size: 12.8px; display:none;">Debes aceptar los términos y condiciones</div>
                                     </div>
                                 </div>
 
 
+                                
                                 <div class="d-flex justify-content-center mt-5">
-                                    <div class="g-recaptcha mt-4 mb-4" data-sitekey="6LcLefUUAAAAAIR7n2G2ZUp0wIHeZ3r2yrRE52_h"></div>
-
+                                    <div class="g-recaptcha mt-4 mb-4" data-sitekey="6LdR_roZAAAAANzLJCdJ1E2dKTXbKx2YzjQTNFoJ"></div>
 
                                 </div>
-                                <div id="error_captcha" class="text-danger text-center" style="font-size: 12.8px; display: none;">Prueba que no eres un robot</div>
+                                <div id="error_captcha_b" class="text-danger text-center" style="font-size: 12.8px; display: none;">Prueba que no eres un robot</div>
 
 
                                 <div class="d-flex justify-content-center mt-5">
@@ -1012,4 +1029,220 @@
                     console.log("error from catch" + err);
                 });
         });
+    
+        document.getElementById('id_enviar_b').addEventListener('click', function() {
+            var data = new FormData(document.getElementById('formRegistro_b'));
+            fetch('<?php echo base_url() ?>RegistroController/validRegFetch', {
+                    method: 'POST',
+                    body: data
+                })
+                .then(function(response) {
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        throw "Error en la llamada Ajax";
+                    }
+                })
+                .then(function(myJson) {
+                    if (!((typeof myJson) == "string")) {
+                        //Fetch correcto
+                        /*Se comprueba cada validacíón con su respectivo mensaje de error (si lo hay)*/
+                        //alert("correo: "+myJson.correo.band+"\n"+"pass1: "+myJson.passwd.band+"\n"+"pass2: "+myJson.passwd_1.band+"\n"+"captcha: "+myJson.captcha+"\n"+"term: "+myJson.term+"\n")
+                        if (myJson.correo.band) {
+                            document.getElementById('error_correo_b').style.display = 'none';
+                            document.getElementById('Correo_b').style.borderColor = "green";
+                        } else {
+                            document.getElementById('error_correo_b').textContent = myJson.correo.msj;
+                            document.getElementById('error_correo_b').style.display = 'block';
+                            document.getElementById('Correo_b').style.borderColor = "red";
+                        }
+                        if (myJson.passwd.band) {
+                            document.getElementById('error_pass_b').style.display = 'none';
+                            document.getElementById('Passwd_b').style.borderColor = "green";
+                        } else {
+                            document.getElementById('error_pass_b').textContent = myJson.passwd.msj;
+                            document.getElementById('error_pass_b').style.display = 'block';
+                            document.getElementById('Passwd_b').style.borderColor = "red";
+                        }
+                        if (myJson.passwd_1.band) {
+                            document.getElementById('error_pass_1_b').style.display = 'none';
+                            document.getElementById('Passwd_1_b').style.borderColor = "green";
+                        } else {
+                            document.getElementById('error_pass_1_b').textContent = myJson.passwd_1.msj;
+                            document.getElementById('error_pass_1_b').style.display = 'block';
+                            document.getElementById('Passwd_1_b').style.borderColor = "red";
+                        }
+                        if (myJson.captcha) {
+                            document.getElementById('error_captcha_b').style.display = 'none';
+                        } else {
+                            document.getElementById('error_captcha_b').style.display = 'block'
+                        }
+                        if (myJson.term) {
+                            document.getElementById('error_term_b').style.display = 'none';
+                        } else {
+                            document.getElementById('error_term_b').style.display = 'block'
+                        }
+
+                        /*Se comprueban todas las respuestas para seguir con el Formulario*/
+                        if (myJson.correo.band && myJson.passwd.band && myJson.passwd_1.band && myJson.term) {
+                            //Se manda el formulario completo por POST y se valida todo desde nivel de backend
+                            
+                            alert('Todo correcto y yo que me alegro!!')
+                            document.getElementById("formRegistro_b").submit();
+                        } else {
+                            /*se resetea el captcha cada vez que hay un error*/
+                            grecaptcha.reset();
+                        }
+                    } else {
+                        if (myJson.startsWith("Error")) {
+                            alert(myJson)
+                        } else if (myJson == "Fatal Error") {
+                            alert("Fatal error");
+                        } else {
+                            alert("Otro error");
+                        }
+
+                    }
+                })
+                .catch(function(err) {
+                    console.log("error from catch" + err);
+                });
+        });
+
+        /*Código para controlar por fetch las respuestas del código postal por la API de SEPOMEX*/
+        var CP_aux = document.getElementById('CP')
+        var button_search = document.getElementById('search')
+        button_search.addEventListener('click', () => {
+            if (CP_aux.value.length < 5 || !($.isNumeric(CP_aux.value))) {
+                colonia.disabled = true
+            }
+            else{
+                var codigoPostal = CP_aux.value
+                //var myData = new FormData()
+                //    myData.append('codigo_postal',codigoPostal)
+                //alert('codigo postal: '+codigoPostal)
+                fetch('<?php echo base_url() ?>RegistroController/getInfoCodigoPostalFetch/'+codigoPostal, {
+                    method: 'GET'
+                })
+                .then(function(response) {
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        throw "Error en la llamada Ajax";
+                    }
+                })
+                .then(function(myJson){
+                    //console.log("Respuesta 2\n"+JSON.stringify(myJson))
+                    //console.log("Respuesta 2\n"+JSON.stringify(myJson.response))
+                    /*Se comienza a tratar la respuesta del CP desde listener de click*/
+                    if (!myJson.error) {
+                        var municipioCP = myJson.response.municipio
+                        var localidadCP = myJson.response.estado
+                        var coloniasCP  = myJson.response.asentamiento
+                            coloniasCP.sort()
+                        /* Se eliminan todas las opciones del antiguo selec*/
+                        $('#Colonia').empty();
+
+                        
+                        document.getElementById('Municipio').value = municipioCP
+                        document.getElementById('Municipio').readOnly = "true";
+                        document.getElementById('Localidad').value = localidadCP
+                        document.getElementById('Localidad').readOnly = "true";
+
+                        coloniasCP.forEach(function(colonia) {
+                            /* Se inserta cada opción dentro del nuevo select*/
+                            $("#Colonia").append(new Option(colonia, colonia));
+                        })
+                        colonia.disabled = false
+                        localidad.disabled = false
+                        municipio.disabled = false
+                        document.getElementById('error_cp').style.display = "none"
+                        bandCP = true
+
+                    }
+                    
+                })
+                .catch(function(error){
+                    console.log("Error desde Catch _  "+error)
+                    colonia.disabled = true
+                    localidad.disabled = true
+                    municipio.disabled = true
+                    document.getElementById('error_cp').style.display = "block"
+                    bandCP = false
+                })
+            }
+        })
+
+        CP_aux.addEventListener('change', () => {
+            if (CP_aux.value.length == 5) {
+
+                var codigoPostal = CP_aux.value
+                fetch('<?php echo base_url() ?>RegistroController/getInfoCodigoPostalFetch/'+codigoPostal, {
+                    method: 'GET'
+                })
+                .then(function(response) {
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        throw "Error en la llamada Ajax";
+                    }
+                })
+                .then(function(myJson){
+                    //console.log("Respuesta 2\n"+JSON.stringify(myJson))
+                    //console.log("Respuesta 2\n"+JSON.stringify(myJson.response))
+                    /*Se comienza a tratar la respuesta del CP desde listener de click*/
+                    if (!myJson.error) {
+                        var municipioCP = myJson.response.municipio
+                        var localidadCP = myJson.response.estado
+                        var coloniasCP  = myJson.response.asentamiento
+                            coloniasCP.sort()
+                        /* Se eliminan todas las opciones del antiguo selec*/
+                        $('#Colonia').empty();
+
+                        
+                        document.getElementById('Municipio').value = municipioCP
+                        document.getElementById('Municipio').readOnly = "true";
+                        document.getElementById('Localidad').value = localidadCP
+                        document.getElementById('Localidad').readOnly = "true";
+
+                        coloniasCP.forEach(function(colonia) {
+                            /* Se inserta cada opción dentro del nuevo select*/
+                            $("#Colonia").append(new Option(colonia, colonia));
+                        })
+                        colonia.disabled = false
+                        localidad.disabled = false
+                        municipio.disabled = false
+                        document.getElementById('error_cp').style.display = "none"
+                        bandCP = true
+
+                    }
+                    
+                })
+                .catch(function(error){
+                    //console.log("Error desde Catch _  "+error)
+                    colonia.disabled = true
+                    localidad.disabled = true
+                    municipio.disabled = true
+                    $('#Colonia').empty()
+                    localidad.value = ""
+                    municipio.value = ""
+                    document.getElementById('error_cp').style.display = "block"
+                    bandCP = false
+                    //NOTA: se manda al stepper acerca de la beneficencia para evitar que el usuario de click en siguiente y el CP este mal por la respuesta asincrona de fetch
+                    stepperForm_1.to(2)
+                })
+            }
+            else{
+                colonia.disabled = true
+                localidad.disabled = true
+                municipio.disabled = true
+                $('#Colonia').empty()
+                localidad.value = ""
+                municipio.value = ""
+                document.getElementById('error_cp').style.display = "block"
+                bandCP = false
+
+            }
+        })
+
     </script>

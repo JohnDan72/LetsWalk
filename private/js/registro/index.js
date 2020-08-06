@@ -151,9 +151,10 @@ var CP = document.getElementById('CP')
 var colonia = document.getElementById('Colonia')
 var localidad = document.getElementById('Localidad')
 var municipio = document.getElementById('Municipio')
+var bandCP = false
 
-calle.disabled = true
-numExterior.disabled = true
+//calle.disabled = true
+//numExterior.disabled = true
 colonia.disabled = true
 localidad.disabled = true
 municipio.disabled = true
@@ -189,6 +190,7 @@ document.addEventListener('DOMContentLoaded', function () {
     btnNextList.forEach(function (btn) {
         btn.addEventListener('click', function () {
             stepperForm_1.next()
+
         })
     })
 
@@ -202,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         var stepperPan = stepperPanList[currentStep]
-
+        //console.log("currentStep: "+currentStep)
         switch (currentStep) {
             /*Solo se pueden trabajar con Steps que tengan un step siguiente. Si es el último, no funciona*/
             case 0:
@@ -223,40 +225,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 var Sexo = ($("input[name='Sexo_b']:checked").val()) ? $("input[name='Sexo_b']:checked").val() : 0;
                 if ((Sexo == 'M') || (Sexo == 'H')) {
-                    document.getElementById('errorSex').style.display = 'none';
+                    document.getElementById('errorSex_b').style.display = 'none';
                 }
                 else {
                     event.preventDefault()
                     form.classList.add('was-validated')
-                    document.getElementById('errorSex').style.display = 'block';
+                    document.getElementById('errorSex_b').style.display = 'block';
                 }
                 break;
 
             case 1:
-                if (!nombre_b.value.length || !TelefonoB.value.length || !CP.value.length || !localidad.value.length || !municipio.value.length || !DescripcionB) {
+                if (!nombre_b.value.length || !TelefonoB.value.length || !CP.value.length || !localidad.value.length || !municipio.value.length || 
+                    !DescripcionB.value.length || !calle.value.length || !numExterior.value.length) {
                     event.preventDefault()
                     form.classList.add('was-validated')
+                    //console.log("Bro, la regaste!")
                 }
                 else if (!(TelefonoB.value.length == 10) || !($.isNumeric(TelefonoB.value))) {
                     event.preventDefault()
                     form.classList.add('was-validated')
                     document.getElementById('errorTelB').style.display = 'block';
-                    console.log("Bro, la regaste!")
+                    //console.log("Bro, la regaste!")
                 }
                 else {
                     document.getElementById('errorTelB').style.display = 'none';
-                    console.log("Bro, no la regaste!")
+                    //console.log("Bro, no la regaste!")
                 }
 
-                if (!(CP.value.length == 5) || !($.isNumeric(CP.value))) {
+                if (!(CP.value.length == 5) || !($.isNumeric(CP.value)) || !bandCP) {
                     event.preventDefault()
                     form.classList.add('was-validated')
                     document.getElementById('error_cp').style.display = 'block';
-                    console.log("Bro, la regaste!")
+                    //console.log("Bro, la regaste!")
 
                 } else {
                     document.getElementById('error_cp').style.display = 'none';
-                    console.log("Bro, no la regaste!")
+                    //console.log("Bro, no la regaste!")
+                }
+                if (!(DescripcionB.value.length <= 200)) {
+                    event.preventDefault()
+                    form.classList.add('was-validated')
+                    document.getElementById('error_descripcion_b').style.display = 'block';
+                    DescripcionB.style.borderColor = "red";
+                }
+                else{
+                    document.getElementById('error_descripcion_b').style.display = 'none';
+                    DescripcionB.style.borderColor = "green";
                 }
 
             break;
@@ -266,33 +280,11 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 })
 
-var button_search = document.getElementById('search')
+//setInterval(function(){
+//    console.log("Step: "+stepperForm_1._currentIndex)
+//},2000)
 
-button_search.addEventListener('click', () => {
-
-
-    if (CP.value.length == 5 || ($.isNumeric(CP.value)) /* && OTRA CONDICION*/) {
-
-        calle.disabled = false
-        numExterior.disabled = false
-        colonia.disabled = false
-
-    } else {
-        alert("Entre al else")
-    }
-
-})
-
-CP.addEventListener('change', () => {
-    if (CP.value.length < 5 || !($.isNumeric(CP.value))) {
-        calle.disabled = true
-        numExterior.disabled = true
-        colonia.disabled = true
-
-
-
-    }
-})
+/*Listener del botón de search se cambió a la vista para trabajar con fetch y la info del CP*/
 
 
 
