@@ -119,6 +119,9 @@ class Usuario extends CI_Model {
 				$postBenef['Id_Direccion'] = $postDireccion['Id_Direccion'];
 				//se inserta por último la beneficencia nueva
 				$this->db->insert('Beneficencia',$postBenef);
+				$id_benef = $this->db->get_where("Beneficencia","CorreoB = '".$post['Correo']."'")->row_array()['Id_Beneficencia'];
+				$this->db->query("UPDATE Usuario SET Id_Beneficencia=$id_benef WHERE Correo='".$post['Correo']."'");
+
 			//----Fin de Queries en transaction
 			$this->db->trans_complete();
 

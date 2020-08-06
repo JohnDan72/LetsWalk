@@ -1087,7 +1087,7 @@
                         if (myJson.correo.band && myJson.passwd.band && myJson.passwd_1.band && myJson.term) {
                             //Se manda el formulario completo por POST y se valida todo desde nivel de backend
                             
-                            alert('Todo correcto y yo que me alegro!!')
+                            //alert('Todo correcto y yo que me alegro!!')
                             document.getElementById("formRegistro_b").submit();
                         } else {
                             /*se resetea el captcha cada vez que hay un error*/
