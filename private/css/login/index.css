@@ -36,3 +36,9 @@ h1,h2,h3,h5,h6,p{
 .register{
   font-size: 13px;
 }
+
+.card{
+  height: 600px !important;
+  width: 550px !important;
+  opacity: 0.85;
+}

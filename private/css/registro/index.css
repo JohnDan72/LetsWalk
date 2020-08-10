@@ -49,7 +49,7 @@ nav, #dd_menu {
 }
 
 @media (max-width: 768px) {
-    #step_h{
+    #step_h, #step_h_1{
         display: none;
     }    
 }
