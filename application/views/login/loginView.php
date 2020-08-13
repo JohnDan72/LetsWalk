@@ -64,7 +64,7 @@
 
             ?>
             <div class="text-center animated fadeInRight faster">
-              <a href="" class="forgot-pass text-right">¿Has olvidado tu contraseña?</a>
+              <a href="<?=base_url()?>loginController/forgot_password" class="forgot-pass text-right">¿Has olvidado tu contraseña?</a>
             </div>
           </div>
 

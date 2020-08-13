@@ -81,6 +81,12 @@ class loginController extends CI_Controller {
 			$this->session->unset_userdata('adopta');
 			redirect('InicioController');
 		}
+
+		function forgot_password(){
+
+			$this->load->view('login/forgotView.php');
+		
+		}
 }
 
 ?>

@@ -8,7 +8,7 @@
 
 
     <style type="text/css">
-        @import url(http: //fonts.googleapis.com/css?family=Lato:400);
+        @import url('http: //fonts.googleapis.com/css?family=Lato:400');
 
         /* Take care of image borders and formatting */
 
@@ -46,7 +46,7 @@
         }
 
         table {
-            background:
+            background: white
         }
 
         h1, h2, h3 {

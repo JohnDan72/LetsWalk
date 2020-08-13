@@ -28,6 +28,26 @@ h1,h2,h3,h5,h6,p{
 .trans{
   opacity: 0.9;
 }
+nav, #dd_menu {
+  background-color: #212121;
+}
+
+.dropdown-menu>a:hover {
+  background-color: #252525 !important;
+}
+
+@media (min-width: 768px) {
+  #navbarNavDropdown {
+    padding-right: 100px;
+  }
+}
+
+body{
+  background-color: #FAFAFA;
+  color:rgb(100,100,100);
+  line-height: 1.3
+}
+
 
 .forgot-pass{
   font-size: 12px;
@@ -42,3 +62,5 @@ h1,h2,h3,h5,h6,p{
   width: 550px !important;
   opacity: 0.85;
 }
+
+

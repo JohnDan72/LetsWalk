@@ -1,0 +1,17 @@
+#id_correo_f, #id_password_1, #id_password_2{
+    width: 350px;
+}
+body{
+    background-color: #FAFAFA;
+  }
+  
+  h1,h2,h3,h5,h6,p{
+    color: #424242;
+  }
+  
+  .trans{
+    opacity: 0.9;
+  }
+  nav, #dd_menu {
+    background-color: #212121;
+  }
