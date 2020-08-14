@@ -2,16 +2,18 @@
     width: 350px;
 }
 body{
-    background-color: #FAFAFA;
-  }
+  background-color: #FAFAFA;
+  color: rgb(100,100,100);
+}
   
-  h1,h2,h3,h5,h6,p{
-    color: #424242;
-  }
+h1,h2,h3,h5,h6,p{
+  color: #424242;
+}
   
-  .trans{
-    opacity: 0.9;
-  }
-  nav, #dd_menu {
-    background-color: #212121;
-  }
+.trans{
+  opacity: 0.9;
+}
+
+nav, #dd_menu {
+  background-color: #212121;
+}
