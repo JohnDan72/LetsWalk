@@ -16,6 +16,10 @@ class Usuario extends CI_Model {
 			return $this->db->get_where('Beneficencia',"CorreoB='$correo'")->row_array();
 		}
 
+		function updateTokenUser($id_user,$token){
+			$this->db->query("UPDATE usuario SET token_email ='".$token."' WHERE Id_User= $id_user;");
+		}
+
 		function confirmarPassCorreo($correo, $passw){
 			$confirmPass="";
 
@@ -150,6 +154,17 @@ class Usuario extends CI_Model {
 		function updateUserToActive($correo){ //activar un usuario que confirmó su correo
 
 			$this->db->query("UPDATE usuario SET Status=1 WHERE Correo='$correo';");
+		}
+
+		function updatePassword($post){
+			$id_user = $post['Id_User'];
+			$pass = $post['Passwd'];
+			$pass = $this->encryption->encrypt($pass);
+
+			return $this->db->query("UPDATE usuario SET Passwd='".$pass."' WHERE Id_User=$id_user;");
+		}
+		function checkUserToken($id_user,$token){
+			return $this->db->get_where("Usuario","Id_User = $id_user AND token_email = '".$token."'")->row_array();
 		}
 
 }
