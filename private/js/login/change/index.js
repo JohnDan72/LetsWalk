@@ -21,7 +21,7 @@ id_password_1.addEventListener('change', () => {
 })
 
 id_password_2.addEventListener('change', () => {
-    if (id_password_2.value, length > 8) {
+    if (id_password_2.value.length > 8) {
         if (id_password_2.value != id_password_1.value) {
             error_pass_f.textContent = 'Las contraseñas deben de coincidir'
             error_pass_f.style.visibility = 'visible'

@@ -23,53 +23,82 @@
 
 <body>
 
-    <!--Vista que se utilizará en caso de que haya algun error en la verificación o que ya haya sido verificado-->
-    <div class="container mt-5">
+    <?php
+        if (!isset($mail_success) || ($mail_success < 1)) {
+           ?>
+                <div class="container mt-5">
 
-        <div class=" d-flex justify-content-center">
-            <img src="<?= base_url() ?>private/media/icons/olvido.svg" alt="" width="150px" class="mt-2">
-        </div>
+                    <div class=" d-flex justify-content-center">
+                        <img src="<?= base_url() ?>private/media/icons/olvido.svg" alt="" width="150px" class="mt-2">
+                    </div>
 
-        <h2 class="display-4 text-center mt-4">¡Veamos que tenemos aquí!</h2>
-        <p class="text-center mt-5 mb-2">Ingresa tu correo para iniciar con el proceso. Si coincide con el que te has
-            registrado en breves momentos recibirás un correo con un enlace para generar una nueva contraseña
-        </p>
+                    <h2 class="display-4 text-center mt-4">¡Veamos que tenemos aquí!</h2>
+                    <p class="text-center mt-5 mb-2">Ingresa tu correo para iniciar con el proceso. Si coincide con el que te has
+                        registrado en breves momentos recibirás un correo con un enlace para generar una nueva contraseña
+                    </p>
 
-        <?php
-        $form_U = array(
-            'id' => 'form_login',
-            'class' => 'd-flex justify-content-center'
-        );
-        echo form_open('', $form_U);
-        ?>
-        <div class="form-group mt-4" id="id_div_correo">
-            <?php
-            $mail_user = array(
-                'id'               => 'id_correo_f',
-                'name'             => 'Correo',
-                'type'             => 'mail',
-                'aria-describedby' => 'emailHelp',
-                'class'            => 'form-control mb-4',
-                'placeholder'      => 'Ingresa tu e-mail',
-                'require'          => 'true'
-            );
-            echo form_input($mail_user, '');
+                    <?php
+                    $form_U = [
+                        'id' => 'form_login',
+                        'class' => 'd-flex justify-content-center needs_validation', 'novalidate' => 'TRUE'
+                    ];
+                    echo form_open(base_url() . 'loginController/sendMailForgot', $form_U, 'required');
+                    ?>
+                    <div class="form-group mt-4" id="id_div_correo">
+                        <?php
+                        $mail_user = array(
+                            'id'               => 'id_correo_f',
+                            'name'             => 'Correo',
+                            'type'             => 'mail',
+                            'aria-describedby' => 'emailHelp',
+                            'class'            => 'form-control mb-4',
+                            'placeholder'      => 'Ingresa tu e-mail',
+                            'require'          => 'true'
+                        );
+                        echo form_input($mail_user, '');
+                        ?>
+
+                        <div id="error_mail_f" class="text-danger text-center mb-4" style="font-size: 12.8px;">Por favor ingresa una dirección de correo valida</div>
+
+                        <div class="d-flex justify-content-center mb-5">
+                            <button id="enviarForgot" class="btn btn-success" type="submit" id="btn_f">Enviar</button>
+                        </div>
+
+
+                        <?= form_close() ?>
+
+
+                        <p class="text-center mb-5"> <a href="<?= base_url() ?>InicioController">Volver al inicio</a></p>
+
+                    </div>
+                </div>
+
+           <?php
+        }
+        else{
+            echo "Correo Enviado!!!<br><br>";
+            /*CASO DONDE YA SE INTENTÓ ENVIAR EL CORREO POR SI EXISTE!!!
+            AQUI VA TU PINCHE PARTE KBRON OGT QLO
+            JEJEJEJEJE   XDXDXD
+            QUE YA NO SE TE OLVIDÉ KRNALITO
+            -
+            -
+            -
+            -
+            ---
+            -
+            -
+            -
+            -
+            --
+            */
             ?>
-
-            <div id="error_mail_f" class="text-danger text-center mb-4" style="font-size: 12.8px;">Por favor ingresa una dirección de correo valida</div>
-
-            <div class="d-flex justify-content-center mb-5">
-                <button class="btn btn-success" id="btn_f">Enviar</button>
-            </div>
-
-
-            <?= form_close() ?>
-
-
-            <p class="text-center mb-5"> <a href="<?= base_url() ?>InicioController">Volver al inicio</a></p>
-
-        </div>
-    </div>
+            <a href="<?= base_url() ?>InicioController">Volver al inicio</a>
+                <!--Aquí va tu html-->
+            <?php
+        }
+    ?>
+    
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

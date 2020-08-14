@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function () {
 var btn_f = document.getElementById('btn_f')
 var id_correo_f = document.getElementById('id_correo_f')
 var error_mail_f = document.getElementById('error_mail_f')
@@ -35,5 +36,9 @@ function validarEmail(valor) {
         return false;
     }
 }
+
+    
+})
+
 
 
