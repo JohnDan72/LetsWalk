@@ -89,11 +89,10 @@
             <p class="text-center mb-5"> <a href="<?= base_url() ?>loginController">Inicia sesión</a></p>
 
         </div>
-        <a href="<?= base_url() ?>InicioController">Volver al inicio</a>
         <!--Aquí va tu html-->
 
     <?php } ?>
-    ?>
+    
 
 
 
