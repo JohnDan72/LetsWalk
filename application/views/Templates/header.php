@@ -32,7 +32,7 @@
                     <a class="nav-link text-white" href="<?=base_url()?>InicioController">Inicio</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link text-white" href="<?=base_url()?>WarningController">Adopta</a>
+                    <a class="nav-link text-white" href="<?=base_url()?>AdoptaController">Adopta</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link text-white" href="#">Contacto</a>
