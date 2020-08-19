@@ -75,7 +75,7 @@
             <div id="id_mensaje_error" class="alert alert-danger" role="alert" style="display: none;">
               Mensaje de error, elije el que mejor se vea
             </div>
-            <p class="register animated fadeInLeft faster" id="text_reg" style="display: block;">¿Aún no eres miembro? <a href="#"> Registrate</a> </p>
+            <p class="register animated fadeInLeft faster" id="text_reg" style="display: block;">¿Aún no eres miembro? <a href="<?php echo base_url()?>RegistroController"> Registrate</a> </p>
             <div class="row justify-content-center text-center d-flex my-3">
               <!--button class=" col-md-6 btn btn-success d-flex my-3 ">Iniciar</button-->
               <button class=" col-md-12 btn btn-success animated fadeInLeft faster" id="id_btn_sig" onclick=" return fetchUser()">
