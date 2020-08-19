@@ -20,9 +20,8 @@ class AdoptaController extends CI_Controller {
 			$dato['string'] = "Let's Walk | Adopta";
 			$dato['css'] = "adopta";
 
-			$dato['alt_css'] = "<link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css'>";
-			$dato['alt_js'] = "<script src='https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js'></script>" .
-				"<script src=" . base_url() . "private/js/adopta/index.js" . "></script>";
+			//$dato['alt_css'] = "<link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css'>";
+			$dato['alt_js'] = "<script src=" . base_url() . "private/js/adopta/index.js" . "></script>";
 
 			//----------Quitar esta parte---------
 			$this->load->view('Templates/header', $dato);

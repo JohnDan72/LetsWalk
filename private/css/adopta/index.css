@@ -1,0 +1,79 @@
+nav,
+#dd_menu {
+    background-color: #212121;
+}
+
+.dropdown-menu>a:hover {
+    background-color: #252525 !important;
+}
+
+@media (min-width: 768px) {
+    #navbarNavDropdown {
+        padding-right: 100px;
+    }
+}
+
+body {
+    background-color: #FAFAFA;
+    color: rgb(100, 100, 100);
+    line-height: 1.3;
+    overflow-x: hidden;
+}
+
+.parallas,
+.main,
+.texto {
+    margin: 0 auto
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30rem;
+    max-width: 100%;
+    position: relative
+}
+
+.texto-interior {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    left: 10%;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    width: 80%
+}
+
+.img-uno {
+    background-image: url('../../../private/media/images/pexels-helena-lopes-1904105.jpg')
+}
+
+.search_cp {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    transition: filter 0.4s;
+    -webkit-transition: -webkit-filter 0.5s;
+    transition: transform .3s;
+    cursor: pointer;
+}
+
+.search_cp:hover {
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+}
+
+.search_cp:active {
+    -ms-transform: scale(0.9);
+    /* IE 9 */
+    -webkit-transform: scale(0.9);
+    /* Safari 3-8 */
+    transform: scale(0.9);
+}
+
+.pagination {
+    background-color: #fafafa;
+    align-content: center;
+}
