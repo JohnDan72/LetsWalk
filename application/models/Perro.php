@@ -41,7 +41,7 @@ class Perro extends CI_Model {
 				case '4' : $this->db->where('Status=2'); break;//disponibles
 				case '5' : $this->db->where('Status=0'); break;//adoptados
 				case '6' : $this->db->where('Status=1'); break;//en proceso
-				case '7' : $this->db->order_by('Sexo,Id_Perro'); break;
+				case '7' : $this->db->order_by('SexoP,Id_Perro'); break;
 				case '8' : $this->db->order_by('Edad,Id_Perro'); break;
 				case '9' : $this->db->order_by('Raza,Id_Perro'); break;
 				case '10': $this->db->order_by("Fecha_Alta DESC, Id_Perro"); break;

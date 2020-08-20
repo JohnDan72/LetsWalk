@@ -27,29 +27,29 @@
             <div class="offset-lg-4 col-lg-4 col-md-12">
 
                 <?php
-                $attributes_formOpen = ['id' => 'formFilter', 'onSubmit' => 'return false', 'novalidate' => 'TRUE'];
-                echo form_open(base_url() . 'AdoptaController/nombre_funcion', $attributes_formOpen, 'required');
+                $attributes_formOpen = ['id' => 'formFilter'];
+                echo form_open(base_url() . 'AdoptaController/index', $attributes_formOpen, 'required');
                 ?>
 
                 <?php
 
                 $options = array(
-                    '0'     =>  'Todos',
-                    '1'     =>  'Nombre',
-                    '2'     =>  'Beneficiencia',
-                    '3'     =>  'Adoptados',
+                    '1'     =>  'Todos',
+                    '2'     =>  'Nombre',
+                    '3'     =>  'Beneficiencia',
                     '4'     =>  'No adoptados',
-                    '5'     =>  'En proceso de adopción',
-                    '6'     =>  'Sexo',
-                    '7'     =>  'Edad',
-                    '8'     =>  'Raza',
-                    '9'     =>  'Agregados recientemente',
-                    '10'    =>  'Más antiguos'
+                    '5'     =>  'Adoptados',
+                    '6'     =>  'En proceso de adopción',
+                    '7'     =>  'Género',
+                    '8'     =>  'Edad',
+                    '9'     =>  'Raza',
+                    '10'    =>  'Agregados recientemente',
+                    '11'    =>  'Más antiguos'
                 );
 
 
                 $options_2 = array(
-                    'id'            => 'filtro',
+                    'id'            => 'id_filtro',
                     'class'         => 'custom-select'
                 );
 
@@ -57,10 +57,10 @@
 
                 ?>
                 <div class="input-group">
-                    <?= form_dropdown('filtro', $options, 'large', $options_2) ?>
+                    <?= form_dropdown('Filtro', $options, 'large', $options_2) ?>
 
                     <div class="input-group-append">
-                        <button class="btn btn-success"><img src="<?= base_url() ?>private/media/icons/buscar_white.svg" alt="" width="18px" class="search_cp pb-n2"></button>
+                        <button type="submit" class="btn btn-success"><img src="<?= base_url() ?>private/media/icons/buscar_white.svg" alt="" width="18px" class="search_cp pb-n2"></button>
                     </div>
                 </div>
             </div>
@@ -71,163 +71,101 @@
         </div>
     </div>
 
-
+    <!--Filtrado de perros (CARDS)--->
     <div class="container container">
         <div class="row mt-5 row row-cols-1 row-cols-md-3">
-            <div class="col mb-4">
-                <div class="card shadow-sm">
-                    <div id="id_perro" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="<?= base_url() ?>private/media/images/dog-1230839_1920.jpg" class="d-block w-100" alt="...">
+            <?php if(isset($results)) {
+                $cont=0;
+                foreach ($results->result() as $fila) { ?>
+                    <div class="col mb-4">
+                        <div class="card shadow-sm">
+                            <div id="id_perro_<?php echo ($cont+1);?>" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="<?= base_url() ?>private/img_perros/<?= $fila->Nombre_Foto_File;?>" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="<?= base_url() ?>private/img_perros/<?= $fila->Nombre_Foto_File;?>" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="<?= base_url() ?>private/img_perros/<?= $fila->Nombre_Foto_File;?>" class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#id_perro_<?php echo ($cont+1);?>" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#id_perro_<?php echo ($cont+1);?>" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
                             </div>
-                            <div class="carousel-item">
-                                <img src="<?= base_url() ?>private/media/images/weimaraner-2600694_1920.jpg" class="d-block w-100" alt="...">
+
+
+
+                            <div class="card-body">
+                                <h5 class="card-title"><?= $fila->Nombre_Perro;?></h5>
+                                <p class="card-text text-justify">
+                                    <b>Fundación: </b>
+                                    <a href="##">
+                                        <?php echo $beneficencias["$cont"]->NombreB;?>
+                                    </a>
+                                </p>
+                                <p class="text-justify">
+                                    <?= $fila->DescripcionP?>
+                                </p>
+                                <p class="text-right" data-toggle="popover" title="Acerca del perro" data-content="<b>Raza:</b> <?php echo $fila->Raza."<br>" ?>
+                                                  <b>Edad:</b> <?php echo $fila->Edad."<br>" ?>
+                                                  <b>Tamaño:</b> <?php echo $fila->Tamanio."<br>" ?>
+                                                  <b>Tipo de pelaje:</b> <?php echo $fila->Tipo_Pelaje."<br>" ?>
+                                                  <b>¿Cuenta con carnet fisico?:</b> <?php echo $fila->Id_Carnet."<br>" ?>
+                                                  ">
+
+                                    <img src="<?= base_url() ?>private/media/icons/info.svg" width="18px">
+                                </p>
                             </div>
-                            <div class="carousel-item">
-                                <img src="<?= base_url() ?>private/media/images/park-bench-2471534_1920.jpg" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#id_perro" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#id_perro" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
 
-
-
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del perro</h5>
-                        <p class="card-text text-justify"><b>Fundación: </b><a href="">Nombre de la fundación</a></p>
-                        <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto excepturi placeat voluptatibus temporibus deserunt molestias,
-                            repudiandae.
-                        </p>
-                        <p class="text-right" data-toggle="popover" title="Acerca del perro" data-content="<b>Raza:</b> <?php echo 'Pastor Aleman<br>' ?>
-                                          <b>Edad:</b> <?php echo '1 año 12 meses<br>' ?>
-                                          <b>Tamaño:</b> <?php echo 'Mediano<br>' ?>
-                                          <b>Tipo de pelaje:</b> <?php echo 'Corto<br>' ?>
-                                          <b>¿Cuenta con carnet fisico?:</b> <?php echo 'Sí' ?>
-                                          ">
-
-                            <img src="<?= base_url() ?>private/media/icons/info.svg" width="18px">
-                        </p>
-                    </div>
-
-                    <div class="card-footer text-center">
-                        <button type="button" class="btn btn-outline-dark btn-sm">Quiero conocerlo</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col mb-4">
-                <div class="card shadow-sm">
-                    <div id="id_perro" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="<?= base_url() ?>private/media/images/dog-1230839_1920.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="<?= base_url() ?>private/media/images/weimaraner-2600694_1920.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="<?= base_url() ?>private/media/images/park-bench-2471534_1920.jpg" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#id_perro" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#id_perro" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-
-
-
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del perro</h5>
-                        <p class="card-text text-justify"><b>Fundación: </b><a href="">Nombre de la fundación</a></p>
-                        <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto excepturi placeat voluptatibus temporibus deserunt molestias,
-                            repudiandae.
-                        </p>
-                        <p class="text-right" data-toggle="popover" title="Acerca del perro" data-content="<b>Raza:</b> <?php echo 'Pastor Aleman<br>' ?>
-                                          <b>Edad:</b> <?php echo '1 año 12 meses<br>' ?>
-                                          <b>Tamaño:</b> <?php echo 'Mediano<br>' ?>
-                                          <b>Tipo de pelaje:</b> <?php echo 'Corto<br>' ?>
-                                          <b>¿Cuenta con carnet fisico?:</b> <?php echo 'Sí' ?>
-                                          ">
-
-                            <img src="<?= base_url() ?>private/media/icons/info.svg" width="18px">
-                        </p>
-                    </div>
-
-                    <div class="card-footer text-center">
-                        <button type="button" class="btn btn-outline-dark btn-sm">Quiero conocerlo</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col mb-4">
-                <div class="card shadow-sm">
-                    <div id="id_perro" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="<?= base_url() ?>private/media/images/dog-1230839_1920.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="<?= base_url() ?>private/media/images/weimaraner-2600694_1920.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="<?= base_url() ?>private/media/images/park-bench-2471534_1920.jpg" class="d-block w-100" alt="...">
+                            <div class="card-footer text-center">
+                                <?php
+                                    extract($this->session->userdata('user'));
+                                    if($Id_Beneficencia==null){
+                                       if($fila->Status==2){
+                                            ?>
+                                                <button type="button" class="btn btn-outline-dark btn-sm">Quiero conocerlo</button>
+                                            <?php
+                                        }
+                                        else if($fila->Status==1){
+                                            ?>
+                                                <span style="font-size: 14px; color: var(--amber-darken-1);">En proceso de Adopción</span>
+                                            <?php
+                                        }
+                                        else{
+                                            ?>
+                                                <span style="font-size: 14px; color: var(--grey-darken-1);">Adoptado</span>
+                                            <?php
+                                        }
+                                    }
+                                ?>
+                                
                             </div>
                         </div>
-                        <a class="carousel-control-prev" href="#id_perro" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#id_perro" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
                     </div>
-
-
-
-                    <div class="card-body">
-                        <h5 class="card-title">Nombre del perro</h5>
-                        <p class="card-text text-justify"><b>Fundación: </b><a href="">Nombre de la fundación</a></p>
-                        <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto excepturi placeat voluptatibus temporibus deserunt molestias,
-                            repudiandae.
-                        </p>
-                        <p class="text-right" data-toggle="popover" title="Acerca del perro" data-content="<b>Raza:</b> <?php echo 'Pastor Aleman<br>' ?>
-                                          <b>Edad:</b> <?php echo '1 año 12 meses<br>' ?>
-                                          <b>Tamaño:</b> <?php echo 'Mediano<br>' ?>
-                                          <b>Tipo de pelaje:</b> <?php echo 'Corto<br>' ?>
-                                          <b>¿Cuenta con carnet fisico?:</b> <?php echo 'Sí' ?>
-                                          ">
-
-                            <img src="<?= base_url() ?>private/media/icons/info.svg" width="18px">
-                        </p>
-                    </div>
-
-                    <div class="card-footer text-center">
-                        <button type="button" class="btn btn-outline-dark btn-sm">Quiero conocerlo</button>
-                    </div>
-                </div>
-            </div>
+            <?php $cont++;}} else{?>
+                <div>Perro(s) NO Encontrados.</div>
+            <?php }?>
         </div>
 
 
+        <!--Paginacion de los filtros-->
         <div class="container mt-5 mb-5">
             <div class="row">
                 <div class="offset-4 col-4">
                     <nav aria-label="Page navigation example d-flex justify-content-center">
-                        <ul class="pagination">
+                        <?php if (isset($links)) { ?>
+                            <?php echo $links ?>
+                        <?php } ?>
+
+                        <!--ul class="pagination">
                             <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
@@ -247,7 +185,7 @@
                                     <span aria-hidden="true">&raquo;</span>
                                 </a>
                             </li>
-                        </ul>
+                        </ul-->
                     </nav>
                 </div>
             </div>

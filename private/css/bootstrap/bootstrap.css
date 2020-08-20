@@ -152,13 +152,39 @@
   --teal-accent-2: #64ffda;
   --teal-accent-3: #1de9b6;
   --teal-accent-4: #00bfa5;
+  
+  --orange-lighten-5: #fff3e0;
+  --orange-lighten-4: #ffe0b2;
+  --orange-lighten-3: #ffcc80;
+  --orange-lighten-2: #ffb74d;
+  --orange-lighten-1: #ffa726;
+  --orange-darken-1: #fb8c00;
+  --orange-darken-2: #f57c00;
+  --orange-darken-3: #ef6c00;
+  --orange-darken-4: #e65100;
+  --orange-accent-1: #ffd180;
+  --orange-accent-2: #ffab40;
+  --orange-accent-3: #ff9100;
+  --orange-accent-4: #ff6d00;
+
+  --amber-lighten-5: #fff8e1;
+  --amber-lighten-4: #ffecb3;
+  --amber-lighten-3: #ffe082;
+  --amber-lighten-2: #ffd54f;
+  --amber-lighten-1: #ffca28;
+  --amber-darken-1: #ffb300;
+  --amber-darken-2: #ffa000;
+  --amber-darken-3: #ff8f00;
+  --amber-darken-4: #ff6f00;
+  --amber-accent-1: #ffe57f;
+  --amber-accent-2: #ffd740;
+  --amber-accent-3: #ffc400;
+  --amber-accent-4: #ffab00;
   /*faltan
     --green
     --light-green
     --lime
     --yellow
-    --amber
-    --orange
     --deep-orange
     --brown
   */

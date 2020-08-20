@@ -76,4 +76,5 @@ body {
 .pagination {
     background-color: #fafafa;
     align-content: center;
+    border-radius: 0px !important;
 }

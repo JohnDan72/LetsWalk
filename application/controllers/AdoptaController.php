@@ -24,12 +24,12 @@ class AdoptaController extends CI_Controller {
 			$dato['alt_js'] = "<script src=" . base_url() . "private/js/adopta/index.js" . "></script>";
 
 			//----------Quitar esta parte---------
-			$this->load->view('Templates/header', $dato);
-			$this->load->view('adopta/adoptaView', $dato);
-			$this->load->view('Templates/footer');
+			//$this->load->view('Templates/header', $dato);
+			//$this->load->view('adopta/adoptaView', $dato);
+			//$this->load->view('Templates/footer');
 			//------------------------------------
 
-			/*
+			
 			//$dato['string'] = "aRDog | Adopta";			
 
 			if(!$this->session->userdata('adopta'))
@@ -38,7 +38,7 @@ class AdoptaController extends CI_Controller {
 	        //--------------------------------------------------------------
 			// init params
 		      $params = array();
-		      $limit_per_page = 9;
+		      $limit_per_page = 6;
 		      $total_records=0;
         	  $page = ($this->uri->segment(3)) ? ($this->uri->segment(3) - 1) : 0; //indice que ayuda a comprobar la pagina actual
 
@@ -47,7 +47,7 @@ class AdoptaController extends CI_Controller {
 
 			if($this->form_validation->run()==false){//caso cuando se esta paginando con filtro actual
 				
-		        extract($this->session->userdata('adopta'));
+		        $filtro = $this->session->userdata('adopta')['filtro'];
 		        //init params
 		        $total_records = $this->Perro->getNumRegistrosFiltro($filtro);
 		     
@@ -88,29 +88,29 @@ class AdoptaController extends CI_Controller {
 	            $config['use_page_numbers'] = TRUE;
 	            $config['reuse_query_string'] = TRUE;
 	             
-	            $config['full_tag_open'] = '<ul class="pagination">';
+	            $config['full_tag_open'] = '<ul class="pagination d-flex justify-content-center">';
 	            $config['full_tag_close'] = '</ul>';
 	             
 	            $config['first_link'] = 'Primera página';
-	            $config['first_tag_open'] = '<li class="waves-effect">';
+	            $config['first_tag_open'] = '<li class="page-item">';
 	            $config['first_tag_close'] = '</li>';
 	             
 	            $config['last_link'] = 'Última página';
-	            $config['last_tag_open'] = '<li class="waves-effect">';
+	            $config['last_tag_open'] = '<li class="page-item">';
 	            $config['last_tag_close'] = '</li>';
 	             
-	            $config['next_link'] = '<i class="material-icons">chevron_right</i>';
-	            $config['next_tag_open'] = '<li class="waves-effect">';
+	            $config['next_link'] = 'Next';
+	            $config['next_tag_open'] = '<li class="page-item">';
 	            $config['next_tag_close'] = '</li>';
 	 
-	            $config['prev_link'] = '<i class="material-icons">chevron_left</i>';
-	            $config['prev_tag_open'] = '<li class="prevlink">';
+	            $config['prev_link'] = 'Previus';
+	            $config['prev_tag_open'] = '<li class="page-item">';
 	            $config['prev_tag_close'] = '</li>';
 	 
-	            $config['cur_tag_open'] = '<li class="active"><a href="#!">';
+	            $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="!#">';
 	            $config['cur_tag_close'] = '</a></li>';
 	 
-	            $config['num_tag_open'] = '<li class="waves-effect">';
+	            $config['num_tag_open'] = '<li class="page-item">';
 	            $config['num_tag_close'] = '</li>';
 
 	            $this->pagination->initialize($config);
@@ -125,7 +125,12 @@ class AdoptaController extends CI_Controller {
 			$this->load->view('Templates/footer');
 			//--------------------------------------------------------------
 	        //--------------------------------------------------------------
-	        */
+	        
+		}
+
+		function filtrar(){
+			echo "Entró en filtrado<br><br>";
+			echo var_dump($this->input->post());
 		}
 	}
 ?>
