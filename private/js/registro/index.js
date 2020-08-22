@@ -1,8 +1,7 @@
-
 var stepperForm
 var stepperForm_1
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
 
     var stepperFormEl = document.querySelector('#stepperForm')
@@ -23,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var Correo = document.getElementById('Correo')
     var Passwd = document.getElementById('Passwd')
     var Passwd_1 = document.getElementById('Passwd_1')
-    //Correo, Passwd, Passwd_1
+        //Correo, Passwd, Passwd_1
 
     //console.log("Tamaño date: " + Fecha_Nacimiento.value.length)
 
@@ -34,13 +33,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var inputPasswordForm = document.getElementById('inputPasswordForm')
     var form = stepperFormEl.querySelector('.bs-stepper-content form')
 
-    btnNextList.forEach(function (btn) {
-        btn.addEventListener('click', function () {
+    btnNextList.forEach(function(btn) {
+        btn.addEventListener('click', function() {
             stepperForm.next()
         })
     })
 
-    stepperFormEl.addEventListener('show.bs-stepper', function (event) {
+    stepperFormEl.addEventListener('show.bs-stepper', function(event) {
         form.classList.remove('was-validated')
         var nextStep = event.detail.indexStep
         var currentStep = nextStep
@@ -58,13 +57,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     !(Fecha_Nacimiento.value.length == 10)) {
                     event.preventDefault()
                     form.classList.add('was-validated')
-                }
-                else if (!(Telefono.value.length == 10) || !($.isNumeric(Telefono.value))) {
+                } else if (!(Telefono.value.length == 10) || !($.isNumeric(Telefono.value))) {
                     event.preventDefault()
                     form.classList.add('was-validated')
                     document.getElementById('errorTel').style.display = 'block';
-                }
-                else {
+                } else {
                     document.getElementById('errorTel').style.display = 'none';
 
                 }
@@ -72,8 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 var Sexo = ($("input[name='Sexo']:checked").val()) ? $("input[name='Sexo']:checked").val() : 0;
                 if ((Sexo == 'M') || (Sexo == 'H')) {
                     document.getElementById('errorSex').style.display = 'none';
-                }
-                else {
+                } else {
                     event.preventDefault()
                     form.classList.add('was-validated')
                     document.getElementById('errorSex').style.display = 'block';
@@ -94,11 +90,11 @@ password_1.addEventListener('change', () => {
     if (password_0.value != password_1.value) {
         passw_msg.textContent = 'Las contraseñas deben de coincidir'
         passw_msg.style.display = 'block'
-        //console.log("Las contraseñas deben de coincidir")
+            //console.log("Las contraseñas deben de coincidir")
     } else {
         passw_msg.textContent = ''
         passw_msg.style.display = 'none'
-        //console.log("Ahora todo esta bien")
+            //console.log("Ahora todo esta bien")
     }
 })
 
@@ -106,11 +102,11 @@ password_0.addEventListener('change', () => {
     if (password_1.value != password_0.value) {
         passw_msg.textContent = 'Las contraseñas deben de coincidir'
         passw_msg.style.display = 'block'
-        //console.log("Las contraseñas deben de coincidir")
+            //console.log("Las contraseñas deben de coincidir")
     } else {
         passw_msg.textContent = ''
         passw_msg.style.display = 'none'
-        //console.log("Ahora todo esta bien")
+            //console.log("Ahora todo esta bien")
     }
 
 })
@@ -161,7 +157,7 @@ municipio.disabled = true
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
 
     var stepperFormEl_1 = document.querySelector('#stepperForm_1')
@@ -187,14 +183,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var form = stepperFormEl_1.querySelector('.bs-stepper-content form')
 
-    btnNextList.forEach(function (btn) {
-        btn.addEventListener('click', function () {
+    btnNextList.forEach(function(btn) {
+        btn.addEventListener('click', function() {
             stepperForm_1.next()
 
         })
     })
 
-    stepperFormEl_1.addEventListener('show.bs-stepper', function (event) {
+    stepperFormEl_1.addEventListener('show.bs-stepper', function(event) {
         form.classList.remove('was-validated')
         var nextStep = event.detail.indexStep
         var currentStep = nextStep
@@ -204,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         var stepperPan = stepperPanList[currentStep]
-        //console.log("currentStep: "+currentStep)
+            //console.log("currentStep: "+currentStep)
         switch (currentStep) {
             /*Solo se pueden trabajar con Steps que tengan un step siguiente. Si es el último, no funciona*/
             case 0:
@@ -212,13 +208,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     !(Fecha_Nacimiento_b.value.length == 10)) {
                     event.preventDefault()
                     form.classList.add('was-validated')
-                }
-                else if (!(Telefono_b.value.length == 10) || !($.isNumeric(Telefono_b.value))) {
+                } else if (!(Telefono_b.value.length == 10) || !($.isNumeric(Telefono_b.value))) {
                     event.preventDefault()
                     form.classList.add('was-validated')
                     document.getElementById('errorTel_b').style.display = 'block';
-                }
-                else {
+                } else {
                     document.getElementById('errorTel_b').style.display = 'none';
 
                 }
@@ -226,8 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 var Sexo = ($("input[name='Sexo_b']:checked").val()) ? $("input[name='Sexo_b']:checked").val() : 0;
                 if ((Sexo == 'M') || (Sexo == 'H')) {
                     document.getElementById('errorSex_b').style.display = 'none';
-                }
-                else {
+                } else {
                     event.preventDefault()
                     form.classList.add('was-validated')
                     document.getElementById('errorSex_b').style.display = 'block';
@@ -235,19 +228,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 break;
 
             case 1:
-                if (!nombre_b.value.length || !TelefonoB.value.length || !CP.value.length || !localidad.value.length || !municipio.value.length || 
+                if (!nombre_b.value.length || !TelefonoB.value.length || !CP.value.length || !localidad.value.length || !municipio.value.length ||
                     !DescripcionB.value.length || !calle.value.length || !numExterior.value.length) {
                     event.preventDefault()
                     form.classList.add('was-validated')
-                    //console.log("Bro, la regaste!")
-                }
-                else if (!(TelefonoB.value.length == 10) || !($.isNumeric(TelefonoB.value))) {
+                        //console.log("Bro, la regaste!")
+                } else if (!(TelefonoB.value.length == 10) || !($.isNumeric(TelefonoB.value))) {
                     event.preventDefault()
                     form.classList.add('was-validated')
                     document.getElementById('errorTelB').style.display = 'block';
                     //console.log("Bro, la regaste!")
-                }
-                else {
+                } else {
                     document.getElementById('errorTelB').style.display = 'none';
                     //console.log("Bro, no la regaste!")
                 }
@@ -267,13 +258,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     form.classList.add('was-validated')
                     document.getElementById('error_descripcion_b').style.display = 'block';
                     DescripcionB.style.borderColor = "red";
-                }
-                else{
+                } else {
                     document.getElementById('error_descripcion_b').style.display = 'none';
                     DescripcionB.style.borderColor = "green";
                 }
 
-            break;
+                break;
 
 
         }
@@ -285,9 +275,3 @@ document.addEventListener('DOMContentLoaded', function () {
 //},2000)
 
 /*Listener del botón de search se cambió a la vista para trabajar con fetch y la info del CP*/
-
-
-
-
-
-
