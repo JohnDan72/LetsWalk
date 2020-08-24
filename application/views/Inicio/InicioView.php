@@ -13,8 +13,8 @@
         </p>
 
         <div class=" d-flex justify-content-center" data-entrance="from-right">
-            <button type="button"
-                class="btn btn-color text-white d-none d-sm-block d-md-block d-lg-block d-md-xl-block">¡Adopta!</button>
+            <a href="<?= base_url()?>AdoptaController" 
+                class="btn btn-color text-white d-none d-sm-block d-md-block d-lg-block d-md-xl-block">¡Adopta!</a>
         </div>
 
         <div class="arrow arrow-first mr-auto align-bottom"></div>

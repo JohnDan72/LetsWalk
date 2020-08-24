@@ -131,7 +131,7 @@
                                     if($Id_Beneficencia==null){
                                        if($fila->Status==2){
                                             ?>
-                                                <button type="button" class="btn btn-outline-dark btn-sm">Quiero conocerlo</button>
+                                                <a href="<?= base_url();?>GenerarcitaController/index/<?= $fila->Id_Perro;?>" class="btn btn-outline-dark btn-sm">Quiero conocerlo</a>
                                             <?php
                                         }
                                         else if($fila->Status==1){

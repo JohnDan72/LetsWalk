@@ -7,6 +7,16 @@ class Perro extends CI_Model {
 			//$this->load->library('encryption');
 		}
 
+		function getInfoPerroById($id_perro){
+			return $this->db->query("
+									SELECT perro.*,carnet.*,beneficencia.*
+									FROM perro
+									LEFT JOIN carnet on carnet.Id_Carnet = perro.Id_Carnet
+									LEFT JOIN beneficencia on beneficencia.Id_Beneficencia = perro.Id_Beneficencia
+									WHERE Id_Perro = $id_perro
+									")->row_array();
+		}
+
 		function updateStatusPerro($id_perro, $status){
 			$this->db->query("UPDATE Perro SET Status=$status WHERE Id_Perro='$id_perro';");
 		}
@@ -63,5 +73,21 @@ class Perro extends CI_Model {
 			return $result;
 		}
 
+		function isDisponible($id_perro){
+			$statusPerro = $this->db->get_where("Perro","perro.Id_Perro = $id_perro")->row_array()['Status'];
+			return ($statusPerro != 2)? false:true;
+		}
+
+		/*QUERY PARA OBTENER TODA LA INFO NECESARIA DE LOS PERROS PARA MOSTRAR EN ADOPCIÓN:
+		
+			SELECT 	
+				perro.*,
+	            carnet.*,
+            	beneficencia.*
+			FROM perro
+			LEFT JOIN beneficencia ON beneficencia.Id_Beneficencia = perro.Id_Beneficencia
+            LEFT JOIN carnet on carnet.Id_Carnet = perro.Id_Carnet
+			ORDER BY perro.Id_Perro;
+		*/
 }
 ?>

@@ -166,6 +166,9 @@ class Usuario extends CI_Model {
 		function checkUserToken($id_user,$token){
 			return $this->db->get_where("Usuario","Id_User = $id_user AND token_email = '".$token."'")->row_array();
 		}
+		function getTokenUserId($id_user){
+			return $this->db->get_where("Usuario","Id_User = $id_user")->row_array()['token_email'];
+		}
 
 }
 ?>

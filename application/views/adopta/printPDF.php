@@ -34,10 +34,10 @@
         <br>
 
 
-        <p class="encabezado" style="margin-top: 50px;"><b>Folio: </b> 12345</p>
-        <p class="encabezado"><b>Beneficiencia: </b> Angeles peludos</p>
-        <p class="encabezado"><b>Fecha: </b> 22/08/2020</p>
-        <p class="encabezado"><b>Hora: </b> 02:30 p.m</p>
+        <p class="encabezado" style="margin-top: 50px;"><b>Folio: </b> <?= $Cita['Id_Cita'];?></p>
+        <p class="encabezado"><b>Beneficiencia: </b> <?= $Cita['NombreB'];?></p>
+        <p class="encabezado"><b>Fecha: </b> <?= $Cita['Fecha'];?></p>
+        <p class="encabezado"><b>Hora: </b> <?= $Cita['Hora'];?></p>
 
         
         <p class="cursiva" style="margin-top: 80px;">Es importante que lleves este comprobante contigo, ya que de la contrario la beneficiencia no podrá ofrecerte el servicio. 
@@ -47,19 +47,19 @@
         
 
         <p ALIGN="justify" style="margin-top: 40px;">
-            El (la) solicitante del servicio: <b><?php echo "Jesús Martín Samano Vargas"/*$Cita['Nombre'] . " " . $Cita['Ap_Paterno'] . " " . $Cita['Ap_Materno'] */?></b> 
+            El (la) solicitante del servicio: <b><?php echo $Cita['Nombre'] . " " . $Cita['Ap_Paterno'] . " " . $Cita['Ap_Materno']; ?></b> 
             declara estar comprometido con la causa de aRDogs por lo que esta de acuerdo en el proceso de trámite para la posible adopción del perro con nombre 
-            <b><?php echo "Willirex"/*$Cita['Nombre_Perro']*/ ?></b> de raza <b><?php echo "Mestiza"/*$Cita['Raza'] */?></b>, teniendo una edad de <b><?php echo "1 año"/*$Cita['EdadP'] */?></b> 
+            <b><?php echo $Cita['Nombre_Perro']; ?></b> de raza <b><?php echo $Cita['Raza']; ?></b>, teniendo una edad de <b><?php echo $Cita['Edad'];?></b> 
         </p>
 
         <p ALIGN="justify">
-        Tal evento será llevado acabo en el Centro de Adopción: <b><?php echo "Angeles peludos"/*$Cita['NombreB'] */?></b> con dirección: <b><?php echo "11 norte 7613 Col 20 de Noviembre"/*$Cita['DireccionB']*/ ?></b> todo esto sujeto a nuestros terminos y condiciones los cuales pueden ser consultados en <a href="https://ardogs.herokuapp.com"><b>ardogs.com</b></a>
+        Tal evento será llevado acabo en el Centro de Adopción: <b><?php echo $Cita['NombreB'];?></b> con dirección: <b><?php echo $Cita['Calle']." ".$Cita['Num_Ext']." Colonia: ".$Cita['Colonia'].". ".$Cita['Localidad'].", ".$Cita['Municipio']." CP: ".$Cita['CP']; ?></b> todo esto sujeto a nuestros terminos y condiciones los cuales pueden ser consultados en <a href="https://ardogs.herokuapp.com"><b>ardogs.com</b></a>
         </p>
 
 
 
         <p align="center" style="margin-top: 100px;">
-           Nombre del solicitante <br> <?php echo "Jesús Martín Samano Vargas"/*$Cita['Nombre'] . " " . $Cita['Ap_Paterno'] . " " . $Cita['Ap_Materno']*/ ?>
+           Nombre del solicitante <br> <?php echo $Cita['Nombre'] . " " . $Cita['Ap_Paterno'] . " " . $Cita['Ap_Materno']; ?>
         </p>
 </page>
 
