@@ -53,10 +53,7 @@
         }
 
         table,
-        td {
-            mso-table-lspace: 0pt;
-            mso-table-rspace: 0pt;
-        }
+
 
         img {
             -ms-interpolation-mode: bicubic;
@@ -114,10 +111,7 @@
 
 <body style="background-color: #fafafa; margin: 0 !important; padding: 0 !important;">
 
-    <!-- HIDDEN PREHEADER TEXT -->
-    <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'Lato', Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-        We're thrilled to have you here! Get ready to dive into your new account.
-    </div>
+
 
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <!-- LOGO -->
@@ -189,7 +183,7 @@
                                     <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 60px 30px;">
                                         <table border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td align="center" style="border-radius: 10px;" bgcolor="#28A745"><a href=href='<?php echo $link?>' target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 10px; border: 1px solid #28A745; display: inline-block;">Comprobante
+                                                <td align="center" style="border-radius: 10px;" bgcolor="#28A745"><a href='<?php echo $link; ?>' target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 10px; border: 1px solid #28A745; display: inline-block;">Comprobante
                                         </table>
                                     </td>
                                 </tr>

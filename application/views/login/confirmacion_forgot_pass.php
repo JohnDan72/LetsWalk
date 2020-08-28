@@ -1,14 +1,14 @@
 <!-- THIS EMAIL WAS BUILT AND TESTED WITH LITMUS http://litmus.com -->
 <!-- IT WAS RELEASED UNDER THE MIT LICENSE https://opensource.org/licenses/MIT -->
 <!-- QUESTIONS? TWEET US @LITMUSAPP -->
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
     <style type="text/css">
         /* FONTS */
 
@@ -53,10 +53,7 @@
         }
 
         table,
-        td {
-            mso-table-lspace: 0pt;
-            mso-table-rspace: 0pt;
-        }
+
 
         img {
             -ms-interpolation-mode: bicubic;
@@ -114,10 +111,6 @@
 
 <body style="background-color: #fafafa; margin: 0 !important; padding: 0 !important;">
 
-    <!-- HIDDEN PREHEADER TEXT -->
-    <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'Lato', Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-        We're thrilled to have you here! Get ready to dive into your new account.
-    </div>
 
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <!-- LOGO -->
