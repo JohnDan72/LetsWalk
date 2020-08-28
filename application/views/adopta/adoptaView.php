@@ -78,9 +78,9 @@
                 $cont=0;
                 foreach ($results->result() as $fila) { ?>
                     <div class="col mb-4">
-                        <div class="card shadow-sm">
+                        <div class="card shadow-sm" style="max-height: 500px;">
                             <div id="id_perro_<?php echo ($cont+1);?>" class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner">
+                                <div class="carousel-inner" style="max-height: 200px;">
                                     <div class="carousel-item active">
                                         <img src="<?= base_url() ?>private/img_perros/<?= $fila->Nombre_Foto_File;?>" class="d-block w-100" alt="...">
                                     </div>
@@ -100,7 +100,6 @@
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>
-
 
 
                             <div class="card-body">

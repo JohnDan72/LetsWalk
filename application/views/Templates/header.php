@@ -62,7 +62,7 @@
                                 //extract($user);
                                 //echo "Bienvenido ".$this->session->userdata('user')['Nombre'];
                         ?>
-                                <a class="dropdown-item text-white" href="#">Pánel de Control</a>
+                                <a class="dropdown-item text-white" href="<?=base_url()?>PanelController">Pánel de Control</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-white" href="<?=base_url()?>loginController/logout">Cerrar Sesión</a>
                         <?php
