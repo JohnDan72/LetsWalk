@@ -114,7 +114,7 @@ class GenerarcitaController extends CI_Controller {
             $msg = $CI->load->view('adopta/correoAdoptaView',$data, true);
 
             if($CI->email
-                    ->from('johndan478@gmail.com')
+                    ->from(CORREO_FUENTE)
                     ->to($this->session->userdata('user')['Correo'])
                     ->subject($subject)
                     ->message($msg)

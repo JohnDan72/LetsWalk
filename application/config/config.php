@@ -326,6 +326,8 @@ $config['cache_query_string'] = FALSE;
 */
 //$config['encryption_key'] = '';
 $config['encryption_key'] = 'letswalk1234';
+$config['correo_fuente'] = 'jesus.martinsamano@gmail.com';
+
 
 /*
 |--------------------------------------------------------------------------

@@ -312,7 +312,6 @@
 
                                 </div>
 
-
                                 <div class="col-12 mt-sm-4 form-group">
 
                                     <?php
@@ -338,6 +337,199 @@
                                     <?= form_error('DescripcionB', '<span class="text-danger text-center">', '</span>') ?>
                                 </div>
                             </div>
+
+                            <h5 class="text-center mt-5">Vacunas</h5>
+
+                            <p class="text-center">Marca las vacunas que el perro ha recibido</p>
+
+                            <div class="form-group form-row ">
+
+                                <div class="col-lg-3 col-sm-12 mt-sm-4 d-flex justify-content-center">
+                                    <div class="form-check">
+
+                                        <?php
+                                        $V_Triple = [
+                                            'name'          => 'V_Triple',
+                                            'id'            => 'V_Triple',
+                                            'value'         => '1',
+                                            'checked'       => TRUE,
+                                        ];
+
+                                        echo form_checkbox($V_Triple);
+                                        ?>
+
+                                        <label class="form-check-label" for="V_Triple">
+                                            Triple
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-3 col-sm-12 mt-sm-4 d-flex justify-content-center">
+                                    <div class="form-check">
+
+                                        <?php
+                                        $V_Mpuppy = [
+                                            'name'          => 'V_Mpuppy',
+                                            'id'            => 'V_Mpuppy',
+                                            'value'         => '1',
+                                            'checked'       => TRUE,
+                                        ];
+
+                                        echo form_checkbox($V_Mpuppy);
+                                        ?>
+
+                                        <label class="form-check-label" for="V_Mpuppy">
+                                            Puppy
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-sm-12 mt-sm-4 d-flex justify-content-center">
+                                    <div class="form-check">
+
+                                        <?php
+                                        $V_Quintuple = [
+                                            'name'          => 'V_Quintuple',
+                                            'id'            => 'V_Quintuple',
+                                            'value'         => '1',
+                                            'checked'       => TRUE,
+                                        ];
+
+                                        echo form_checkbox($V_Quintuple);
+                                        ?>
+
+                                        <label class="form-check-label" for="V_Quintuple">
+                                            Quintuple
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-sm-12 mt-sm-4 d-flex justify-content-center">
+                                    <div class="form-check">
+
+                                        <?php
+                                        $V_Sectuple = [
+                                            'name'          => 'V_Sectuple',
+                                            'id'            => 'V_Sectuple',
+                                            'value'         => '1',
+                                            'checked'       => TRUE,
+                                        ];
+
+                                        echo form_checkbox($V_Sectuple);
+                                        ?>
+
+                                        <label class="form-check-label" for="V_Sectuple">
+                                            Sectuple
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h5 class="text-center mt-5">Desparacitación</h5>
+                            <div class="form-group form-row">
+                                <div class="col-lg-6 col-sm-12 mt-sm-4 d-flex justify-content-center">
+                                    <div class="form-check">
+
+                                        <?php
+                                        $Desp_Ext = [
+                                            'name'          => 'Desp_Ext',
+                                            'id'            => 'Desp_Ext',
+                                            'value'         => '1',
+                                            'checked'       => TRUE,
+                                        ];
+
+                                        echo form_checkbox($Desp_Ext);
+                                        ?>
+
+                                        <label class="form-check-label" for="Desp_Ext">
+                                            Externa
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-sm-12 mt-sm-4 d-flex justify-content-center">
+                                    <div class="form-check">
+
+                                        <?php
+                                        $Desp_Int = [
+                                            'name'          => 'Desp_Int',
+                                            'id'            => 'Desp_Int',
+                                            'value'         => '1',
+                                            'checked'       => TRUE,
+                                        ];
+
+                                        echo form_checkbox($Desp_Int);
+                                        ?>
+
+                                        <label class="form-check-label" for="Desp_Int">
+                                            Interna
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <h5 class="text-center mt-5">Esterilización</h5>
+                            <div class="form-group form-row">
+                                <div class="col-lg-12 col-sm-12 mt-sm-4 d-flex justify-content-center">
+                                    <div class="form-check">
+
+                                        <?php
+                                        $Esterilizacion = [
+                                            'name'          => 'Esterilizacion',
+                                            'id'            => 'Esterilizacion',
+                                            'value'         => '1',
+                                            'checked'       => TRUE,
+                                        ];
+
+                                        echo form_checkbox($Esterilizacion);
+                                        ?>
+
+                                        <label class="form-check-label" for="Esterilizacion">
+                                            Esterilizado
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <h5 class="text-center mt-5">Otros</h5>
+                            <div class="form-group form-row">
+                                <div class="col-lg-12 col-sm-12 mt-sm-4 d-flex justify-content-center">
+                                    <div class="form-check">
+
+                                        <?php
+                                        $Carnet_Fisico = [
+                                            'name'          => 'Carnet_Fisico',
+                                            'id'            => 'Carnet_Fisico',
+                                            'value'         => '1',
+                                            'checked'       => TRUE,
+                                        ];
+
+                                        echo form_checkbox($Carnet_Fisico);
+                                        ?>
+
+                                        <label class="form-check-label" for="Carnet_Fisico">
+                                            Carnet fisico
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                             <h5 class="text-center mt-5">Fotografias del perro</h5>
 

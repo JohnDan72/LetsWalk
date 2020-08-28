@@ -1,322 +1,289 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- THIS EMAIL WAS BUILT AND TESTED WITH LITMUS http://litmus.com -->
+<!-- IT WAS RELEASED UNDER THE MIT LICENSE https://opensource.org/licenses/MIT -->
+<!-- QUESTIONS? TWEET US @LITMUSAPP -->
+<!DOCTYPE html>
+<html>
 
 <head>
+    <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Restablecer contraseña</title>
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <style type="text/css">
-        @import url('http: //fonts.googleapis.com/css?family=Lato:400');
+        /* FONTS */
 
-        /* Take care of image borders and formatting */
+        @media screen {
+            @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+            }
+
+            @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 700;
+                src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v11/qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+            }
+
+            @font-face {
+                font-family: 'Lato';
+                font-style: italic;
+                font-weight: 400;
+                src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v11/RYyZNoeFgb0l7W3Vu1aSWOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+            }
+
+            @font-face {
+                font-family: 'Lato';
+                font-style: italic;
+                font-weight: 700;
+                src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYELO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+            }
+        }
+
+        /* CLIENT-SPECIFIC STYLES */
+
+        body,
+        table,
+        td,
+        a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
 
         img {
-            max-width: 600px;
-            outline: none;
-            text-decoration: none;
             -ms-interpolation-mode: bicubic;
         }
 
-        a {
-            text-decoration: none;
+        /* RESET STYLES */
+
+        img {
             border: 0;
+            height: auto;
+            line-height: 100%;
             outline: none;
-        }
-
-        a img {
-            border: none;
-        }
-
-        /* General styling */
-
-        td, h1, h2, h3 {
-            font-family: Helvetica, Arial, sans-serif;
-            font-weight: 400;
-        }
-
-        body {
-            -webkit-font-smoothing: antialiased;
-            -webkit-text-size-adjust: none;
-            width: 100%;
-            height: 100%;
-            color: #37302d;
-            background: #ffffff;
+            text-decoration: none;
         }
 
         table {
-            background: white
+            border-collapse: collapse !important;
         }
 
-        h1, h2, h3 {
-            padding: 0;
-            margin: 0;
-            color: #ffffff;
-            font-weight: 400;
+        body {
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
         }
 
-        h3 {
-            color: #212121;
-            font-size: 24px;
+        /* iOS BLUE LINKS */
+
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
         }
 
+        /* MOBILE STYLES */
+
+        @media screen and (max-width:600px) {
+            h1 {
+                font-size: 32px !important;
+                line-height: 32px !important;
+            }
+        }
+
+        /* ANDROID CENTER FIX */
+
+        div[style*="margin: 16px 0;"] {
+            margin: 0 !important;
+        }
     </style>
-
-    <style type="text/css" media="screen">
-        @media screen {
-
-            /* Thanks Outlook 2013! http://goo.gl/XLxpyl*/
-            td,
-            h1,
-            h2,
-            h3 {
-                font-family: 'Lato', 'Helvetica Neue', 'Arial', 'sans-serif' !important;
-            }
-        }
-
-    </style>
-
-    <style type="text/css" media="only screen and (max-width: 480px)">
-        /* Mobile styles */
-        @media only screen and (max-width: 480px) {
-            table[class="w320"] {
-                width: 320px !important;
-            }
-
-            table[class="w300"] {
-                width: 300px !important;
-            }
-
-            table[class="w290"] {
-                width: 290px !important;
-            }
-
-            td[class="w320"] {
-                width: 320px !important;
-            }
-
-            table[class*="w260"] {
-                width: 260px !important;
-            }
-
-            td[class*="mobile-center"] {
-                text-align: center !important;
-            }
-
-            td[class*="mobile-padding"] {
-                padding-left: 20px !important;
-                padding-right: 20px !important;
-                padding-bottom: 20px !important;
-            }
-
-            td[class*="mobile-block"] {
-                display: block !important;
-                width: 280px !important;
-                text-align: justify !important;
-                padding-bottom: 20px !important;
-            }
-
-            td[class*="mobile-img"] {
-                display: block !important;
-                width: 100% !important;
-                text-align: center !important;
-                padding-bottom: 20px !important;
-                width: 320px !important;
-            }
-        }
-
-    </style>
-
-
-
-
-
 
 </head>
 
-<body class="body" style="padding:0; margin:0; display:block; background:#ffffff; -webkit-text-size-adjust:none" bgcolor="#ffffff">
-    <table align="center" cellpadding="0" cellspacing="0" width="100%" height="100%">
+<body style="background-color: #fafafa; margin: 0 !important; padding: 0 !important;">
+
+    <!-- HIDDEN PREHEADER TEXT -->
+    <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'Lato', Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+        We're thrilled to have you here! Get ready to dive into your new account.
+    </div>
+
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!-- LOGO -->
         <tr>
-            <td align="center" valign="top" bgcolor="#ffffff" width="100%">
-
-                <table cellspacing="0" cellpadding="0" width="100%">
+            <td bgcolor="#212121" align="center">
+                <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+            <![endif]-->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                     <tr>
-                        <td style="border-bottom: 3px " width="100%">
-                            <center>
-                                <table cellspacing="0" cellpadding="0" width="500" class="w320">
-                                    <tr>
-                                        <td valign="top" style="padding:10px 0; text-align:center;" class="mobile-center">
-                                            <img width="250" height="62" src="https://image.ibb.co/dtKSaK/logo_mail.png">
-                                        </td>
-                                    </tr>
-                                </table>
-                            </center>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td background="https://image.ibb.co/gsvNQK/banner_mail.jpg" bgcolor="#0d0102" valign="top" style="background: url(https://image.ibb.co/gsvNQK/banner_mail.jpg) no-repeat center; background-color: #0d0102; background-position: center;">
-                            <!--[if gte mso 9]>
-          <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;height:303px;">
-            <v:fill type="tile" src="https://www.filepicker.io/api/file/mEwMJfoIQlKlv1u3CSfU" color="#0d0102" />
-            <v:textbox inset="0,0,0,0">
-          <![endif]-->
-                            <div>
-                                <center>
-                                    <table cellspacing="0" cellpadding="0" width="530" height="303" class="w320">
-                                        <tr>
-
-                                        </tr>
-                                    </table>
-                                </center>
-                            </div>
-                            <!--[if gte mso 9]>
-            </v:textbox>
-          </v:rect>
-          <![endif]-->
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top">
-                            <center>
-                                <table cellspacing="0" cellpadding="30" width="500" class="w320">
-                                    <tr>
-                                        <td valign="top" style="border-bottom:1px solid #a1a1a1;">
-
-                                            <table cellspacing="0" cellpadding="0" width="100%">
-                                                <tr>
-                                                    <td style="text-align: center;">
-                                                        <h3>Tenemos a don pendejo aqui, parece que olvidaste la pinche contraseña</h3>
-                                                        <br>
-                                                    </td>
-                                                </tr>
-                                            </table>
-
-                                            <center>
-                                                <table style="margin: 0 auto;" cellspacing="0" cellpadding="8" width="180">
-                                                    <tr>
-
-                                                        <td style="width:150px; height:33px; background-color: #212121;">
-                                                            <div>
-                                                                <a href="<?php echo $link;?>" style="background-color:#212121;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width:150px;-webkit-text-size-adjust:none;">Restablecer mi contraseña</a>
-                                                            </div>
-                                                        </td>
-
-
-
-
-                                                        <!--</td>-->
-                                                    </tr>
-                                                </table>
-                                            </center>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <table cellspacing="0" cellpadding="0" width="500" class="w320">
-                                    <tr>
-                                        <td>
-
-                                            <table cellspacing="0" cellpadding="0" width="500" class="w320">
-                                                <tr>
-                                                    <td style="padding-bottom:30px; padding-top:30px;" class="mobile-img">
-                                                        <table cellspacing="0" cellpadding="0" width="100%">
-                                                            <tr>
-                                                                <td style="padding-bottom:0px;" class="mobile-img">
-                                                                    <table cellspacing="0" cellpadding="0" width="120">
-                                                                        <tr>
-                                                                            <td style="vertical-align:middle; text-align:center;" class="mobile-img">
-                                                                                <img style="border:0px solid #a1a1a1;" src="https://image.ibb.co/hjpGkK/huella.png" width="90" height="90" alt="profile" />
-                                                                            </td>
-                                                                        </tr>
-
-                                                                    </table>
-                                                                </td>
-                                                                <td class="mobile-block mobile-padding" style="text-align:justify;">
-                                                                    Por qué se te olvidó hdttpm!!
-                                                                    <br><br> Parece que no entiendes!!! bueno si tu lo pediste haz clic arriba, si no chtpm!!!<br>
-
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="mobile-padding">
-                                            <table cellspacing="0" cellpadding="0" width="100%">
-                                                <tr>
-
-                                                    <td>
-                                                        &nbsp;
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <table cellspacing="0" cellpadding="25" width="100%">
-                                                <tr>
-                                                    <td>
-                                                        &nbsp;
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </center>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="background-color:#212121;">
-                            <center>
-                                <table cellspacing="0" cellpadding="0" width="500" class="w320">
-                                    <tr>
-                                        <td>
-                                            <table cellspacing="0" cellpadding="30" width="100%">
-                                                <tr>
-                                                    <td style="text-align:center;">
-                                                        <a href="#">
-                                                            <img width="41" height="41" src="https://image.ibb.co/n2OQUe/facebook_mail.png" alt="Facebook" />
-                                                        </a>
-                                                        <a href="#">
-                                                            <img width="41" height="41" src="https://image.ibb.co/g1MOFK/twitter_mail.png" alt="Twitter" />
-
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <center>
-                                                <table style="margin:0 auto;" cellspacing="0" cellpadding="5" width="100%">
-                                                    <tr>
-                                                        <td style="text-align:center; margin:0 auto;" width="100%">
-                                                            <a href="#" style="text-align:center;">
-                                                                <img style="margin:0 auto;" width="123" height="24" src="https://image.ibb.co/fxcK5K/pie_mail.png" alt="logo link" />
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </center>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </center>
+                        <td align="center" valign="top" style="padding: 40px 10px 40px 10px;">
+                            <a href="http://litmus.com" target="_blank">
+                                <img alt="Logo" src="https://i.ibb.co/CsdPL9q/Logo-nav.png" height="100px" style="display: block; width: 100px; max-width: 100px; min-width: 40px; font-family: 'Lato', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;" border="0">
+                            </a>
                         </td>
                     </tr>
                 </table>
+                <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+            </td>
+        </tr>
+        <!-- HERO -->
+        <tr>
+            <td bgcolor="#212121" align="center" style="padding: 0px 10px 0px 10px;">
+                <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+            <![endif]-->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                    <tr>
+                        <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
+                            <h1 style="font-size: 48px; font-weight: 400; margin: 0;">Recuperación de contraseña</h1>
+                        </td>
+                    </tr>
+                </table>
+                <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+            </td>
+        </tr>
+        <!-- COPY BLOCK -->
+        <tr>
+            <td bgcolor="#fafafa" align="center" style="padding: 0px 10px 0px 10px;">
+                <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+            <![endif]-->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                    <!-- COPY -->
+                    <tr>
+                        <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 400; line-height: 25px;">
+                            <p style="margin: 0;" align="center">El proceso para reestablecer tu contraseña ha iniciado.</p>
+                        </td>
+                    </tr>
+                    <!-- BULLETPROOF BUTTON -->
+                    <tr>
+                        <td bgcolor="#ffffff" align="left">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 60px 30px;">
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="center" style="border-radius: 10px;" bgcolor="#28A745"><a href='<?php echo $link?>' target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 10px; border: 1px solid #28A745; display: inline-block;">Recuperar contraseña
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- COPY -->
+                    <tr>
+                        <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 0px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 400; line-height: 25px;">
+                            <p style="margin: 0;" align="center">Presiona el boton "Recuperar contraseña" para que seas redirigido a una pagina donde podras asignar una nueva.</p>
+                            <ul>
+                                <li>Si crees que esto ha sido un error, por favor omite este mensaje</li>
+
+                            </ul>
+                        </td>
+                    </tr>
+                    <!-- COPY -->
+
+                    <!-- COPY -->
+
+                    <!-- COPY -->
+
+                </table>
+                <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+            </td>
+        </tr>
+        <!-- SUPPORT CALLOUT -->
+        <tr>
+            <td bgcolor="#fafafa" align="center" style="padding: 30px 10px 0px 10px;">
+                <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+            <![endif]-->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                    <!-- HEADLINE -->
+                    <tr>
+                        <td bgcolor="#E6E6E6" align="center" style="padding: 30px 30px 30px 30px; border-radius: 4px 4px 4px 4px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+                            <h2 style="font-size: 20px; font-weight: 400; color: #111111; margin: 0;">¿Porque no nos visitas?</h2>
+                            <p style="margin: 0;"><a href="" target="_blank" style="color: #28A745;">letswalk.com.mx</a></p>
+                        </td>
+                    </tr>
+                </table>
+                <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+            </td>
+        </tr>
+        <!-- FOOTER -->
+        <tr>
+            <td bgcolor="#fafafa" align="center" style="padding: 0px 10px 0px 10px;">
+                <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+            <tr>
+            <td align="center" valign="top" width="600">
+            <![endif]-->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                    <!-- NAVIGATION -->
+                    <tr>
+                        <td bgcolor="#fafafa" align="left" style="padding: 30px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;">
+
+                        </td>
+                    </tr>
+                    <!-- PERMISSION REMINDER -->
+                    <tr>
+                        <td bgcolor="#fafafa" align="left" style="padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;">
+                        </td>
+                    </tr>
+                    <!-- UNSUBSCRIBE -->
+                    <tr>
+                        <td bgcolor="#fafafa" align="left" style="padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;">
+                        </td>
+                    </tr>
+                    <!-- ADDRESS -->
+                    <tr>
+                        <td bgcolor="#fafafa" align="left" style="padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;">
+                        </td>
+                    </tr>
+                </table>
+                <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
             </td>
         </tr>
     </table>
 
-    <script type="text/javascript">
-      document.oncontextmenu =  function(){return false;}
-    </script>
 </body>
 
 </html>

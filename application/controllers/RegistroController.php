@@ -212,7 +212,7 @@ class RegistroController extends CI_Controller
 				$msg = $CI->load->view('registro/confirmar_mail', $data, true);
 
 				if ($CI->email
-					->from('johndan478@gmail.com')
+					->from(CORREO_FUENTE)
 					->to($this->input->post('Correo'))
 					->subject($subject)
 					->message($msg)
@@ -313,7 +313,7 @@ class RegistroController extends CI_Controller
 				$msg = $CI->load->view('registro/confirmar_mail', $data, true);
 
 				if ($CI->email
-					->from('johndan478@gmail.com')
+					->from(CORREO_FUENTE)
 					->to($this->input->post('Correo'))
 					->subject($subject)
 					->message($msg)

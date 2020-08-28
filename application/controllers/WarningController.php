@@ -9,9 +9,10 @@ class WarningController extends CI_Controller {
 		function index(){
 			$dato['string'] = "Let's Walk | ¡Gracias!";
 
-			//$this->load->view('Templates/header',$dato);
-			$this->load->view('Warning/WarningView', $dato);
-			//$this->load->view('Templates/footer');
+			$this->load->view('Templates/header');
+			$this->load->view('Warning/WarningView');
+			//$this->load->view('login/confirmacion_forgot_pass', $dato);
+			$this->load->view('Templates/footer');
 		}
 }
 
