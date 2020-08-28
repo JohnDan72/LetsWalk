@@ -338,6 +338,12 @@
                                 </div>
                             </div>
 
+                            <div class="row mt-5 mb-5">
+                                <div class="col-md-5 offset-sm-4 col-sm-4">
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                            </div>
+
                             <h5 class="text-center mt-5">Vacunas</h5>
 
                             <p class="text-center">Marca las vacunas que el perro ha recibido</p>
@@ -426,6 +432,12 @@
                                 </div>
                             </div>
 
+                            <div class="row mt-5 mb-5">
+                                <div class="col-md-5 offset-sm-4 col-sm-4">
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                            </div>
+
                             <h5 class="text-center mt-5">Desparacitación</h5>
                             <div class="form-group form-row">
                                 <div class="col-lg-6 col-sm-12 mt-sm-4 d-flex justify-content-center">
@@ -470,6 +482,12 @@
 
                             </div>
 
+                            <div class="row mt-5 mb-5">
+                                <div class="col-md-5 offset-sm-4 col-sm-4">
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                            </div>
+
                             <h5 class="text-center mt-5">Esterilización</h5>
                             <div class="form-group form-row">
                                 <div class="col-lg-12 col-sm-12 mt-sm-4 d-flex justify-content-center">
@@ -492,6 +510,12 @@
                                     </div>
                                 </div>
 
+                            </div>
+
+                            <div class="row mt-5 mb-5">
+                                <div class="col-md-5 offset-sm-4 col-sm-4">
+                                    <div class="dropdown-divider"></div>
+                                </div>
                             </div>
 
                             <h5 class="text-center mt-5">Otros</h5>
@@ -518,16 +542,11 @@
 
                             </div>
 
-
-
-
-
-
-
-
-
-
-
+                            <div class="row mt-5 mb-5">
+                                <div class="col-md-5 offset-sm-4 col-sm-4">
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                            </div>
 
 
 
