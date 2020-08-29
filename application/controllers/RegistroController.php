@@ -20,7 +20,10 @@ class RegistroController extends CI_Controller
 	}
 
 	function index()
-	{
+	{	
+		if ($this->session->userdata('user')) {
+			redirect("InicioController");
+		}
 		//echo var_dump($this->Usuario->getUserByCorreo('mr._dany@hotmail.com'));
 		$dato['string'] = "Let's Walk | Registro";
 		$dato['css'] = "registro";
@@ -53,7 +56,11 @@ class RegistroController extends CI_Controller
 	}
 
 	function validRegFetch()
-	{
+	{	
+		if ($this->session->userdata('user')) {
+			redirect("InicioController");
+		}
+
 		if ($this->input->post()) {
 			//array de retorno para correo y captcha
 			$returnData['captcha'] = false;
@@ -355,6 +362,9 @@ class RegistroController extends CI_Controller
 
 
 	function getInfoCodigoPostalFetch($codigo_postal = null){
+		if ($this->session->userdata('user')) {
+			redirect("InicioController");
+		}
 		//$codigo_postal = $this->input->post('codigo_postal');
 
 		if ($codigo_postal) {

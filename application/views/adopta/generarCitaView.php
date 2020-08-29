@@ -139,7 +139,6 @@
                         'name' => 'Fecha',
                         'type' => 'date',
                         'class' => 'form-control',
-                        'value' => date("Y-m-d"),
                         'required' => 'required'
                     ];
                     //label del campo
@@ -228,12 +227,16 @@
     <script type="text/javascript">
 
         document.addEventListener('DOMContentLoaded', function() {
+
+
             var selectHora = document.getElementById('hora_cita')
             var elDate = document.getElementById('fecha_cita')
             var elForm = document.getElementById('formCita')
             var elSubmit = document.getElementById('buttonSubmit')
-            var diasInv = <?php echo json_encode($dias_inv);?> //$dias_inv se obtiene del controlador en $dato['dias_inv'] = ...
-
+            var diasInv = <?php echo json_encode($dias_inv);?>; //$dias_inv se obtiene del controlador en $dato['dias_inv'] = ...
+            
+            //console.log(diasInv)
+            setTimeout(validaFecha,500);
             
             elDate.addEventListener('change', validaFecha)
             elDate.addEventListener("blur", obtenerFecha)
