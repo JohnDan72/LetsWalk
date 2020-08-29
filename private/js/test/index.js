@@ -1,6 +1,5 @@
-
 var stepper
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     stepper = new Stepper(document.querySelector('.bs-stepper'), {
         animation: true
     })
@@ -41,4 +40,3 @@ back_3.addEventListener("click", () => {
         behavior: 'smooth'
     });
 })
-        

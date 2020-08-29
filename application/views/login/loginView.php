@@ -28,9 +28,9 @@
             </div>
           </div>
           <div class="d-flex justify-content-center mt-5 ">
-            <img src="<?= base_url() ?>private/media/icons/gold.svg" alt="" width="100px" height="100px" class="animated fadeIn faster">
+            <img src="<?= base_url() ?>private/media/icons/gold.svg" alt="" width="80px" height="80px" class="animated fadeIn faster">
           </div>
-          <h4 class="card-title text-center mt-5 display-5 animated fadeInLeft faster" id="id_titulo">Inicio de Sesión</h4>
+          <h4 class="card-title text-center mt-3 display-5 animated fadeInLeft faster" id="id_titulo">Inicio de Sesión</h4>
           <p class="card-text text-center mt-4 animated fadeInLeft faster" id="id_indicacion">¡Que gusto tenerte aquí! Por favor ingresa tu correo<br>Recuerda no compartir tu información personal con nadie</p>
 
           <?php

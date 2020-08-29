@@ -1,7 +1,7 @@
 var mestizo = document.getElementById('mestizo')
 var drop_1 = document.getElementById('raza')
 var drop_2 = document.getElementById('r_2')
-    drop_2.style.visibility = 'hidden'
+drop_2.style.visibility = 'hidden'
 var msg_energia = document.getElementById('msg_energia')
 var msg_sociabilidad = document.getElementById('msg_sociabilidad')
 
@@ -271,3 +271,21 @@ img_3.onchange = function(e) {
 
 
 }
+
+window.addEventListener('load', (event) => {
+    console.log('The page has fully loaded');
+    window.scroll({
+        top: 800,
+        behavior: 'smooth'
+    });
+});
+
+var btn = document.getElementById("add_btn");
+var div_dog = document.getElementById('ADD_DOG')
+btn.addEventListener("click", () => {
+    //alert("Presionado")
+    window.scroll({
+        top: 400,
+        behavior: 'smooth'
+    });
+})

@@ -31,26 +31,25 @@
                     </p>
                 </div>
 
-                <div id="ADD_DOG" class="collapse" aria-labelledby="add_dog" data-parent="#Panel_Benf" >
-                    <?php 
-                        if(isset($actDatosCorrect)){
-                            ?>
-                                <div class="d-flex justify-content-center mt-4">
-                                    <font size="3" color="#43a047">
-                                                                REGISTRO COMPLETADO CORRECTAMENTE
-                                                            </font>
-                                </div>
-                            <?php
-                        }
-                        elseif (isset($actDatosIncorrect)) {
-                            ?>
-                                <div class="d-flex justify-content-center mt-4">
-                                    <font size="3" color="#d32f2f">
-                                                                ERROR EN FORMULARIO, INTENTA DE NUEVO
-                                                            </font>
-                                </div>
-                            <?php
-                        }
+                <div id="ADD_DOG" class="collapse" aria-labelledby="add_dog" data-parent="#Panel_Benf">
+                    <?php
+                    if (isset($actDatosCorrect)) {
+                    ?>
+                        <div class="d-flex justify-content-center mt-4">
+                            <font size="3" color="#43a047">
+                                REGISTRO COMPLETADO CORRECTAMENTE
+                            </font>
+                        </div>
+                    <?php
+                    } elseif (isset($actDatosIncorrect)) {
+                    ?>
+                        <div class="d-flex justify-content-center mt-4">
+                            <font size="3" color="#d32f2f">
+                                ERROR EN FORMULARIO, INTENTA DE NUEVO
+                            </font>
+                        </div>
+                    <?php
+                    }
                     ?>
                     <div class="card-body">
 
@@ -59,13 +58,13 @@
                         $attributes_formOpen = ['id' => 'formAddPerro', 'class' => 'needs_validation'];
                         echo form_open_multipart(base_url() . 'PanelControl/PBenefController', $attributes_formOpen, 'required');
 
-                        $vistaActiva = array(//ventana activa para benef en adjuntar archivos
-                          'name'      =>  'Activa',
-                          'id'        =>  'Activa_Id',
-                          'value'     =>  1,
-                          'required'  => 'required',
-                          'class'     =>  'validate',
-                          'style'     => 'display:none'
+                        $vistaActiva = array( //ventana activa para benef en adjuntar archivos
+                            'name'      =>  'Activa',
+                            'id'        =>  'Activa_Id',
+                            'value'     =>  1,
+                            'required'  => 'required',
+                            'class'     =>  'validate',
+                            'style'     => 'display:none'
                         );
                         echo form_input($vistaActiva);
                         ?>
@@ -91,7 +90,7 @@
                                     //label del campo
                                     echo form_label('Nombre del perro <span class="text-danger font-weight-bold">*</span>', 'Nombre_Perro');
                                     //Se declara el campo
-                                    echo form_input($nombre_p,(isset($actDatosCorrect)) ? "" : ($this->input->post('Nombre_Perro')),'');
+                                    echo form_input($nombre_p, (isset($actDatosCorrect)) ? "" : ($this->input->post('Nombre_Perro')), '');
                                     ?>
 
                                     <div class="invalid-feedback">Este campo es obligatorio</div>
@@ -358,7 +357,7 @@
                                     //label del campo
                                     echo form_label('Descripción sobre el cachorro <span class="text-danger font-weight-bold">*</span>', 'DescripcionP');
                                     //Se declara el campo
-                                    echo form_textarea($descripcion,(isset($actDatosCorrect)) ? "" : ($this->input->post('DescripcionP')),'');
+                                    echo form_textarea($descripcion, (isset($actDatosCorrect)) ? "" : ($this->input->post('DescripcionP')), '');
                                     ?>
 
                                     <div class="invalid-feedback">Este campo es obligatorio</div>
@@ -699,7 +698,7 @@
 
                             </div>
 
-                            <div class="d-flex justify-content-center mb-4"> <button class="btn btn-success" type="submit">Agregar</button></div>
+                            <div class="d-flex justify-content-center mb-4"> <button class="btn btn-success" type="submit" id="add_btn">Agregar</button></div>
                         </div>
 
                         <?= form_close() ?>
@@ -763,32 +762,32 @@
 
     <script type="text/javascript">
         <?php
-            switch ($this->input->post('Activa')) {
-                case '1':
-                    ?>
-                        $('#ADD_DOG').show()
-                    <?php
-                    break;
-                case '2':
-                    ?>
-                        $('#ADMON_CITA').show()
-                    <?php
-                    break;
-                case '3':
-                    ?>
-                        $('#PROFILE').show()
-                    <?php
-                    break;
-                case '4':
-                    ?>
-                        $('#SEGURIDAD').show()
-                    <?php
-                    break;
-                default:
-                    ?>
-                        console.log("nachos...")
-                    <?php
-                    break;
-            }
+        switch ($this->input->post('Activa')) {
+            case '1':
+        ?>
+                $('#ADD_DOG').show()
+            <?php
+                break;
+            case '2':
+            ?>
+                $('#ADMON_CITA').show()
+            <?php
+                break;
+            case '3':
+            ?>
+                $('#PROFILE').show()
+            <?php
+                break;
+            case '4':
+            ?>
+                $('#SEGURIDAD').show()
+            <?php
+                break;
+            default:
+            ?>
+                console.log("nachos...")
+        <?php
+                break;
+        }
         ?>
     </script>
