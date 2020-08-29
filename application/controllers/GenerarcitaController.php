@@ -42,7 +42,7 @@ class GenerarcitaController extends CI_Controller {
             $dato['fotos_perro'] = $this->loadPhotosPerro($dato['info_perro']);
 
             $this->form_validation->set_rules('Fecha','','trim|xss_clean|required|regex_match[/^[0-9]{4}-[0-9]{2}-[0-9]{2}+$/]');
-			$this->form_validation->set_rules('Hora', '', 'trim|xss_clean|required|regex_match[/^[0-9]{2}:[0-9]{2}:[0-9]{2}+$/]',
+			$this->form_validation->set_rules('Hora', '', 'trim|xss_clean|required|regex_match[/^[0-9]{2}:[0-9]{2}+$/]',
 				array('required' => 'Elije un dia valido para poder elegir una hora.')
 			);
 
@@ -136,6 +136,7 @@ class GenerarcitaController extends CI_Controller {
 
 			if ($success) {
 				$Data['Cita']=$this->Cita->getCitaInformacionPDF($id_cita);
+				$Data['Cita']['Hora'] = substr($Data['Cita']['Hora'], 0, -3);
 				$this->load->view('adopta/printPDF',$Data);
 			}
 			else{

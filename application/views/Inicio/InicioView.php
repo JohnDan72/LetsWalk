@@ -31,7 +31,8 @@
                 <div class="card border-light my-2 zoom">
                     <div class="card-body ">
                         <img src="<?=base_url() ?>private/media/icons/browser.svg" width="128px" height="128px" class="card-img-top mt-4" alt="...">
-                        <h5 class="card-title text-center text-info mt-4">Registrarte</h5>
+                        <a href="<?= base_url();?>RegistroController"><h5 class="card-title text-center text-info mt-4">Registrarte</h5></a>
+                        
                         <p class="card-text text-center mb-4 mt-4">Contamos con dos tipos de registros. Para personas que buscan
                             adoptar a
                             algún perrito o para beneficencias que buscan ser colaboradores de nosotros.
@@ -46,7 +47,8 @@
                     <div class="card-body">
                         <img src="<?=base_url() ?>private/media/icons/password.svg" width="128px" height="128px" class="card-img-top mt-4"
                             alt="">
-                        <h5 class="card-title text-center text-info mt-4">Iniciar Sesión</h5>
+                            <a href="<?= base_url();?>loginController"><h5 class="card-title text-center text-info mt-4">Iniciar Sesión</h5></a>
+                        
                         <p class="card-text text-center mb-4 mt-4">No podrás gozar de ninguno de nuestros servicios sin antes
                             iniciar sesión, asi que ¿Que esperas? Los datos que nos proporciones estan protegidos por la
                             ley</p>
@@ -61,7 +63,8 @@
                 <div class="card border-light my-1 zoom">
                     <div class="card-body">
                         <img src="<?=base_url() ?>private/media/icons/medal.svg" width="128px" height="128px" class="card-img-top mt-4" alt="...">
-                        <h5 class="card-title text-center text-info mt-4">Adoptar</h5>
+                        <a href="<?= base_url();?>AdoptaController"><h5 class="card-title text-center text-info mt-4">Adoptar</h5></a>
+                        
                         <p class="card-text text-center mb-4 mt-4">Puedes conocer a más de un cachorro, puedes buscar con el que
                             sientas esa química especial, solicita una cita y visítalo. Existen diversos centros de
                             adopción</p>
@@ -78,21 +81,36 @@
         </div>
     </div>
 
-    <div class="slider_banner my-5 align-items-center d-flex justify-content-center container" data-entrance="fade" data-entrance-delay="100">
-        <div class="container">
-            <h5 class="display-4  text-center text-white pt-5 ">
-               ¿Eres apto para adoptar?
-            </h5>
+    <?php
+        if ($this->session->userdata('user')['scoreTest'] != null) {
+            echo "Ya lo llenaste motherfucker";
+            ?>
+                <!--AQUI LO PONES PENDEJO-->
 
-            <p class="text-center text-white mt-2" data-entrance="fade" data-entrance-delay="200">
-               Nostros te ayudamos a saberlo, contesta nuestro test
-            </p>
 
-            <div class=" d-flex justify-content-center mt-3" data-entrance="fade" data-entrance-delay="300">
-                <a href="<?= base_url()?>TestController" class="btn btn-color text-white ">¡Aquí!</a>
-            </div>
-        </div>
-    </div>
+            <?php
+        }
+        else{
+            ?>
+                <div class="slider_banner my-5 align-items-center d-flex justify-content-center container" data-entrance="fade" data-entrance-delay="100">
+                    <div class="container">
+                        <h5 class="display-4  text-center text-white pt-5 ">
+                           ¿Eres apto para adoptar?
+                        </h5>
+
+                        <p class="text-center text-white mt-2" data-entrance="fade" data-entrance-delay="200">
+                           Nostros te ayudamos a saberlo, contesta nuestro test
+                        </p>
+
+                        <div class=" d-flex justify-content-center mt-3" data-entrance="fade" data-entrance-delay="300">
+                            <a href="<?= base_url()?>TestController" class="btn btn-color text-white ">¡Aquí!</a>
+                        </div>
+                    </div>
+                </div>
+            <?php
+        }
+    ?>
+    
 
     <div class="row mt-4 mb-4">
         <div class="offset-4 col-4" >
@@ -132,7 +150,7 @@
         </p>
 
         <div class=" d-flex justify-content-center mt-3 mb-5" data-entrance="fade" data-entrance-delay="300">
-            <button type="button" class="btn btn-color text-white ">Conoce más</button>
+            <a href="<?= base_url();?>NosotrosController" class="btn btn-success text-white ">Conoce más</a>
         </div>
     </div>
  

@@ -87,7 +87,7 @@
                     );
                     echo form_open(base_url().'loginController/cambiarPassword', $form_U);
                     ?>
-                    <div class="form-group mt-4" id="id_div_correo">
+                    <div class="form-group mt-4 text-center" id="id_div_correo">
                         <?php 
                         $id_user = array(
                             'id'               => 'id_user1',
@@ -110,12 +110,12 @@
                             'id'               => 'id_password_1',
                             'name'             => 'Passwd',
                             'type'             => 'password',
-                            'class'            => 'form-control mb-4',
+                            'class'            => 'form-control mb-3',
                             'placeholder'      => 'Ingresa tu nueva contraseña',
                             'require'          => 'true'
                         );
                         echo form_input($pass_user1, '');
-                        echo form_error('Passwd', '<span class="helper-text"style="color:red;">', '</span>');
+                        echo form_error('Passwd', '<div class="text-center text-danger mt-n2 mb-3"style="font-size:12.8px;">', '</div>');
                         ?>
 
                         <?php
@@ -123,12 +123,12 @@
                             'id'               => 'id_password_2',
                             'name'             => 'Passwd_1',
                             'type'             => 'password',
-                            'class'            => 'form-control mb-4',
+                            'class'            => 'form-control mb-3',
                             'placeholder'      => 'Confirma tu nueva contraseña',
                             'require'          => 'true'
                         );
                         echo form_input($pass_user2, '');
-                        echo form_error('Passwd_1', '<span class="helper-text"style="color:red;">', '</span>');
+                        echo form_error('Passwd_1', '<div class="text-center text-danger"style="font-size:12.8px;">', '</div>');
                         ?>
 
                         <div id="error_pass_f" class="text-danger text-center mb-4" style="font-size: 12.8px;"></div>

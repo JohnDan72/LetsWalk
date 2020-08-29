@@ -55,8 +55,8 @@ class Beneficencia extends CI_Model {
 			$horariosR = []; //arreglo de los horarios disponibles
 			while ($horaAux<=$hora2) {
 				//si el horario no ha sido reservado, entonces se adjunta a los horarios disponibles
-				if (!$this->db->get_where("Cita","Id_Beneficencia=$id_benef  AND  Fecha='".$fecha."' AND Hora='".$horaAux->format('H:i:s')."'")->row_array()) {
-					array_push($horariosR, $horaAux->format('H:i:s'));
+				if (!$this->db->get_where("Cita","Id_Beneficencia=$id_benef  AND  Fecha='".$fecha."' AND Hora='".$horaAux->format('H:i')."'")->row_array()) {
+					array_push($horariosR, $horaAux->format('H:i'));
 				}
 				//echo "Horario: ".end($horariosR)->format('H:i')."<br>";
 				$horaAux->modify('+30 minute');	//se agrega 30 minutos a la hora actual
