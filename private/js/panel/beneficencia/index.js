@@ -1,12 +1,13 @@
 var mestizo = document.getElementById('mestizo')
 var drop_1 = document.getElementById('raza')
 var drop_2 = document.getElementById('r_2')
+    drop_2.style.visibility = 'hidden'
 var msg_energia = document.getElementById('msg_energia')
 var msg_sociabilidad = document.getElementById('msg_sociabilidad')
 
-var img_1 = document.getElementById("img_1")
-var img_2 = document.getElementById("img_2")
-var img_3 = document.getElementById("img_3")
+var img_1 = document.getElementById("Nombre_Foto_File")
+var img_2 = document.getElementById("Nombre_Foto_File2")
+var img_3 = document.getElementById("Nombre_Foto_File3")
 
 var p_1 = document.getElementById('preview_1')
 var p_2 = document.getElementById('preview_2')
@@ -39,7 +40,7 @@ mestizo.addEventListener('input', () => {
 
 
 /*Contreol de rangos*/
-$('#id_energia').on('input', function(e) {
+$('#Nivel_E').on('input', function(e) {
     var min = e.target.min,
         max = e.target.max,
         val = e.target.value;
@@ -86,15 +87,15 @@ $('#id_energia').on('input', function(e) {
     });
 }).trigger('input');
 
-$("#id_energia").on('input', function(e) {
+$("#Nivel_E").on('input', function(e) {
     var val = e.target.value;
     if (val < 25) {
-        document.getElementById('id_energia').style.backgroundImage = 'linear-gradient(#f00, #f00)'
-        $("#id_energia").css({
+        document.getElementById('Nivel_E').style.backgroundImage = 'linear-gradient(#f00, #f00)'
+        $("#Nivel_E").css({
             'background-size': '25% 100%'
         });
         msg_energia.innerHTML = "<span class='text_muted span_b'>Nivel de energia: bajo</span>"
-        document.getElementById('id_energia').value = '25'
+        document.getElementById('Nivel_E').value = '25'
 
 
     }
@@ -103,7 +104,7 @@ $("#id_energia").on('input', function(e) {
 
 
 /*Otro gato*/
-$('#id_sociabilidad').on('input', function(e) {
+$('#Sociabilidad').on('input', function(e) {
     var min = e.target.min,
         max = e.target.max,
         val = e.target.value;
@@ -149,14 +150,14 @@ $('#id_sociabilidad').on('input', function(e) {
     });
 }).trigger('input');
 
-$("#id_sociabilidad").on('input', function(e) {
+$("#Sociabilidad").on('input', function(e) {
     var val = e.target.value;
     if (val < 25) {
-        document.getElementById('id_sociabilidad').style.backgroundImage = 'linear-gradient(#f00, #f00)'
-        $("#id_sociabilidad").css({
+        document.getElementById('Sociabilidad').style.backgroundImage = 'linear-gradient(#f00, #f00)'
+        $("#Sociabilidad").css({
             'background-size': '25% 100%'
         });
-        document.getElementById('id_sociabilidad').value = '25'
+        document.getElementById('Sociabilidad').value = '25'
         msg_sociabilidad.innerHTML = "<span class='text_muted span_b'>Nivel de sociabilidad: bajo</span>"
 
 
@@ -164,19 +165,19 @@ $("#id_sociabilidad").on('input', function(e) {
 });
 
 
-$('#img_1').change(function(e) {
+$('#Nombre_Foto_File').change(function(e) {
     var fileName = e.target.files[0].name;
-    $('#id_img1').html(fileName);
+    $('#Nombre_Foto_File').html(fileName);
 });
 
-$('#img_2').change(function(e) {
+$('#Nombre_Foto_File2').change(function(e) {
     var fileName = e.target.files[0].name;
-    $('#id_img2').html(fileName);
+    $('#Nombre_Foto_File2').html(fileName);
 });
 
-$('#img_3').change(function(e) {
+$('#Nombre_Foto_File3').change(function(e) {
     var fileName = e.target.files[0].name;
-    $('#id_img3').html(fileName);
+    $('#Nombre_Foto_File3').html(fileName);
 });
 
 
@@ -207,7 +208,7 @@ img_1.onchange = function(e) {
         p_1.style.display = "none"
         document.getElementById('msg_img1').innerHTML = "<span class='span_b text-danger'>El tamaño maximo es de 5 mb</span>"
         img_1.value = ""
-        $('#id_img1').html('Foto #1');
+        $('#Nombre_Foto_File').html('Foto #1');
     }
 
 
@@ -236,7 +237,7 @@ img_2.onchange = function(e) {
         p_2.style.display = "none"
         document.getElementById('msg_img2').innerHTML = "<span class='span_b text-danger'>El tamaño maximo es de 5 mb</span>"
         img_2.value = ""
-        $('#id_img2').html('Foto #2');
+        $('#Nombre_Foto_File2').html('Foto #2');
     }
 
 
@@ -264,7 +265,7 @@ img_3.onchange = function(e) {
         p_3.style.display = "none"
         document.getElementById('msg_img3').innerHTML = "<span class='span_b text-danger'>El tamaño maximo es de 5 mb</span>"
         img_3.value = ""
-        $('#id_img3').html('Foto #3');
+        $('#Nombre_Foto_File3').html('Foto #3');
 
     }
 

@@ -54,6 +54,8 @@ class AdoptaController extends CI_Controller {
 		        if ($total_records > 0){
 		            // obtener los registros dependiendo de la página actual
 		            $params["results"] = $this->Perro->getPaginationPerrosFiltro($filtro,$limit_per_page, $page*$limit_per_page);
+		            //echo var_dump($params['results']);
+		            $params["fotosCarousel"] = $this->loadPhotosPerros($params["results"]);
 		        }
 
 		        $params['Filtro']=$filtro;
@@ -69,14 +71,15 @@ class AdoptaController extends CI_Controller {
 		        if ($total_records > 0){
 		            // obtener los registros dependiendo de la página actual
 		            $params["results"] = $this->Perro->getPaginationPerrosFiltro($this->input->post('Filtro'),$limit_per_page, $page*$limit_per_page);
-		            
+		            //echo var_dump($params['results']);
+		            $params["fotosCarousel"] = $this->loadPhotosPerros($params["results"]);
 	        	}
 	        	$params['Filtro']=$this->input->post('Filtro');
 	        }
 	        if($total_records>0){
 
 	        	//obtener los datos de la beneficencia a la que pertenece cada perro
-		        $params["beneficencias"]=$this->Perro->getBenefPerro($params["results"]);
+		        //$params["beneficencias"]=$this->Perro->getBenefPerro($params["results"]);
         		
         		$config['base_url'] = base_url() . 'AdoptaController/index';
 	            $config['total_rows'] = $total_records;
@@ -132,5 +135,61 @@ class AdoptaController extends CI_Controller {
 			echo "Entró en filtrado<br><br>";
 			echo var_dump($this->input->post());
 		}
+
+		function loadPhotosPerros($perros){
+			$ind = 0;
+			$fotos;
+			//echo var_dump($perros);
+			foreach ($perros as $perro) {
+				//carpeta para listar
+				$carpeta = BASEPATH."../private/files/perros/".$perro['Id_Perro'];
+				//carpeta para mostrar en view
+				$carpeta2 = base_url()."private/files/perros/".$perro['Id_Perro'];
+				$fotos[$ind] = $this->listarArchivos($carpeta,$carpeta2);
+				$ind++;
+			}
+			return $fotos;
+		}
+
+		function listarArchivos( $path,$carpeta2 ){
+		    // Abrimos la carpeta que nos pasan como parámetro
+		    $ind = 1;
+		    $dataReturn = "";
+		    $dir = opendir($path);
+		    // Leo todos los ficheros de la carpeta
+		    while ($elemento = readdir($dir)){
+		        // Tratamos los elementos . y .. que tienen todas las carpetas
+		        if( $elemento != "." && $elemento != ".."){
+		            // Si es una carpeta
+		            if( is_dir($path.$elemento) ){
+		                // Muestro la carpeta
+		                echo "<p><strong>CARPETA: ". $elemento ."</strong></p>";
+		            // Si es un fichero
+		            } else {
+		                // Muestro el fichero
+		                $activeAux = ($ind == 1)? "active":"";
+		                $dataReturn .='	<div class="carousel-item '.$activeAux.'">
+                                        	<img src="'.$carpeta2.'/'.$elemento.'" class="d-block w-100" alt="...">
+                                    	</div>';
+                                    	$ind++;
+		            }
+		        }
+		    }
+		    return $dataReturn;
+		}
+
+		/*
+			IMG DEL CAROUSEL DESDE VIEW
+									<div class="carousel-item active">
+                                        <img src="<?= base_url() ?>private/img_perros/<?= $fila->Nombre_Foto_File;?>" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="<?= base_url() ?>private/img_perros/<?= $fila->Nombre_Foto_File;?>" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="<?= base_url() ?>private/img_perros/<?= $fila->Nombre_Foto_File;?>" class="d-block w-100" alt="...">
+                                    </div>
+			
+		*/
 	}
 ?>

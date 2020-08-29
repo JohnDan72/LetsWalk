@@ -39,6 +39,7 @@ class GenerarcitaController extends CI_Controller {
             $dato['dias_inv'] = $this->Beneficencia->getDiasInvalidosByIdPerro($id_perro);
             $dato['id_benef'] = $this->Beneficencia->getIdBenefByIdPerro($id_perro);
             $dato['info_perro'] = $this->Perro->getInfoPerroById($id_perro);
+            $dato['fotos_perro'] = $this->loadPhotosPerro($dato['info_perro']);
 
             $this->form_validation->set_rules('Fecha','','trim|xss_clean|required|regex_match[/^[0-9]{4}-[0-9]{2}-[0-9]{2}+$/]');
 			$this->form_validation->set_rules('Hora', '', 'trim|xss_clean|required|regex_match[/^[0-9]{2}:[0-9]{2}:[0-9]{2}+$/]',
@@ -142,6 +143,42 @@ class GenerarcitaController extends CI_Controller {
 			}
 		}
 
+		function loadPhotosPerro($perro){	
+			//carpeta para listar
+			$carpeta = BASEPATH."../private/files/perros/".$perro['Id_Perro'];
+			//carpeta para mostrar en view
+			$carpeta2 = base_url()."private/files/perros/".$perro['Id_Perro'];
+			$fotos = $this->listarArchivos($carpeta,$carpeta2);
+
+			return $fotos;
+		}
+
+		function listarArchivos( $path,$carpeta2 ){
+		    // Abrimos la carpeta que nos pasan como parámetro
+		    $ind = 1;
+		    $dataReturn = "";
+		    $dir = opendir($path);
+		    // Leo todos los ficheros de la carpeta
+		    while ($elemento = readdir($dir)){
+		        // Tratamos los elementos . y .. que tienen todas las carpetas
+		        if( $elemento != "." && $elemento != ".."){
+		            // Si es una carpeta
+		            if( is_dir($path.$elemento) ){
+		                // Muestro la carpeta
+		                echo "<p><strong>CARPETA: ". $elemento ."</strong></p>";
+		            // Si es un fichero
+		            } else {
+		                // Muestro el fichero
+		                $activeAux = ($ind == 1)? "active":"";
+		                $dataReturn .='	<div class="carousel-item '.$activeAux.'">
+                                        	<img src="'.$carpeta2.'/'.$elemento.'" class="d-block w-100" alt="...">
+                                    	</div>';
+                                    	$ind++;
+		            }
+		        }
+		    }
+		    return $dataReturn;
+		}
 
 		function generateRandomString($length = 10)
 		{

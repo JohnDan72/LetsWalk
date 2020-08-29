@@ -31,14 +31,43 @@
                     </p>
                 </div>
 
-                <div id="ADD_DOG" class="collapse" aria-labelledby="add_dog" data-parent="#Panel_Benf">
+                <div id="ADD_DOG" class="collapse" aria-labelledby="add_dog" data-parent="#Panel_Benf" >
+                    <?php 
+                        if(isset($actDatosCorrect)){
+                            ?>
+                                <div class="d-flex justify-content-center mt-4">
+                                    <font size="3" color="#43a047">
+                                                                REGISTRO COMPLETADO CORRECTAMENTE
+                                                            </font>
+                                </div>
+                            <?php
+                        }
+                        elseif (isset($actDatosIncorrect)) {
+                            ?>
+                                <div class="d-flex justify-content-center mt-4">
+                                    <font size="3" color="#d32f2f">
+                                                                ERROR EN FORMULARIO, INTENTA DE NUEVO
+                                                            </font>
+                                </div>
+                            <?php
+                        }
+                    ?>
                     <div class="card-body">
 
                         <!--Apertura del form-->
                         <?php
-                        $attributes_formOpen = ['id' => 'formAddPerro', 'class' => 'needs_validation', 'onSubmit' => 'return false', 'novalidate' => 'TRUE'];
-                        echo form_open(base_url() . '', $attributes_formOpen, 'required');
+                        $attributes_formOpen = ['id' => 'formAddPerro', 'class' => 'needs_validation'];
+                        echo form_open_multipart(base_url() . 'PanelControl/PBenefController', $attributes_formOpen, 'required');
 
+                        $vistaActiva = array(//ventana activa para benef en adjuntar archivos
+                          'name'      =>  'Activa',
+                          'id'        =>  'Activa_Id',
+                          'value'     =>  1,
+                          'required'  => 'required',
+                          'class'     =>  'validate',
+                          'style'     => 'display:none'
+                        );
+                        echo form_input($vistaActiva);
                         ?>
 
 
@@ -62,11 +91,11 @@
                                     //label del campo
                                     echo form_label('Nombre del perro <span class="text-danger font-weight-bold">*</span>', 'Nombre_Perro');
                                     //Se declara el campo
-                                    echo form_input($nombre_p);
+                                    echo form_input($nombre_p,(isset($actDatosCorrect)) ? "" : ($this->input->post('Nombre_Perro')),'');
                                     ?>
 
                                     <div class="invalid-feedback">Este campo es obligatorio</div>
-                                    <?= form_error('Ap_Paterno', '<span class="text-danger text-center">', '</span>') ?>
+                                    <?= form_error('Nombre_Perro', '<span class="text-danger text-center">', '</span>') ?>
                                 </div>
 
                                 <div class="col-lg-4 col-sm-12 mt-sm-4">
@@ -133,7 +162,7 @@
                                 <div class="col-lg-4 col-sm-12 mt-sm-4 d-flex justify-content-center align-items-center">
 
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="mestizo" name="mestizo" checked>
+                                        <input class="form-check-input" type="checkbox" value="1" id="mestizo" name="Mestizo">
                                         <label class="form-check-label" for="mestizo">¿El perro es mestizo?</label>
                                     </div>
                                     <div class="invalid-feedback">Este campo es obligatorio</div>
@@ -158,17 +187,17 @@
                                     ];
 
                                     $options_211 = array(
-                                        'id'       => 'raza',
+                                        'id'       => 'Raza',
                                         'class' => 'custom-select'
                                     );
                                     //label del campo
-                                    echo form_label('Raza <span class="text-danger font-weight-bold">*</span>', 'raza');
+                                    echo form_label('Raza <span class="text-danger font-weight-bold">*</span>', 'Raza');
                                     //Se declara el campo
-                                    echo form_dropdown('raza', $options_201, 'null', $options_211);
+                                    echo form_dropdown('Raza', $options_201, 'null', $options_211);
                                     ?>
 
                                     <div class="invalid-feedback">Este campo es obligatorio</div>
-                                    <?= form_error('raza', '<span class="text-danger text-center">', '</span>') ?>
+                                    <?= form_error('Raza', '<span class="text-danger text-center">', '</span>') ?>
                                 </div>
 
 
@@ -188,17 +217,17 @@
                                     ];
 
                                     $options_212 = array(
-                                        'id'       => 'raza_2',
+                                        'id'       => 'Raza_2',
                                         'class' => 'custom-select'
                                     );
                                     //label del campo
-                                    echo form_label('Segunda raza <span class="text-danger font-weight-bold">*</span>', 'raza_2');
+                                    echo form_label('Segunda raza <span class="text-danger font-weight-bold">*</span>', 'Raza_2');
                                     //Se declara el campo
-                                    echo form_dropdown('raza_2', $options_202, 'null', $options_212);
+                                    echo form_dropdown('Raza_2', $options_202, 'null', $options_212);
                                     ?>
 
                                     <div class="invalid-feedback">Este campo es obligatorio</div>
-                                    <?= form_error('raza_2', '<span class="text-danger text-center">', '</span>') ?>
+                                    <?= form_error('Raza_2', '<span class="text-danger text-center">', '</span>') ?>
                                 </div>
 
                                 <div class="col-lg-6 col-sm-12 mt-sm-4">
@@ -260,8 +289,8 @@
                                     <?php
                                     //Declaración del arreglo de atributos para el campo
                                     $energia = [
-                                        'id' => 'id_energia',
-                                        'name' => 'id_energia',
+                                        'id' => 'Nivel_E',
+                                        'name' => 'Nivel_E',
                                         'type' => 'range',
                                         'class' => 'form-control-range',
                                         'required' => 'required',
@@ -270,13 +299,13 @@
                                         'step' => '25'
                                     ];
                                     //label del campo
-                                    echo form_label('Nivel de energia <span class="text-danger font-weight-bold">*</span>', 'id_energia');
+                                    echo form_label('Nivel de energia <span class="text-danger font-weight-bold">*</span>', 'Nivel_E');
                                     //Se declara el campo
                                     echo form_input($energia);
                                     ?>
 
                                     <div class="invalid-feedback">Este campo es obligatorio</div>
-                                    <?= form_error('id_energia', '<span class="text-danger text-center">', '</span>') ?>
+                                    <?= form_error('Nivel_E', '<span class="text-danger text-center">', '</span>') ?>
 
                                     <div id="msg_energia"><span class='text_muted text-center span_b'>Nivel de energia: medio</span></div>
 
@@ -289,8 +318,8 @@
                                     <?php
                                     //Declaración del arreglo de atributos para el campo
                                     $sociabilidad = [
-                                        'id' => 'id_sociabilidad',
-                                        'name' => 'id_sociabilidad',
+                                        'id' => 'Sociabilidad',
+                                        'name' => 'Sociabilidad',
                                         'type' => 'range',
                                         'class' => 'form-control-range',
                                         'required' => 'required',
@@ -299,13 +328,13 @@
                                         'step' => '25'
                                     ];
                                     //label del campo
-                                    echo form_label('Nivel de Sociabilidad <span class="text-danger font-weight-bold">*</span>', 'id_sociabilidad');
+                                    echo form_label('Nivel de Sociabilidad <span class="text-danger font-weight-bold">*</span>', 'Sociabilidad');
                                     //Se declara el campo
                                     echo form_input($sociabilidad);
                                     ?>
 
                                     <div class="invalid-feedback">Este campo es obligatorio</div>
-                                    <?= form_error('id_sociabilidad', '<span class="text-danger text-center">', '</span>') ?>
+                                    <?= form_error('Sociabilidad', '<span class="text-danger text-center">', '</span>') ?>
 
                                     <div id="msg_sociabilidad"><span class='text_muted text-center span_b'>Nivel de sociabilidad: medio</span></div>
 
@@ -322,19 +351,19 @@
                                         'class' => 'form-control',
                                         'required' => 'required',
                                         'placeholder' => 'Cuentanos algo sobre el perro',
-                                        'rows' => '6',
+                                        'rows' => '4',
                                         "data-length" => "200",
                                         "maxlength" => "200"
                                     ];
                                     //label del campo
-                                    echo form_label('Descripción sobre el cachorro <span class="text-danger font-weight-bold">*</span>', 'DescripcionB');
+                                    echo form_label('Descripción sobre el cachorro <span class="text-danger font-weight-bold">*</span>', 'DescripcionP');
                                     //Se declara el campo
-                                    echo form_textarea($descripcion);
+                                    echo form_textarea($descripcion,(isset($actDatosCorrect)) ? "" : ($this->input->post('DescripcionP')),'');
                                     ?>
 
                                     <div class="invalid-feedback">Este campo es obligatorio</div>
                                     <div id="error_descripcion_b" class="text-danger" style="font-size: 12.8px; display: none;">Se requiere máximo 200 caracteres</div>
-                                    <?= form_error('DescripcionB', '<span class="text-danger text-center">', '</span>') ?>
+                                    <?= form_error('DescripcionP', '<span class="text-danger text-center">', '</span>') ?>
                                 </div>
                             </div>
 
@@ -367,6 +396,7 @@
                                         <label class="form-check-label" for="V_Triple">
                                             Triple
                                         </label>
+                                        <?= form_error('V_Triple', '<span class="text-danger text-center">', '</span>') ?>
                                     </div>
                                 </div>
 
@@ -388,6 +418,7 @@
                                         <label class="form-check-label" for="V_Mpuppy">
                                             Puppy
                                         </label>
+                                        <?= form_error('V_Mpuppy', '<span class="text-danger text-center">', '</span>') ?>
                                     </div>
                                 </div>
 
@@ -408,6 +439,7 @@
                                         <label class="form-check-label" for="V_Quintuple">
                                             Quintuple
                                         </label>
+                                        <?= form_error('V_Quintuple', '<span class="text-danger text-center">', '</span>') ?>
                                     </div>
                                 </div>
 
@@ -428,6 +460,7 @@
                                         <label class="form-check-label" for="V_Sectuple">
                                             Sectuple
                                         </label>
+                                        <?= form_error('V_Sectuple', '<span class="text-danger text-center">', '</span>') ?>
                                     </div>
                                 </div>
                             </div>
@@ -457,6 +490,7 @@
                                         <label class="form-check-label" for="Desp_Ext">
                                             Externa
                                         </label>
+                                        <?= form_error('Desp_Ext', '<span class="text-danger text-center">', '</span>') ?>
                                     </div>
                                 </div>
 
@@ -477,6 +511,7 @@
                                         <label class="form-check-label" for="Desp_Int">
                                             Interna
                                         </label>
+                                        <?= form_error('Desp_Int', '<span class="text-danger text-center">', '</span>') ?>
                                     </div>
                                 </div>
 
@@ -507,6 +542,7 @@
                                         <label class="form-check-label" for="Esterilizacion">
                                             Esterilizado
                                         </label>
+                                        <?= form_error('Esterilizacion', '<span class="text-danger text-center">', '</span>') ?>
                                     </div>
                                 </div>
 
@@ -537,6 +573,7 @@
                                         <label class="form-check-label" for="Carnet_Fisico">
                                             Carnet fisico
                                         </label>
+                                        <?= form_error('Carnet_Fisico', '<span class="text-danger text-center">', '</span>') ?>
                                     </div>
                                 </div>
 
@@ -560,8 +597,8 @@
                                         //Declaración del arreglo de atributos para el campo
                                         $foto_1 = [
                                             'class' => 'custom-file-input',
-                                            'id' => 'img_1',
-                                            'name' => 'img_1',
+                                            'id' => 'Nombre_Foto_File',
+                                            'name' => 'Nombre_Foto_File[]',
                                             'accept' => 'image/x-png,image/jpg,image/jpeg'
                                         ];
 
@@ -574,11 +611,11 @@
                                         //Se declara el campo
                                         echo form_upload($foto_1);
                                         //label del campo
-                                        echo form_label('Foto #1 ', 'img_1', $foto_1_attributos);
+                                        echo form_label('Foto #1 ', 'Nombre_Foto_File', $foto_1_attributos);
                                         ?>
 
                                         <div class="invalid-feedback">Este campo es obligatorio</div>
-                                        <?= form_error('img_1', '<span class="text-danger text-center">', '</span>') ?>
+                                        <?= form_error('Nombre_Foto_File', '<span class="text-danger text-center">', '</span>') ?>
                                     </div>
 
                                     <div id="msg_img1"> </div>
@@ -590,8 +627,8 @@
                                         //Declaración del arreglo de atributos para el campo
                                         $foto_2 = [
                                             'class' => 'custom-file-input',
-                                            'id' => 'img_2',
-                                            'name' => 'img_2',
+                                            'id' => 'Nombre_Foto_File2',
+                                            'name' => 'Nombre_Foto_File[]',
                                             'accept' => 'image/png,image/jpg,image/jpeg'
 
                                         ];
@@ -605,11 +642,11 @@
                                         //Se declara el campo
                                         echo form_upload($foto_2);
                                         //label del campo
-                                        echo form_label('Foto #2 ', 'img_2', $foto_2_attributos);
+                                        echo form_label('Foto #2 ', 'Nombre_Foto_File2', $foto_2_attributos);
                                         ?>
 
                                         <div class="invalid-feedback">Este campo es obligatorio</div>
-                                        <?= form_error('img_2', '<span class="text-danger text-center">', '</span>') ?>
+                                        <?= form_error('Nombre_Foto_File2', '<span class="text-danger text-center">', '</span>') ?>
                                     </div>
 
                                     <div id="msg_img2"> </div>
@@ -621,8 +658,8 @@
                                         //Declaración del arreglo de atributos para el campo
                                         $foto_3 = [
                                             'class' => 'custom-file-input',
-                                            'id' => 'img_3',
-                                            'name' => 'img_3',
+                                            'id' => 'Nombre_Foto_File3',
+                                            'name' => 'Nombre_Foto_File[]',
                                             'accept' => 'image/x-png,image/jpg,image/jpeg'
 
                                         ];
@@ -636,11 +673,11 @@
                                         //Se declara el campo
                                         echo form_upload($foto_3);
                                         //label del campo
-                                        echo form_label('Foto #3 ', 'img_3', $foto_3_attributos);
+                                        echo form_label('Foto #3 ', 'Nombre_Foto_File3', $foto_3_attributos);
                                         ?>
 
                                         <div class="invalid-feedback">Este campo es obligatorio</div>
-                                        <?= form_error('img_3', '<span class="text-danger text-center">', '</span>') ?>
+                                        <?= form_error('Nombre_Foto_File3', '<span class="text-danger text-center">', '</span>') ?>
                                     </div>
                                     <div id="msg_img3"> </div>
                                 </div>
@@ -662,7 +699,7 @@
 
                             </div>
 
-                            <div class="d-flex justify-content-center mb-4"> <button class="btn btn-success">Agregar</button></div>
+                            <div class="d-flex justify-content-center mb-4"> <button class="btn btn-success" type="submit">Agregar</button></div>
                         </div>
 
                         <?= form_close() ?>
@@ -723,3 +760,35 @@
 
         </div>
     </div>
+
+    <script type="text/javascript">
+        <?php
+            switch ($this->input->post('Activa')) {
+                case '1':
+                    ?>
+                        $('#ADD_DOG').show()
+                    <?php
+                    break;
+                case '2':
+                    ?>
+                        $('#ADMON_CITA').show()
+                    <?php
+                    break;
+                case '3':
+                    ?>
+                        $('#PROFILE').show()
+                    <?php
+                    break;
+                case '4':
+                    ?>
+                        $('#SEGURIDAD').show()
+                    <?php
+                    break;
+                default:
+                    ?>
+                        console.log("nachos...")
+                    <?php
+                    break;
+            }
+        ?>
+    </script>

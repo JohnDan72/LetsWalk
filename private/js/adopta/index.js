@@ -9,7 +9,6 @@ $(document).ready(function() {
 
 	var links = document.querySelectorAll('.page-item > a')
 
-	console.log(links)
 	links.forEach(function(element, index, array){
 	    element.classList.add('page-link')
 	  });

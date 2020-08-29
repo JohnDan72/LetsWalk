@@ -1,12 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class PanelController extends CI_Controller {
+class PUserController extends CI_Controller {
 		function __construct(){
 			parent::__construct();
 		}
 
 		function index(){
+			redirect("InicioController");
 			$dato['string'] = "Let's Walk | Panel de Control";
             $dato['css'] = "panel";
             

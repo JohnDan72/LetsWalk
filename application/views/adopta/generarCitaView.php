@@ -23,15 +23,7 @@
                 <h4 class="text-center mb-4">Información detallada del perro</h4>
                 <div id="id_perro_x" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="<?= base_url() ?>private/img_perros/<?= $info_perro['Nombre_Foto_File']?>" class="d-block w-100 img-circle" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="<?= base_url() ?>private/img_perros/<?= $info_perro['Nombre_Foto_File']?>" class="d-block w-100 img-circle" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="<?= base_url() ?>private/img_perros/<?= $info_perro['Nombre_Foto_File']?>" class="d-block w-100 img-circle" alt="...">
-                        </div>
+                        <?= $fotos_perro;?>
                     </div>
                     <a class="carousel-control-prev" href="#id_perro_x" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

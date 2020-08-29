@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>private/css/<?php echo $css?>/index.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>private/css/footer/index.css">
     <link rel="icon" href="https://image.ibb.co/dEEbaA/baidu-logotipo-de-la-pata-2.png">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <?php if(isset($alt_css)) echo $alt_css; ?>
     <title><?php echo $string; ?></title>
 
@@ -58,11 +59,23 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dd_menu">
                         <?php 
                             if($this->session->userdata('user')) {
-                                //$user = $this->session->userdata('user');
-                                //extract($user);
-                                //echo "Bienvenido ".$this->session->userdata('user')['Nombre'];
+                                if ($this->session->userdata('user')['Tipo_User'] == 1) {
+                                   ?>
+                                        <a class="dropdown-item text-white" href="<?=base_url()?>PanelControl/PUserController">Pánel de Control</a>
+                                   <?php
+                                }
+                                elseif ($this->session->userdata('user')['Tipo_User'] == 2){
+                                    ?>
+                                        <a class="dropdown-item text-white" href="<?=base_url()?>PanelControl/PBenefController">Pánel de Control</a>
+                                   <?php
+                                }
+                                elseif ($this->session->userdata('user')['Tipo_User'] == 3){
+                                    ?>
+                                        <a class="dropdown-item text-white" href="<?=base_url()?>PanelControl/PAdminController">Pánel de Control</a>
+                                   <?php
+                                }
                         ?>
-                                <a class="dropdown-item text-white" href="<?=base_url()?>PanelController">Pánel de Control</a>
+                                
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-white" href="<?=base_url()?>loginController/logout">Cerrar Sesión</a>
                         <?php

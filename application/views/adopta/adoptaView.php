@@ -76,12 +76,15 @@
         <div class="row mt-5 row row-cols-1 row-cols-md-3">
             <?php if(isset($results)) {
                 $cont=0;
-                foreach ($results->result() as $fila) { ?>
+                foreach ($results as $fila) {
+                    //echo "Nombre perro: ".$fila['Nombre_Perro']." Status: ".$fila['Status']."<br><br>"; 
+                    ?>
                     <div class="col mb-4">
                         <div class="card shadow-sm" style="max-height: 500px;">
                             <div id="id_perro_<?php echo ($cont+1);?>" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner" style="max-height: 200px;">
-                                    <div class="carousel-item active">
+                                    <?php echo $fotosCarousel[$cont];?>
+                                    <!--div class="carousel-item active">
                                         <img src="<?= base_url() ?>private/img_perros/<?= $fila->Nombre_Foto_File;?>" class="d-block w-100" alt="...">
                                     </div>
                                     <div class="carousel-item">
@@ -89,7 +92,7 @@
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?= base_url() ?>private/img_perros/<?= $fila->Nombre_Foto_File;?>" class="d-block w-100" alt="...">
-                                    </div>
+                                    </div-->
                                 </div>
                                 <a class="carousel-control-prev" href="#id_perro_<?php echo ($cont+1);?>" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -103,21 +106,21 @@
 
 
                             <div class="card-body">
-                                <h5 class="card-title"><?= $fila->Nombre_Perro;?></h5>
+                                <h5 class="card-title"><?= $fila['Nombre_Perro'];?></h5>
                                 <p class="card-text text-justify">
                                     <b>Fundación: </b>
                                     <a href="##">
-                                        <?php echo $beneficencias["$cont"]->NombreB;?>
+                                        <?php echo $fila['NombreB'];?>
                                     </a>
                                 </p>
                                 <p class="text-justify">
-                                    <?= $fila->DescripcionP?>
+                                    <?= $fila['DescripcionP']?>
                                 </p>
-                                <p class="text-right" data-toggle="popover" title="Acerca del perro" data-content="<b>Raza:</b> <?php echo $fila->Raza."<br>" ?>
-                                                  <b>Edad:</b> <?php echo $fila->Edad."<br>" ?>
-                                                  <b>Tamaño:</b> <?php echo $fila->Tamanio."<br>" ?>
-                                                  <b>Tipo de pelaje:</b> <?php echo $fila->Tipo_Pelaje."<br>" ?>
-                                                  <b>¿Cuenta con carnet fisico?:</b> <?php echo $fila->Id_Carnet."<br>" ?>
+                                <p class="text-right" data-toggle="popover" title="Acerca del perro" data-content="<b>Raza:</b> <?php echo $fila['Raza']."<br>" ?>
+                                                  <b>Edad:</b> <?php echo $fila['Edad']."<br>" ?>
+                                                  <b>Tamaño:</b> <?php echo $fila['Tamanio']."<br>" ?>
+                                                  <b>Tipo de pelaje:</b> <?php echo $fila['Tipo_Pelaje']."<br>" ?>
+                                                  <b>¿Cuenta con carnet fisico?:</b> <?php echo ($fila['Carnet_Fisico'])?"Sí <br>":"No <br>";?>
                                                   ">
 
                                     <img src="<?= base_url() ?>private/media/icons/info.svg" width="18px">
@@ -128,12 +131,13 @@
                                 <?php
                                     extract($this->session->userdata('user'));
                                     if($Id_Beneficencia==null){
-                                       if($fila->Status==2){
+
+                                       if($fila['Status_Perro']=='2'){
                                             ?>
-                                                <a href="<?= base_url();?>GenerarcitaController/index/<?= $fila->Id_Perro;?>" class="btn btn-outline-dark btn-sm">Quiero conocerlo</a>
+                                                <a href="<?= base_url();?>GenerarcitaController/index/<?= $fila['Id_Perro'];?>" class="btn btn-outline-dark btn-sm">Quiero conocerlo</a>
                                             <?php
                                         }
-                                        else if($fila->Status==1){
+                                        else if($fila['Status_Perro']=='1'){
                                             ?>
                                                 <span style="font-size: 14px; color: var(--amber-darken-1);">En proceso de Adopción</span>
                                             <?php
