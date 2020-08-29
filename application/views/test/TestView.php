@@ -5,7 +5,7 @@
             <section class="content">
                 <div class="parallax img-uno">
                     <div class="texto-interior">
-                        <h2 class="display-4">El Test</h2>
+                        <h2 class="display-4 text-white">El Test</h2>
                     </div>
                 </div><!-- .parallax -->
 

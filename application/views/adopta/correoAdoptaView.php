@@ -72,6 +72,7 @@
         table {
             border-collapse: collapse !important;
         }
+        
 
         body {
             height: 100% !important;
